@@ -1,0 +1,6 @@
+<ReportItem>
+<cwe>326</cwe>
+<description>The remote host supports the use of SSL ciphers that offer weak encryption.
+
+Note: This is considerably easier to exploit if the attacker is on the same physical network.</description>
+</ReportItem>
