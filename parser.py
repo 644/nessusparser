@@ -7,15 +7,20 @@ tree = ET.parse('report.xml').getroot()
 
 c.execute("CREATE TABLE IF NOT EXISTS reports (ReportItem text, cwe text, description text)")
 for ReportItem in tree.iter('ReportItem'):
+	cols = []
+	datas = []
 	for e in ReportItem.iter():
-		## Possibly attempt trickery with data entry
-		#fields = "\'" + '\', \''.join(e.tag) + "\'"
-		#data = "\'" + '\', \''.join(e.text) + "\'"
-		#if len(e.text) > 3:
-		#	marklist = ["?"] * len(e.text)
-		#	marks = ', '.join(marklist)
-		print(e.text)
-		c.execute("INSERT INTO reports (cwe) VALUES (?)", (e.text,))
+		if len(e.text) > 1:
+			cols.append(e.tag)
+			datas.append(e.text)
+	if len(datas) > 0:
+		marklist = ["?"] * len(datas)
+		marks = ', '.join(marklist)
+	if len(cols) > 0:
+		datalist = ['%s'] * len(cols)
+		datastrings = ', '.join(datalist)
+	insert = "INSERT INTO reports (%s) VALUES (%s)" % (datastrings, marks)
+	c.execute(insert % (*cols,), (*datas,))
 
 conn.commit()
 conn.close()
