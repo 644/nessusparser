@@ -1,6 +1,8 @@
 import xml.etree.ElementTree as ET
 import sqlite3
 from appJar import gui
+from shutil import copyfile
+conn = sqlite3.connect('reports.db')
 
 def xml2sqlite(dest_file):
 	conn = sqlite3.connect('reports.db')
@@ -45,7 +47,14 @@ def import_options(button):
 def select_options(button):
 	if button == "OK":
 		cb_list = [cb for cb in app.getAllCheckBoxes() if app.getCheckBox(cb)]
-		print(cb_list)
+		for cb in cb_list:
+			c = conn.cursor()
+			c.execute("select reports.host_ip from reportitems INNER JOIN reports ON reports.report_id = reportitems.report_id WHERE reportitems.plugin_name LIKE 'Unencrypted Telnet Server' AND reports.report_name = ?", [cb])
+			copyfile('plugins/telnet-services.txt', './' + cb + '.txt')
+			with open('./' + cb + '.txt', "a") as t_file:
+				[ t_file.write(str(append_line[0] + '\n')) for append_line in c.fetchall() ]
+		print("Done")
+		exit()
 	else:
 		exit()
 
@@ -59,7 +68,6 @@ def first_press(button):
 		app.setFocus("File")
 		app.addButtons(["OK", "Exit"], import_options)
 	elif button == "Select":
-		conn = sqlite3.connect('reports.db')
 		c = conn.cursor()
 		app.removeAllWidgets()
 		c.execute('select DISTINCT reports.report_name from reports')
