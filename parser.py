@@ -1,7 +1,6 @@
 import xml.etree.ElementTree as ET
 import sqlite3
 from appJar import gui
-import glob
 
 def xml2sqlite(dest_file):
 	conn = sqlite3.connect('reports.db')
@@ -56,6 +55,7 @@ def first_press(button):
 		app.addButtons(["Select", "OK", "Exit"], import_options)
 	elif button == "Select":
 		app.removeAllWidgets()
+		print("todo")
 	else:
 		exit()
 
