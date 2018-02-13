@@ -37,10 +37,15 @@ def xml2sqlite(dest_file):
 	print("Successfully converted %s to sqlite database" % dest_file)
 
 def import_options(button):
-	if button == "Select":
-		print("todo")
-	elif button == "OK":
+	if button == "OK":
 		xml2sqlite(app.getEntry("File"))
+	else:
+		exit()
+
+def select_options(button):
+	if button == "OK":
+		cb_list = [cb for cb in app.getAllCheckBoxes() if app.getCheckBox(cb)]
+		print(cb_list)
 	else:
 		exit()
 
@@ -52,10 +57,15 @@ def first_press(button):
 		app.setLabelFg("title", "white")
 		app.addFileEntry("File")
 		app.setFocus("File")
-		app.addButtons(["Select", "OK", "Exit"], import_options)
+		app.addButtons(["OK", "Exit"], import_options)
 	elif button == "Select":
+		conn = sqlite3.connect('reports.db')
+		c = conn.cursor()
 		app.removeAllWidgets()
-		print("todo")
+		c.execute('select DISTINCT reports.report_name from reports')
+		for rc in c.fetchall():
+			app.addCheckBox(rc[0])
+		app.addButtons(["OK", "Exit"], select_options)
 	else:
 		exit()
 
