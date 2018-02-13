@@ -37,30 +37,27 @@ def xml2sqlite(dest_file):
 	conn.close()
 	print("Successfully converted %s to sqlite database" % dest_file)
 
-def import_files(button):
-	if button == "OK":
+def import_options(button):
+	if button == "Select":
+		print("todo")
+	elif button == "OK":
 		xml2sqlite(app.getEntry("File"))
-
-def select_options(button):
-		if button == "Select":
-			print("todo")
-		else:
-			exit()
+	else:
+		exit()
 
 def first_press(button):
 	if button == "Import":
 		app.removeAllWidgets()
-		app.addButtons(["Select", "Exit"], select_options)
 		app.addLabel("title", "Enter the file destination")
 		app.setLabelBg("title", "white")
 		app.setLabelFg("title", "white")
 		app.addFileEntry("File")
 		app.setFocus("File")
-		app.addButtons(["OK"], import_files)
+		app.addButtons(["Select", "OK", "Exit"], import_options)
 	elif button == "Select":
 		app.removeAllWidgets()
-	elif button == "Exit":
-		app.stop()
+	else:
+		exit()
 
 app = gui("NessusParser", "335x235")
 app.setBg("white")
