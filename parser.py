@@ -40,9 +40,17 @@ def xml2sqlite(dest_file):
 def import_files(button):
 	if button == "OK":
 		xml2sqlite(app.getEntry("File"))
-		
+
+def select_options(button):
+		if button == "Select":
+			print("todo")
+		else:
+			exit()
+
 def first_press(button):
 	if button == "Import":
+		app.removeAllWidgets()
+		app.addButtons(["Select", "Exit"], select_options)
 		app.addLabel("title", "Enter the file destination")
 		app.setLabelBg("title", "white")
 		app.setLabelFg("title", "white")
@@ -50,7 +58,7 @@ def first_press(button):
 		app.setFocus("File")
 		app.addButtons(["OK"], import_files)
 	elif button == "Select":
-		print("todo")
+		app.removeAllWidgets()
 	elif button == "Exit":
 		app.stop()
 
