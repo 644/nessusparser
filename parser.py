@@ -36,7 +36,6 @@ def xml2sqlite(dest_file):
 	conn.commit()
 	conn.close()
 	print("Successfully converted %s to sqlite database" % dest_file)
-	exit()
 
 def press(button):
 	if button == "Import":
