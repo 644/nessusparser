@@ -43,7 +43,7 @@ def press(button):
         dest_file = app.getEntry("File")
         xml2sqlite(dest_file)
 
-app = gui("NessusParser", "300x150")
+app = gui("NessusParser", "335x235")
 app.setBg("white")
 app.addLabel("title", "Enter the file destination")
 app.setLabelBg("title", "white")
