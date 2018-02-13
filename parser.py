@@ -26,7 +26,10 @@ def xml2sqlite(dest_file):
 					elems = [e for e in reportitem.iter() if len(e.text) > 1]
 					marks = ', '.join("?" for e in elems)
 					cols = ', '.join(e.tag.replace('-', '_') for e in elems)
-					c.execute(f"INSERT INTO reportitems ({cols}, report_id) VALUES ({marks}, %d)" % last_report_id, [e.text for e in elems])
+					try:
+						c.execute(f"INSERT INTO reportitems ({cols}, report_id) VALUES ({marks}, %d)" % last_report_id, [e.text for e in elems])
+					except sqlite3.OperationalError:
+						print("Could not add to db")
 
 	conn.commit()
 	conn.close()
