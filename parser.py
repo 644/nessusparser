@@ -8,6 +8,8 @@ def import_options(button):
 	if button == "ok1":
 		x.xml2sqlite(app.getEntry("File"))
 		print("Successfully converted %s to sqlite database" % app.getEntry("File"))
+		app.removeAllWidgets()
+		start_gui()
 	else:
 		exit()
 
@@ -28,28 +30,30 @@ def select_options(button):
 		exit()
 
 app = gui("NessusParser", "335x235")
-app.setBg("white")
-app.startTabbedFrame("TabbedFrame")
-app.startTab("Import")
-app.addLabel("title", "Enter the file destination")
-app.setLabelBg("title", "white")
-app.setLabelFg("title", "white")
-app.addFileEntry("File")
-app.addNamedButton("OK", "ok1", import_options)
-app.addNamedButton("Exit", "exit1", import_options)
-app.stopTab()
+def start_gui():
+	app.startTabbedFrame("TabbedFrame")
+	app.startTab("Import")
+	app.addLabel("file_dest", "Click to open file")
+	app.addFileEntry("File")
+	row = app.getRow()
+	app.addNamedButton("OK", "ok1", import_options, row, 1)
+	app.addNamedButton("Exit", "exit1", import_options, row, 2)
+	app.stopTab()
 
-app.startTab("Select")
-try:
-	c = conn.cursor()
-	c.execute('select DISTINCT reports.report_name from reports')
-	for rc in c.fetchall():
-		app.addCheckBox(rc[0])
-except sqlite3.OperationalError:
-	app.addLabel('The database appears to be empty.\nImport a file first')
+	app.startTab("Select")
+	try:
+		c = conn.cursor()
+		c.execute('select DISTINCT reports.report_name from reports')
+		for rc in c.fetchall():
+			app.addCheckBox(rc[0])
+	except sqlite3.OperationalError:
+		app.addLabel('The database appears to be empty.\nImport a file first')
+	
+	row = app.getRow()
+	app.addNamedButton("OK", "ok2", select_options, row, 1)
+	app.addNamedButton("Exit", "exit2", select_options, row, 2)
+	app.stopTab()
+	app.stopTabbedFrame()
 
-app.addNamedButton("OK", "ok2", select_options)
-app.addNamedButton("Exit", "exit2", select_options)
-app.stopTab()
-app.stopTabbedFrame()
+start_gui()
 app.go()
