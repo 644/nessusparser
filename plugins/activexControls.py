@@ -1,11 +1,10 @@
 from plugins import selects
-def genFile(cb, plugin_ids, name, risk_description, recommendation, notes):
+def gen_file(cb, plugin_ids, name, risk_description, recommendation, notes):
 	if isinstance(plugin_ids[0], int):
 		all_rows = selects.pluginId(plugin_ids, cb)
 	else:
 		all_rows = selects.pluginName(plugin_ids, cb)
 
-	print(plugin_ids)
 	if len(all_rows) > 0:
 		with open('./' + cb + '.txt', "a") as t_file:
 			t_file.write(name + '\n' + risk_description + '\n' + recommendation + '\n' + notes + '\nAffected hosts:\n')
@@ -21,7 +20,7 @@ def gen(cb):
 	notes+="\n<url>https://web.nvd.nist.gov/view/vuln/detail?vulnId=CVE-2011-0323</url>"
 	notes+="\n<url>https://web.nvd.nist.gov/view/vuln/detail?vulnId=CVE-2011-0324</url>"
 
-	genFile(cb, plugin_ids, name, risk_description, recommendation, notes)
+	gen_file(cb, plugin_ids, name, risk_description, recommendation, notes)
 
 
 	## New plugins
@@ -32,7 +31,7 @@ def gen(cb):
 	notes="\n<bold>"+name+"</bold>"
 	notes+="\n<url>https://web.nvd.nist.gov/view/vuln/detail?vulnId=CVE-2007-4470</url>"
 
-	genFile(cb, plugin_ids, name, risk_description, recommendation, notes)
+	gen_file(cb, plugin_ids, name, risk_description, recommendation, notes)
 
 	## New plugins
 	plugin_ids=["Macrovision FLEXnet %","FLEXNet %"]
@@ -44,7 +43,7 @@ def gen(cb):
 	notes+="\n<url>http://support.installshield.com/kb/view.asp?articleid=Q113020</url>"
 	notes+="\n<url>https://web.nvd.nist.gov/view/vuln/detail?vulnId=CVE-2007-0328</url>"
 
-	genFile(cb, plugin_ids, name, risk_description, recommendation, notes)
+	gen_file(cb, plugin_ids, name, risk_description, recommendation, notes)
 
 	## New plugins
 	plugin_ids=["Data Dynamics %"]
@@ -54,7 +53,7 @@ def gen(cb):
 	notes="\n<bold>"+name+"</bold>"
 	notes+="\n<url>https://web.nvd.nist.gov/view/vuln/detail?vulnId=CVE-2011-0323</url>"
 
-	genFile(cb, plugin_ids, name, risk_description, recommendation, notes)
+	gen_file(cb, plugin_ids, name, risk_description, recommendation, notes)
 
 	## New plugins
 	plugin_ids=["EasyMail SMTP Object ActiveX Control Multiple Buffer Overflows"]
@@ -66,7 +65,7 @@ def gen(cb):
 	notes+="\n<url>https://web.nvd.nist.gov/view/vuln/detail?vulnId=CVE-2007-4607</url>"
 	notes+="\n<url>https://web.nvd.nist.gov/view/vuln/detail?vulnId=CVE-2009-4663</url>"
 
-	genFile(cb, plugin_ids, name, risk_description, recommendation, notes)
+	gen_file(cb, plugin_ids, name, risk_description, recommendation, notes)
 
 	## New plugins
 	include_strings=["  Filename","  Installed version"]	
@@ -78,7 +77,7 @@ def gen(cb):
 	notes="\n<bold>"+name+"</bold>"
 	notes+="\n<url>http://www.oracle.com/technetwork/topics/security/cpujan2011-194091.html</url>"
 
-	genFile(cb, plugin_ids, name, risk_description, recommendation, notes)
+	gen_file(cb, plugin_ids, name, risk_description, recommendation, notes)
 
 	## New plugins
 	include_strings=["  Path","  Version"]
@@ -90,7 +89,7 @@ def gen(cb):
 	notes="\n<bold>"+name+"</bold>"
 	notes+="\n<url>http://www.adobe.com/devnet/svg/adobe-svg-viewer-eol.html</url>"
 
-	genFile(cb, plugin_ids, name, risk_description, recommendation, notes)
+	gen_file(cb, plugin_ids, name, risk_description, recommendation, notes)
 
 	## New plugins
 	include_strings=["  Filename","  Version"]
@@ -102,7 +101,7 @@ def gen(cb):
 	notes="\n<bold>"+name+"</bold>"
 	notes+="\n<url>https://discussion.evernote.com/topic/79359-evernote-for-windows-581/</url>"
 
-	genFile(cb, plugin_ids, name, risk_description, recommendation, notes)
+	gen_file(cb, plugin_ids, name, risk_description, recommendation, notes)
 
 	## New plugins
 	include_strings=["  Filename","  Installed version"]
@@ -115,7 +114,7 @@ def gen(cb):
 	notes+="\n<url>https://nvd.nist.gov/vuln/detail/CVE-2014-9268</url>"
 	notes+="\n<url>https://knowledge.autodesk.com/support/design-review/downloads/caas/downloads/content/autodesk-design-review-2013-hotfix.html</url>"
 
-	genFile(cb, plugin_ids, name, risk_description, recommendation, notes)
+	gen_file(cb, plugin_ids, name, risk_description, recommendation, notes)
 
 	## New plugins
 	include_strings=["  Path","  Installed version"]
@@ -127,4 +126,4 @@ def gen(cb):
 	notes="\n<bold>"+name+"</bold>"
 	notes+="\n<url>https://www.rapid7.com/db/modules/exploit/windows/browser/autodesk_idrop</url>"
 
-	genFile(cb, plugin_ids, name, risk_description, recommendation, notes)
+	gen_file(cb, plugin_ids, name, risk_description, recommendation, notes)
