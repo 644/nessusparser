@@ -1,1 +1,1 @@
-__all__ = ['selects', 'telnet', 'activexControlsParent', 'activexControls', 'aix61Patching'] 
+__all__ = ['selects', 'telnet', 'activexControlsParent', 'activexControls'] 
