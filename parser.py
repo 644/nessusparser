@@ -23,6 +23,7 @@ def select_options(button):
 		for cb in cb_list:
 			telnet.gen(cb)
 			activexControlsParent.gen(cb)
+			activexControls.gen(cb)
 		print("Done")
 		exit()
 	else:

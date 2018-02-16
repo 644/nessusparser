@@ -1,4 +1,4 @@
-import sqlite3
+from plugins import selects
 
 def gen(cb):
 	plugin_ids=['Unencrypted Telnet Server']
@@ -12,11 +12,10 @@ def gen(cb):
 
 	notes="<url>https://catn.com/2010/03/23/why-do-we-use-ssh-over-telnet/</url>"
 	
-	conn = sqlite3.connect('./reports.db')
-	c = conn.cursor()
-	c.execute("select reports.host_ip from reportitems INNER JOIN reports ON reports.report_id = reportitems.report_id WHERE reportitems.plugin_name LIKE 'Unencrypted Telnet Server' AND reports.report_name = ?", [cb])
-	all_rows = c.fetchall()
+	all_rows = selects.pluginName(plugin_ids, cb)
+	
 	if len(all_rows) > 0:
 		with open('./' + cb + '.txt', "a") as t_file:
 			t_file.write(name + '\n' + description + '\n' + risk_description + '\n' + recommendation + '\n' + notes + '\nAffected hosts:\n')
 			[ t_file.write(str(append_line[0] + '\n')) for append_line in all_rows ]
+			t_file.write('\n\n\n')
