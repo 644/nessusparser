@@ -1,4 +1,3 @@
-from shutil import copyfile
 from appJar import gui
 import xml2sql as x
 import sqlite3
