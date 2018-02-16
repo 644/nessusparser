@@ -29,7 +29,7 @@ def xml2sqlite(dest_file):
 						try:
 							c.execute(f"INSERT INTO reportitems ({cols}, plugin_id, report_id) VALUES ({marks}, %s, %d)" % (plugin_id, last_report_id), [e.text for e in elems])
 						except sqlite3.OperationalError:
-							print("Could not add to db")
+							print('Could not add row to db\r', end='')
 
 		conn.commit()
 		conn.close() 

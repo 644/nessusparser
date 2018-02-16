@@ -10,6 +10,8 @@ def gen(cb):
 	child_module="activex_controls"
 	
 	all_rows = selects.pluginName(name, cb)
+	all_rows = [*{*all_rows}]
+	
 	if len(all_rows) > 0:
 		with open('./' + cb + '.txt', "a") as t_file:
 			t_file.write(name + '\n' + description + '\n' + notes + '\n' + child_module + '\nAffected hosts:\n')

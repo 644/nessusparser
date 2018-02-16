@@ -13,6 +13,7 @@ def gen(cb):
 	notes="<url>https://catn.com/2010/03/23/why-do-we-use-ssh-over-telnet/</url>"
 	
 	all_rows = selects.pluginName(plugin_ids, cb)
+	all_rows = [*{*all_rows}]
 	
 	if len(all_rows) > 0:
 		with open('./' + cb + '.txt', "a") as t_file:

@@ -5,6 +5,8 @@ def gen_file(cb, plugin_ids, name, risk_description, recommendation, notes):
 	else:
 		all_rows = selects.pluginName(plugin_ids, cb)
 
+	all_rows = [*{*all_rows}]
+	
 	if len(all_rows) > 0:
 		with open('./' + cb + '.txt', "a") as t_file:
 			t_file.write(name + '\n' + risk_description + '\n' + recommendation + '\n' + notes + '\nAffected hosts:\n')
