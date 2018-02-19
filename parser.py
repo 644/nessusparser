@@ -23,6 +23,10 @@ def select_options(button):
 			telnet.gen(cb)
 			activexControlsParent.gen(cb)
 			activexControls.gen(cb)
+			winlogonCachedPasswords.gen(cb)
+			windowsUpdateReboot.gen(cb)
+			windowsServer2003.gen(cb)
+			webInternalIpDisco.gen(cb)
 		print('Done')
 		exit()
 	else:
