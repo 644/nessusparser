@@ -27,6 +27,8 @@ def select_options(button):
 			windowsUpdateReboot.gen(cb)
 			windowsServer2003.gen(cb)
 			webInternalIpDisco.gen(cb)
+			vmwareVsphereUpdateManager.gen(cb)
+			vmwareVcenter.gen(cb)
 		print('Done')
 		exit()
 	else:

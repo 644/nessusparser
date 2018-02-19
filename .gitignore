@@ -1,1 +1,4 @@
 tests/Archive
+__pycache__/
+plugins/__pycache__/
+reports.db
