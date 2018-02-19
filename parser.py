@@ -29,6 +29,8 @@ def select_options(button):
 			webInternalIpDisco.gen(cb)
 			vmwareVsphereUpdateManager.gen(cb)
 			vmwareVcenter.gen(cb)
+			vmwareEsxi.gen(cb)
+			unquotedServicePaths.gen(cb)
 		print('Done')
 		exit()
 	else:
