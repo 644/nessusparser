@@ -1,1 +1,1 @@
-__all__ = ['selects', 'telnet', 'activexControlsParent', 'activexControls', 'winlogonCachedPasswords', 'windowsUpdateReboot', 'windowsServer2003', 'webInternalIpDisco', 'vmwareVsphereUpdateManager', 'vmwareVcenter', 'vmwareEsxi', 'unquotedServicePaths'] 
+__all__ = ['selects', 'telnet', 'activexControlsParent', 'activexControls', 'winlogonCachedPasswords', 'windowsUpdateReboot', 'windowsServer2003', 'webInternalIpDisco', 'vmwareVsphereUpdateManager', 'vmwareVcenter', 'vmwareEsxi', 'unquotedServicePaths', 'sslTlsMultipleIssues'] 

@@ -31,6 +31,7 @@ def select_options(button):
 			vmwareVcenter.gen(cb)
 			vmwareEsxi.gen(cb)
 			unquotedServicePaths.gen(cb)
+			sslTlsMultipleIssues.gen(cb)
 		print('Done')
 		exit()
 	else:
