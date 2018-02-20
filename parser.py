@@ -21,7 +21,6 @@ def select_options(button):
 		cb_list = [cb for cb in app.getAllCheckBoxes() if app.getCheckBox(cb)]
 		for cb in cb_list:
 			telnet.gen(cb)
-			activexControlsParent.gen(cb)
 			activexControls.gen(cb)
 			winlogonCachedPasswords.gen(cb)
 			windowsUpdateReboot.gen(cb)

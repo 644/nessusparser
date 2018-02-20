@@ -1,7 +1,6 @@
 from plugins import genFile
+
 def gen(cb):
-	child_module = str()
-	
 	plugin_ids=['Microsoft Windows Server 2003 Unsupported Installation Detection','Microsoft Windows Server 2003 Unsupported Installation Detection (ERRATICGOPHER)']
 	name='Microsoft Windows Server 2003 Installations'
 	description="Hosts have been found to be running Microsoft Windows Server 2003. This operating system has now been retired by Microsoft and no longer receives security updates. The continued presence of such hosts leaves the affected assets and the network at risk of compromise through unaddressed issues."
@@ -12,4 +11,4 @@ def gen(cb):
 	notes+="\n<url>http://support.microsoft.com/lifecycle/?p1=7274</url>"
 	notes+="\n<url>https://blogs.technet.microsoft.com/filecab/2016/09/16/stop-using-smb1/</url>"
 	
-	genFile.genr(cb, plugin_ids, name, description, risk_description, recommendation, notes, child_module)
+	genFile.genr(cb, plugin_ids, name, description, risk_description, recommendation, notes)

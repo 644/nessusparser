@@ -1,8 +1,6 @@
 from plugins import genFile
 
 def gen(cb):
-	child_module = str()
-	
 	plugin_ids = ['Microsoft Windows Unquoted Service Path Enumeration']
 	remove_strings = ["Nessus found the following services with an untrusted path :","Nessus found the following service with an untrusted path :"]
 	name = "Windows Unquoted Service Paths"
@@ -11,4 +9,4 @@ def gen(cb):
 	recommendation = "Ensure that any services that contain a space in the path are reconfigured to enclose the path in quotes."
 	notes="<url>http://www.commonexploits.com/unquoted-service-paths/</url>\n<url>https://gallery.technet.microsoft.com/scriptcenter/Windows-Unquoted-Service-190f0341</url>"
 	
-	genFile.genr(cb, plugin_ids, name, description, risk_description, recommendation, notes, child_module)
+	genFile.genr(cb, plugin_ids, name, description, risk_description, recommendation, notes)
