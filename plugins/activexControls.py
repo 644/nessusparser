@@ -1,7 +1,7 @@
 from plugins import genFile
 
 def gen(cb):
-	description = "ActiveX Controls\nHosts have been identified with vulnerable ActiveX controls installed. Hosts would be at risk of remote compromise if a user was tricked into accessing malicious resources.\n<url>https://support.microsoft.com/kb/240797</url>\n\n"
+	description=str()
 
 	plugin_ids=[51894,51895]
 	name="SigPlus Pro ActiveX Control"
@@ -62,7 +62,7 @@ def gen(cb):
 	include_strings=["  Filename","  Installed version"]	
 	plugin_ids=['Oracle Document Capture Multiple Vulnerabilities']	
 	name="Oracle Document Capture"
-	description=""
+	description=str()
 	risk_description="A version of the Oracle Document Capture ActiveX control that is known to be affected by multiple security vulnerabilities has been found on the affected hosts. This may allow an attacker to overwrite arbitrary files on the host systems or potentially execute code via buffer overflow."
 	recommendation="It is recommended that Oracle's Document Capture client be updated to the most recent available version so that the ActiveX controls are disabled. If this software has been bundled alongside another application that includes the NCSEcw.dll control, it is recommended that the ActiveX kill bit be set for the affected control."
 	notes="\n<bold>"+name+"</bold>"
@@ -74,7 +74,7 @@ def gen(cb):
 	include_strings=["  Path","  Version"]
 	plugin_ids=['Adobe SVG Viewer Circle Transform Remote Code Execution']	
 	name="Adobe SVG Viewer"
-	description=""
+	description=str()
 	risk_description="A version of the Adobe SVG Viewer ActiveX control, known to be affected by a remote code execution vulnerability, has been found on the affected hosts. Leveraging this issue by directing a user to a malicious web page can allow the execution of code on the underlying host, potentially leading to its compromise. This control is also no longer supported by Adobe, increasing the risk it is seen to present as this issue will not be addressed."
 	recommendation="As the SVG Viewer is no longer supported, it should be removed."
 	notes="\n<bold>"+name+"</bold>"
@@ -86,7 +86,7 @@ def gen(cb):
 	include_strings=["  Filename","  Version"]
 	plugin_ids=['Evernote < 5.8.1 ActiveX Control Arbitrary File Overwrite']	
 	name="Evernote"
-	description=""
+	description=str()
 	risk_description="Deployments of the Evernote ActiveX control were identified on hosts as a result of authenticated assessment. The versions seen predate releases which addressed security issues, including a vulnerability which allowed a remote, unauthenticated attacker to read and overwrite arbitrary files on the affected hosts. Leveraging such issues requires a user to browse to a malicious web page, reducing the likelihood of exploitation of this control."
 	recommendation="Remove the control if it is not required, otherwise update it in line with the most recent release."
 	notes="\n<bold>"+name+"</bold>"
@@ -98,7 +98,7 @@ def gen(cb):
 	include_strings=["  Filename","  Installed version"]
 	plugin_ids=['Autodesk Design Review AdView.AdViewer ActiveX Control RCE']	
 	name="Autodesk Design Review AdView"
-	description=""
+	description=str()
 	risk_description="Deployments of the AutoDesk Design Review AdView ActiveX control were identified on hosts as a result of authenticated assessment. The versions seen predate releases which addressed security issues, including a vulnerability which allowed a remote, unauthenticated attacker to execute arbitrary code on the affected hosts. Leveraging such issues requires a user to open a malicious file (e.g. email attachment) or browse to a malicious web page, reducing the likelihood of exploitation of this control."
 	recommendation="Remove the control if it is not required, otherwise update it in line with the most recent release. Vendor advice for this issue requires all deployments be upgraded to the 2013 release and then a 2013 hotfix be applied to them."
 	notes="\n<bold>"+name+"</bold>"
@@ -111,7 +111,7 @@ def gen(cb):
 	include_strings=["  Path","  Installed version"]
 	plugin_ids=['Autodesk IDrop ActiveX Control Heap Corruption']	
 	name="AutoDesk IDrop"
-	description=""
+	description=str()
 	risk_description="Deployments of the AutoDesk IDrop ActiveX control were identified on hosts as a result of authenticated assessment. The versions seen predate releases which addressed security issues, including a vulnerability which allows an attacker to execute arbitrary code on the affected hosts. Public exploit code is available for this vulnerability. Leveraging such issues requires a user to open a malicious HTML file, requiring additional exploitation of the user (e.g. through social engineering) in order to leverage this attack. This is seen to reduce the likelihood of exploitation of this control.\n\nIt should also be noted that AutoDesk no longer support this control, resulting in its presence introducing a persistent risk to the underlying hosts."
 	recommendation="Remove this control if it is not required. As it is no longer supported continued use of this control is not recommended."
 	notes="\n<bold>"+name+"</bold>"

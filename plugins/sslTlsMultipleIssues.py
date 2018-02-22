@@ -1,8 +1,7 @@
 from plugins import genFile
 
 def gen(cb):
-	description="TLS/SSL Multiple Issues\nA number of hosts have been found to be susceptible to several issues within services using the Transport Layer Security (TLS)/Secure Sockets Layer (SSL) protocol. These issues range from support for cryptographically weak ciphers that leave encrypted traffic vulnerable to decryption to certificate configuration errors that prevent a host's authenticity from being accurately determined, leaving traffic vulnerable to interception and redirection."
-
+	description=str()
 	## New plugins UntrustedSSLCertificate(VulnerabilityPlugin):
 	plugin_ids=[57582, 51192]
 	name="Untrusted SSL Certificate"
@@ -18,7 +17,7 @@ def gen(cb):
 	## New plugins SSLCertificateWithWrongHostname(VulnerabilityPlugin):
 	plugin_ids=[45411]
 	name="SSL Certificate with Wrong Hostname"
-	risk_description="The commonName (CN) field of the certificate presented by each host is for a different hostname. This check is performed by automated software and may be a false positive. This is because the CN field is compared to the IP address of the host rather than its hostname. If an instance of this finding is not a false positive, then the continued use of this certificate encourages poor security awareness in staff and prevents the verification of a host's authenticity."
+	risk_description="The commonName (CN) field of the certificate presented by each host is for a different hostname. This check is performed by automated software and may be a false positive. This is because the CN field is compared to the IP address of the host rather than its hostname. If an instance of this finding is not a false positive, then the continued use of this certificate encourages poor security awareness in staff and prevents the verification of a hosts authenticity."
 	recommendation="Acquire a new certificate with the correct hostname to replace the existing one. This should be sourced from a trusted CA."
 	notes="\n<bold_italic>"+name+"</bold_italic>"
 	notes+="\n<url>https://www.owasp.org/index.php/Transport_Layer_Protection_Cheat_Sheet#Server_Certificate</url>"
@@ -77,7 +76,7 @@ def gen(cb):
 	## New plugins SSLRC4CipherSuitesSupported(VulnerabilityPlugin):
 	plugin_ids=[65821]
 	name="SSL RC4 Cipher Suites Supported"
-	risk_description="Services support the use of the TLS/SSL protocols in order to encrypt service traffic. Within their current configuration, these services accept connections made using an RC4 cipher, which is considered to be cryptographically unsound. Due to flaws in its generation of random streams of bytes, the RC4 cipher's randomness is decreased as a result of a number of biases being introduced into the stream.\n\nAs a result, any plaintext value that is encrypted using this cipher and is repeatedly obtained by an attacker in its ciphertext form could enable them to derive the original plaintext. This process requires a significant number of ciphertexts to have been captured, reducing the likelihood of this issue being exploited."
+	risk_description="Services support the use of the TLS/SSL protocols in order to encrypt service traffic. Within their current configuration, these services accept connections made using an RC4 cipher, which is considered to be cryptographically unsound. Due to flaws in its generation of random streams of bytes, the RC4 ciphers randomness is decreased as a result of a number of biases being introduced into the stream.\n\nAs a result, any plaintext value that is encrypted using this cipher and is repeatedly obtained by an attacker in its ciphertext form could enable them to derive the original plaintext. This process requires a significant number of ciphertexts to have been captured, reducing the likelihood of this issue being exploited."
 	recommendation="Disable support for RC4 ciphers on each affected host/service.\n\nFor Windows hosts/services using SCHANNEL this will require Registry alterations to adjust the SCHANNEL supported ciphers. Consider using TLS 1.2 with AES-GCM suites subject to browser and web server support."
 	notes="\n<bold_italic>"+name+"</bold_italic>"
 	notes+="\n<url>http://httpd.apache.org/docs/trunk/ssl/ssl howto.html</url>"
@@ -92,7 +91,7 @@ def gen(cb):
 	## New plugins AnonymousSSLCiphersPermitted(VulnerabilityPlugin):
 	plugin_ids=[31705]
 	name="Anonymous SSL Ciphers Permitted"
-	risk_description="Hosts were seen to present TLS/SSL enabled services which support the use of anonymous ciphers. While this enables an administrator to set up a service that encrypts traffic without having to generate and configure certificates, it offers no way to verify a remote host's identity and renders the service vulnerable to a Man-in-the-Middle attack."
+	risk_description="Hosts were seen to present TLS/SSL enabled services which support the use of anonymous ciphers. While this enables an administrator to set up a service that encrypts traffic without having to generate and configure certificates, it offers no way to verify a remote hosts identity and renders the service vulnerable to a Man-in-the-Middle attack."
 	recommendation="If possible, reconfigure the affected application/host to prevent the use of anonymous ciphers."
 	notes="\n<bold_italic>"+name+"</bold_italic>"
 	notes+="\n<url>https://www.owasp.org/index.php/Transport_Layer_Protection_Cheat_Sheet#Server_Protocol_and_Cipher_Configuration</url>"
@@ -114,7 +113,7 @@ def gen(cb):
 	## New plugins SSLVersion2and3ProtocolDetection(VulnerabilityPlugin):
 	plugin_ids=[20007]
 	name="SSL Version 2 and 3 Protocol Detection"
-	risk_description="Services on the affected hosts accept connections encrypted using either SSL version 2.0 or version 3.0. Both versions are known to suffer from multiple cryptographic flaws which could enable an attacker to exploit these issues to conduct man-in-the-middle attacks or decrypt communications between the affected service and clients.\n\nNIST has determined that SSL 3.0 is no longer acceptable for secure communications. As of the date of enforcement found in PCI DSS v3.1, no versions of SSL will meet the PCI SSC's definition of 'strong cryptography'."
+	risk_description="Services on the affected hosts accept connections encrypted using either SSL version 2.0 or version 3.0. Both versions are known to suffer from multiple cryptographic flaws which could enable an attacker to exploit these issues to conduct man-in-the-middle attacks or decrypt communications between the affected service and clients.\n\nNIST has determined that SSL 3.0 is no longer acceptable for secure communications. As of the date of enforcement found in PCI DSS v3.1, no versions of SSL will meet the PCI SSCs definition of strong cryptography."
 	recommendation="Disable support for SSL version 2 and 3, replacing it with TLS (ideally TLS 1.2).\n\nThis will require Registry alterations within a Windows environment to adjust the SCHANNEL supported protocols or alterations to service configuration files for other services (e.g. Apache Web Server). See the Notes section for further details."
 	notes="\n<bold_italic>"+name+"</bold_italic>"
 	notes+="\n<url>https://httpd.apache.org/docs/2.4/ssl/ssl_howto.html</url>"
@@ -137,7 +136,7 @@ def gen(cb):
 
 
 	## New plugins SSLTLSProtocolInitialisationVectorInformationDisclosure(VulnerabilityPlugin):
-	plugin_ids=[58751,'SSL/TLS Protocol Initialization Vector Implementation Information Disclosure Vulnerability (BEAST)']
+	plugin_ids=[58751,"SSL/TLS Protocol Initialization Vector Implementation Information Disclosure Vulnerability (BEAST)"]
 	name="TLS/SSL BEAST Vulnerability"
 	risk_description="TLS/SSL services on the hosts may be affected by an information disclosure issue due to a vulnerability in SSL 3.0 and TLS 1.0. Automated vulnerability assessment tools identified that these services respond to requests with a response that is not fragmented with an empty or one-byte record and has highlighted them as vulnerable.\n\nThis issue is directly related to the BEAST attack, which exploits the client-side iteration of this issue. The detection at server-side does not necessarily mean the services are vulnerable to the BEAST attack, because it exploits the vulnerability at client-side, and both SSL/TLS clients and servers can independently employ the split record countermeasure. Most modern browsers have now been patched against this issue, limiting its potential impact."
 	recommendation="Review the configuration of the affected services so that they implement countermeasures for the BEAST attack (split records/empty fragments). This is typically controlled by settings of software such as OpenSSL or SCHANNEL.\n\nIf possible, remove all CBC ciphers from the accepted cipher suite list for each service or disable support for v1.0 of the TLS protocol."
@@ -163,7 +162,7 @@ def gen(cb):
 	## New plugins SSLv3PaddingOracleOnDowngradedLegacyEncryptionVulnerability(VulnerabilityPlugin):
 	plugin_ids=[78479]
 	name="SSLv3 Padding Oracle On Downgraded Legacy Encryption Vulnerability (POODLE)"
-	risk_description="Services are affected by a man-in-the-middle (MitM) information disclosure vulnerability known as POODLE. The vulnerability is due to the way SSL 3.0 handles padding bytes when decrypting messages encrypted using block ciphers in cipher block chaining (CBC) mode. MitM attackers can decrypt a selected byte of a cipher text in as few as 256 tries if they are able to force a victim application to repeatedly send the same data over newly created SSL 3.0 connections. As long as a client and service both support SSLv3, a connection can be 'rolled back' to SSLv3, even if TLSv1 or newer is supported by the client and service.\n\nThe TLS Fallback SCSV mechanism prevents 'version rollback' attacks without impacting legacy clients; however, it can only protect connections when the client and service support the mechanism. Sites that cannot disable SSLv3 immediately should enable this mechanism. This is a vulnerability in the SSLv3 specification, not in any particular SSL implementation."
+	risk_description="Services are affected by a man-in-the-middle (MitM) information disclosure vulnerability known as POODLE. The vulnerability is due to the way SSL 3.0 handles padding bytes when decrypting messages encrypted using block ciphers in cipher block chaining (CBC) mode. MitM attackers can decrypt a selected byte of a cipher text in as few as 256 tries if they are able to force a victim application to repeatedly send the same data over newly created SSL 3.0 connections. As long as a client and service both support SSLv3, a connection can be rolled back to SSLv3, even if TLSv1 or newer is supported by the client and service.\n\nThe TLS Fallback SCSV mechanism prevents version rollback attacks without impacting legacy clients; however, it can only protect connections when the client and service support the mechanism. Sites that cannot disable SSLv3 immediately should enable this mechanism. This is a vulnerability in the SSLv3 specification, not in any particular SSL implementation."
 	recommendation="Disable SSLv3 on each affected host. Services that must support SSLv3 should enable the TLS Fallback SCSV mechanism until SSLv3 can be disabled."
 	notes="\n<bold_italic>"+name+"</bold_italic>"
 	notes+="\n<url>https://web.nvd.nist.gov/view/vuln/detail?vulnId=CVE-2014-3566</url>"
@@ -187,7 +186,7 @@ def gen(cb):
 	## New plugins SSLTLSRenegotiationHandshakesMiTMPlaintextDataInjection(VulnerabilityPlugin):
 	plugin_ids=[42880]
 	name="SSL / TLS Renegotiation Handshakes MiTM Plaintext Data Injection"
-	risk_description="Services encrypt traffic using TLS / SSL and permits clients to renegotiate connections after the initial handshake. A remote attacker may be able to leverage this issue to inject an arbitrary amount of plaintext into the beginning of the application protocol stream, which could facilitate man-in-the-middle attacks if the service assumes that the sessions before and after renegotiation are from the same client and merges them at the application layer.\n\nThis could lead to an attacker manipulating a valid user's application session in order to perform actions as the authenticated user. One example would allow the injection of the start of a malicious HTTP request into the application stream that results in the user's session cookie being appended to the request, authenticating the request as the user rather than the attacker."
+	risk_description="Services encrypt traffic using TLS / SSL and permits clients to renegotiate connections after the initial handshake. A remote attacker may be able to leverage this issue to inject an arbitrary amount of plaintext into the beginning of the application protocol stream, which could facilitate man-in-the-middle attacks if the service assumes that the sessions before and after renegotiation are from the same client and merges them at the application layer.\n\nThis could lead to an attacker manipulating a valid users application session in order to perform actions as the authenticated user. One example would allow the injection of the start of a malicious HTTP request into the application stream that results in the users session cookie being appended to the request, authenticating the request as the user rather than the attacker."
 	recommendation="Vendor-supplied updates are usually required to remedy these issues. Fixes are available for Windows software. There are also cases were it is possible to reconfigure an affected host to prevent connecting clients from invoking connection renegotiations, such as in a Windows environment."
 	notes="\n<bold_italic>"+name+"</bold_italic>"
 	notes+="\n<url>http://technet.microsoft.com/en-us/security/advisory/977377</url>"
@@ -197,10 +196,10 @@ def gen(cb):
 
 
 	## New plugins ExportWeakDHCiphers(VulnerabilityPlugin):
-	plugin_ids=["SSL/TLS EXPORT_RSA <= 512-bit Cipher Suites Supported (FREAK)", 'SSL/TLS EXPORT_DHE <= 512-bit Export Cipher Suites Supported (Logjam)','SSL/TLS Diffie-Hellman Modulus <= 1024 Bits (Logjam)']
+	plugin_ids=["SSL/TLS EXPORT_RSA <= 512-bit Cipher Suites Supported (FREAK)", "SSL/TLS EXPORT_DHE <= 512-bit Export Cipher Suites Supported (Logjam),SSL/TLS Diffie-Hellman Modulus <= 1024 Bits (Logjam)"]
 	name="Export Grade Ciphers/Weak Diffie Hellman Group (FREAK / Logjam)"
 	risk_description="Services support connections made using EXPORT grade ciphers or with one or more Diffie-Hellman moduli that are 1024 bits or shorter. These ciphers use key lengths that are either weak by design and are therefore easier to break or now considered cryptographically unsound. This may allow an attacker to intercept or modify traffic as it passes over the network."
-	recommendation="It is recommended that support for all EXPORT grade ciphers be disabled within the remote system's configuration. For OpenSSL, this can be achieved by specifying !EXPORT within the cipher definition string.\n\nIt is also recommended that a Diffie-Hellman modulus be generated that is a minimum length of 2048 bits. This can be achieved using the OpenSSL dhparam tool.\n\nFor IIS deployments, The \"Computer Configuration / Administrative Templates / Network / SSL Configuration Settings SSL Cipher Suite Order\" setting can be used to set a strong cipher suite order."
+	recommendation="It is recommended that support for all EXPORT grade ciphers be disabled within the remote systems configuration. For OpenSSL, this can be achieved by specifying !EXPORT within the cipher definition string.\n\nIt is also recommended that a Diffie-Hellman modulus be generated that is a minimum length of 2048 bits. This can be achieved using the OpenSSL dhparam tool.\n\nFor IIS deployments, The \"Computer Configuration / Administrative Templates / Network / SSL Configuration Settings SSL Cipher Suite Order\" setting can be used to set a strong cipher suite order."
 	notes="\n<bold_italic>"+name+"</bold_italic>"
 	notes+="\n<url>https://www.openssl.org/news/secadv/20150108.txt</url>"
 	notes+="\n<url>http://www.kb.cert.org/vuls/id/243585</url>"
@@ -212,7 +211,7 @@ def gen(cb):
 	## New plugins SWEET32Ciphers(VulnerabilityPlugin):
 	plugin_ids=[94437]
 	name="64-bit Block Size Ciphers (SWEET32)"
-	risk_description="The service supports the use of a block cipher with 64-bit blocks in one or more cipher suites and is therefore affected by a vulnerability known as SWEET32. A man-in-the-middle attacker who has sufficient resources can exploit this vulnerability, via a 'birthday' attack, to detect a collision that leaks the XOR between the fixed secret and a known plaintext, allowing the disclosure of the secret text, such as secure HTTPS cookies, and possibly resulting in the hijacking of an authenticated session."
+	risk_description="The service supports the use of a block cipher with 64-bit blocks in one or more cipher suites and is therefore affected by a vulnerability known as SWEET32. A man-in-the-middle attacker who has sufficient resources can exploit this vulnerability, via a birthday attack, to detect a collision that leaks the XOR between the fixed secret and a known plaintext, allowing the disclosure of the secret text, such as secure HTTPS cookies, and possibly resulting in the hijacking of an authenticated session."
 	recommendation="Reconfigure the affected service/application, if possible, to avoid use of all 64-bit block ciphers."
 	notes="\n<bold_italic>"+name+"</bold_italic>"
 	notes+="\n<url>https://sweet32.info/</url>"
