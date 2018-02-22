@@ -100,7 +100,7 @@ def select_options(button):
 			rlogin.gen(cb)
 			rServices.gen(cb)
 			sambaBadlock.gen(cb)
-		print('Done')
+			print(cb, 'report finished')
 		exit()
 	else:
 		exit()
