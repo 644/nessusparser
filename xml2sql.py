@@ -23,6 +23,8 @@ def xml2sqlite(dest_file):
 					last_report_id = c.lastrowid
 					for reportitem in reporthost.iter('ReportItem'):
 						plugin_id = reportitem.attrib["pluginID"]
+						reports_pluginname = reportitem.attrib["pluginName"]
+						reports_pluginfamily = reportitem.attrib["pluginFamily"]
 						elems = [e for e in reportitem.iter() if len(e.text) > 1]
 						marks = ', '.join("?" for e in elems)
 						cols = ', '.join(e.tag.replace('-', '_') for e in elems)
