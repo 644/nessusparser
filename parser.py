@@ -105,7 +105,7 @@ def select_options(button):
 	else:
 		exit()
 
-app = gui('NessusParser', '335x235')
+app = gui('NessusParser', '378x264')
 def start_gui():
 	app.startTabbedFrame('TabbedFrame')
 	app.startTab('Import')

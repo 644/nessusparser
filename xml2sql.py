@@ -8,7 +8,7 @@ def xml2sqlite(dest_file):
 		reportitem_tags = list(set([e.tag for e in tree.findall('.//ReportItem/*')]))
 		reportitem_tags = ', '.join(e.replace('-', '_') for e in reportitem_tags)
 
-		c.execute(f"CREATE TABLE IF NOT EXISTS reportitems (plugin_id TEXT, report_id INTEGER, {reportitem_tags})");
+		c.execute(f"CREATE TABLE IF NOT EXISTS reportitems (reports_pluginName TEXT, reports_pluginFamily TEXT, plugin_id TEXT, report_id INTEGER, {reportitem_tags})");
 		c.execute("CREATE TABLE IF NOT EXISTS reports (report_id INTEGER PRIMARY KEY, report_name, reporthost_name, host_ip, netbios_name)")
 
 		for report in tree.iter('Report'):
@@ -23,13 +23,13 @@ def xml2sqlite(dest_file):
 					last_report_id = c.lastrowid
 					for reportitem in reporthost.iter('ReportItem'):
 						plugin_id = reportitem.attrib["pluginID"]
-						reports_pluginname = reportitem.attrib["pluginName"]
-						reports_pluginfamily = reportitem.attrib["pluginFamily"]
+						reports_pluginName = reportitem.attrib["pluginName"]
+						reports_pluginFamily = reportitem.attrib["pluginFamily"]
 						elems = [e for e in reportitem.iter() if len(e.text) > 1]
 						marks = ', '.join("?" for e in elems)
 						cols = ', '.join(e.tag.replace('-', '_') for e in elems)
 						try:
-							c.execute(f"INSERT INTO reportitems ({cols}, plugin_id, report_id) VALUES ({marks}, %s, %d)" % (plugin_id, last_report_id), [e.text for e in elems])
+							c.execute(f"INSERT INTO reportitems (reports_pluginName, reports_pluginFamily, {cols}, plugin_id, report_id) VALUES('{reports_pluginName}', '{reports_pluginFamily}', {marks}, %s, %d)" % (plugin_id, last_report_id), [e.text for e in elems])
 						except sqlite3.OperationalError:
 							print('Could not add row to db\r', end='')
 
