@@ -11,12 +11,12 @@ def gen(cb):
 
 	conn = sqlite3.connect('./reports.db')
 	c = conn.cursor()
-	
 	c.execute("select reports.report_id,reports.reporthost_name,reports.host_ip,reportitems.plugin_name,reportitems.mskb from reportitems INNER JOIN reports ON reports.report_id = reportitems.report_id WHERE reportitems.reports_pluginFamily == 'Windows : Microsoft Bulletins' OR reportitems.reports_pluginName LIKE 'MS0%' OR reportitems.reports_pluginName LIKE 'MS1%' OR reportitems.reports_pluginName LIKE 'MS1%' OR reportitems.reports_pluginName LIKE 'MS KB%' OR reportitems.reports_pluginName LIKE 'MSKB%' OR reportitems.reports_pluginName LIKE 'KB%' OR reportitems.reports_pluginName LIKE 'MS Security Advisory%' OR reportitems.reports_pluginName == 'Update for Microsoft EAP Implementation that Enables the Use of TLS' AND reportitems.reports_pluginName != 'Microsoft Patch Bulletin Feasibility Check' AND reportitems.reports_pluginName != 'Microsoft Windows Summary of Missing Patches'")
 	
 	all_rows = c.fetchall()
 	result_dict = dict()
 	keys_check = []
+
 	for x in all_rows:
 		if x[1]:
 			host_identifier = x[1]
@@ -48,17 +48,14 @@ def gen(cb):
 			if not key in keys_check:
 				affected_components += "<bold_italic>{0}</bold_italic>\n".format(key)
 				keys_check.append(key)
-			
-			if not key2 in keys_check:
-				advisory = key2
-				if advisory != 0:
-					notes += "<url>https://support.microsoft.com/help/{0}</url>\n".format(advisory)
+
+			if not key2 in keys_check and key2 != 0:
+				notes += "<url>https://support.microsoft.com/help/{0}</url>\n".format(key2)
 				keys_check.append(key2)
-			
+
 			if not result_dict[key,key2] in keys_check:
 				affected_components += result_dict[key,key2] + "\n"
 				keys_check.append(result_dict[key,key2])
 
 	print(affected_components,notes)
-
 	conn.close()
