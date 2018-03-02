@@ -1,4 +1,5 @@
 import sqlite3
+import re
 
 def gen(cb):
 	name = "Microsoft Software Updates"
@@ -10,10 +11,54 @@ def gen(cb):
 
 	conn = sqlite3.connect('./reports.db')
 	c = conn.cursor()
-
-	c.execute("select reports.host_ip,reportitems.plugin_name,reportitems.mskb from reportitems INNER JOIN reports ON reports.report_id = reportitems.report_id WHERE reportitems.reports_pluginFamily == 'Windows : Microsoft Bulletins' OR reportitems.reports_pluginName LIKE 'MS0%' OR reportitems.reports_pluginName LIKE 'MS1%' OR reportitems.reports_pluginName LIKE 'MS1%' OR reportitems.reports_pluginName LIKE 'MS KB%' OR reportitems.reports_pluginName LIKE 'MSKB%' OR reportitems.reports_pluginName LIKE 'KB%' OR reportitems.reports_pluginName LIKE 'MS Security Advisory%' OR reportitems.reports_pluginName == 'Update for Microsoft EAP Implementation that Enables the Use of TLS' AND reportitems.reports_pluginName != 'Microsoft Patch Bulletin Feasibility Check' AND reportitems.reports_pluginName != 'Microsoft Windows Summary of Missing Patches'")
+	
+	c.execute("select reports.report_id,reports.reporthost_name,reports.host_ip,reportitems.plugin_name,reportitems.mskb from reportitems INNER JOIN reports ON reports.report_id = reportitems.report_id WHERE reportitems.reports_pluginFamily == 'Windows : Microsoft Bulletins' OR reportitems.reports_pluginName LIKE 'MS0%' OR reportitems.reports_pluginName LIKE 'MS1%' OR reportitems.reports_pluginName LIKE 'MS1%' OR reportitems.reports_pluginName LIKE 'MS KB%' OR reportitems.reports_pluginName LIKE 'MSKB%' OR reportitems.reports_pluginName LIKE 'KB%' OR reportitems.reports_pluginName LIKE 'MS Security Advisory%' OR reportitems.reports_pluginName == 'Update for Microsoft EAP Implementation that Enables the Use of TLS' AND reportitems.reports_pluginName != 'Microsoft Patch Bulletin Feasibility Check' AND reportitems.reports_pluginName != 'Microsoft Windows Summary of Missing Patches'")
 	
 	all_rows = c.fetchall()
-	print(all_rows)
+	result_dict = dict()
+	keys_check = []
+	for x in all_rows:
+		if x[1]:
+			host_identifier = x[1]
+		else:
+			host_identifier = x[2]
+		
+		if x[3] == "Update for Microsoft EAP Implementation that Enables the Use of TLS":
+			advisory = "2977292"
+			plugin_name = "Update for Microsoft EAP Implementation that Enables the Use of TLS (2977292)"
+		elif x[3] == "Security Update for Microsoft Office Products (April 2017)":
+			advisory = "4016803"
+			plugin_name = "Security Update for Microsoft Office Products (April 2017) (4016803)"
+		elif x[3] == "Security and Quality Rollup for .NET Framework (April 2017)":
+			advisory = "4014981"
+			plugin_name = "Update for Microsoft EAP Implementation that Enables the Use of TLS (4014981)"
+		else:
+			try:
+				m = re.search('[0-9]{7}', x[3])
+				advisory = m.group(0)
+				plugin_name = x[3]
+			except AttributeError as ae:
+				plugin_name = x[3]
+				advisory = 0
+		
+		plugin_key = plugin_name,advisory
+		result_dict[plugin_key] = host_identifier
+
+		for key,key2 in result_dict.keys():
+			if not key in keys_check:
+				affected_components += "<bold_italic>{0}</bold_italic>\n".format(key)
+				keys_check.append(key)
+			
+			if not key2 in keys_check:
+				advisory = key2
+				if advisory != 0:
+					notes += "<url>https://support.microsoft.com/help/{0}</url>\n".format(advisory)
+				keys_check.append(key2)
+			
+			if not result_dict[key,key2] in keys_check:
+				affected_components += result_dict[key,key2] + "\n"
+				keys_check.append(result_dict[key,key2])
+
+	print(affected_components,notes)
 
 	conn.close()
