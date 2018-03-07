@@ -1,7 +1,6 @@
 import sqlite3
 import re
-from docx import Document
-from docx.shared import Inches
+from plugins import genFile
 
 def gen(cb):
 	name = "Microsoft Software Updates"
@@ -10,6 +9,7 @@ def gen(cb):
 	recommendation="It is strongly recommended that the patches corresponding to the missing security bulletins be applied to the affected hosts and that a revision of the current management strategy also be performed to ensure that it is adhering to outlined policies.\n\nPatching issues with such software commonly arise due to a misconfiguration within patching solutions, such as Windows Server Update Services (WSUS), which may require reviewing to identify the cause of this lack of patching."
 	affected_components=str()
 	notes=str()
+	plugin_ids = ['NONE']
 
 	conn = sqlite3.connect('./reports.db')
 	c = conn.cursor()
@@ -18,7 +18,7 @@ def gen(cb):
 	all_rows = c.fetchall()
 	result_dict = dict()
 	keys_check = []
-	affected_components = []
+	affected_hosts = []
 
 	for x in all_rows:
 		if x[1]:
@@ -49,7 +49,7 @@ def gen(cb):
 
 		for key,key2 in result_dict.keys():
 			if not key in keys_check:
-				affected_components.append("<bold_italic>{0}</bold_italic>\n".format(key))
+				affected_hosts.append("<bold_italic>{0}</bold_italic>\n".format(key))
 				keys_check.append(key)
 
 			if not key2 in keys_check and key2 != 0:
@@ -57,38 +57,8 @@ def gen(cb):
 				keys_check.append(key2)
 
 			if not result_dict[key,key2] in keys_check:
-				affected_components.append(result_dict[key,key2] + "\n")
+				affected_hosts.append(result_dict[key,key2] + "\n")
 				keys_check.append(result_dict[key,key2])
 
-	document = Document()
-
-	table = document.add_table(rows=1, cols=2)
-	tbl_cells = table.rows[0].cells
-	tbl_cells[0].text = name
-	tbl_cells = table.add_row().cells
-	tbl_cells[0].text = 'Risk Rating:'
-
-	document.add_heading('Issue Description:', level=1)
-	document.add_paragraph(description)
-
-	document.add_heading('Recommendation:', level=1)
-	document.add_paragraph(recommendation)
-	
-	table = document.add_table(rows=1, cols=1)
-	tbl_cells = table.rows[0].cells
-	tbl_cells[0].text = 'Affected Hosts:'
-
-	for ac in affected_components[:20]:
-		tbl_cells = table.add_row().cells
-		if '<bold_italic>' in ac:
-			ac = ac.replace('<bold_italic>', '')
-			ac = ac.replace('</bold_italic>', '')
-			tbl_cells[0].text = str(ac)
-			tbl_cells[0].style = "bold"
-		else:
-			tbl_cells[0].text = str(ac)
-
-	document.add_page_break()
-
-	document.save(cb + '.docx') 
+	genFile.gen_document(cb, name, description, risk_description, recommendation, notes, affected_hosts)
 	conn.close()
