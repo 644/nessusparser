@@ -1,6 +1,8 @@
 from plugins import genFile
 
 def gen(cb):
+	appendices = []
+
 	plugin_ids=[10722]
 	name="LDAP NULL BASE Search Access"
 	description="LDAP services support requests with NULL base objects, which can be used to extract information about the directory structure."
@@ -8,4 +10,11 @@ def gen(cb):
 	recommendation="If the affected LDAP servers support a version of the LDAP protocol prior to v3, consider disabling NULL BASE queries."
 	notes="<url>http://support.microsoft.com/kb/837964</url>"
 
-	genFile.genr(cb, plugin_ids, name, description, risk_description, recommendation, notes)
+	ap = genFile.genr(cb, plugin_ids, name, description, risk_description, recommendation, notes)
+	if not ap is None:
+		appendices += ap
+
+
+
+	if appendices:
+		return appendices

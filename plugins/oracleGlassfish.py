@@ -1,6 +1,8 @@
 from plugins import genFile
 
 def gen(cb):
+	appendices = []
+
 	plugin_ids=['Outdated Oracle GlassFish'] ## wasn't here originally
 	name="Outdated Oracle GlassFish"
 	description="A number of hosts have been found to be running an outdated instance of the Oracle GlassFish software. GlassFish is the reference implementation of Java EE and is used to host a variety of Java-based web applications."
@@ -8,4 +10,11 @@ def gen(cb):
 	recommendation="It is recommended that each affected GlassFish installation be updated to the most recent avaialable stable version."
 	notes="<url>https://glassfish.java.net/</url>"
 
-	genFile.genr(cb, plugin_ids, name, description, risk_description, recommendation, notes)
+	ap = genFile.genr(cb, plugin_ids, name, description, risk_description, recommendation, notes)
+	if not ap is None:
+		appendices += ap
+
+
+
+	if appendices:
+		return appendices

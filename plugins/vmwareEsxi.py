@@ -1,6 +1,8 @@
 from plugins import genFile
 
 def gen(cb):
+	appendices = []
+
 	name="VMware ESX/ESXi"
 	plugin_ids=['VMware ESX%','VMware ESXi%','ESXi 5.%', 'ESX%']
 	description="The VMWare vSphere ESX/ESXi hypervisor software solutions provides functionality with which organisations are able to deploy a multitude of virtual assets, including servers and networking devices. As these hypervisors are typically used to host the majority of infrastructure assets due to the flexibility a virtual environment can offer, vulnerabilities within the deployed ESX/ESXi software versions could have a potentially critical impact on an environment if exploited."
@@ -8,4 +10,11 @@ def gen(cb):
 	recommendation="Update each ESX/ESXi deployment to the most recent supported release for its current branch."
 	notes="<url>http://www.vmware.com/security/advisories.html</url>"
 
-	genFile.genr(cb, plugin_ids, name, description, risk_description, recommendation, notes)
+	ap = genFile.genr(cb, plugin_ids, name, description, risk_description, recommendation, notes)
+	if not ap is None:
+		appendices += ap
+
+
+
+	if appendices:
+		return appendices

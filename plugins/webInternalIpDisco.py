@@ -1,6 +1,8 @@
 from plugins import genFile
 
 def gen(cb):
+	appendices = []
+
 	plugin_ids=[10759]
 	name="Web Server Internal IP Disclosure"
 	description="Web servers have been identified which leak a private IP address through their returned HTTP headers."
@@ -9,4 +11,11 @@ def gen(cb):
 	notes="<url>https://support.microsoft.com/en-gb/kb/967342</url>"
 	notes+="<url>https://web.nvd.nist.gov/view/vuln/detail?vulnId=CVE-2000-0649</url>"
 	
-	genFile.genr(cb, plugin_ids, name, description, risk_description, recommendation, notes)
+	ap = genFile.genr(cb, plugin_ids, name, description, risk_description, recommendation, notes)
+	if not ap is None:
+		appendices += ap
+
+
+
+	if appendices:
+		return appendices

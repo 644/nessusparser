@@ -1,6 +1,8 @@
 from plugins import genFile
 
 def gen(cb):
+	appendices = []
+
 	plugin_ids=["Microsoft Windows SMBv1 Multiple Vulnerabilities"]
 	name="Microsoft Windows SMBv1 Support"
 	description="Hosts running deployments of Microsoft Windows operating systems each present a Server Message Block (SMB) service which supports connections made using version 1 of the protocol. Several vulnerabilities were identified to affected services configured in such a manner, leaving each host susceptible to various attack vectors."
@@ -41,4 +43,11 @@ def gen(cb):
 	notes+="\n<url>https://support.microsoft.com/help/4019473</url>"
 	notes+="\n<url>https://support.microsoft.com/help/4019474</url>"
 
-	genFile.genr(cb, plugin_ids, name, description, risk_description, recommendation, notes)
+	ap = genFile.genr(cb, plugin_ids, name, description, risk_description, recommendation, notes)
+	if not ap is None:
+		appendices += ap
+
+
+
+	if appendices:
+		return appendices

@@ -1,6 +1,8 @@
 from plugins import genFile
 
 def gen(cb):
+	appendices = []
+
 	plugin_ids=["Cookie without HttpOnly flag set"]
 	name="Cookies Not Set With HttpOnly Flag"
 	description="Session cookies are used to track a user's application session and are typically used to check the permissions that a specific user session has within the application with regard to its available resources and functionality. By acquiring another user's session cookie value, an attacker may be able to connect to the application as that user.\n\nIf the acquired session cookie value relates to an authenticated session, then the attacker would have access to the application resources typically available to the targeted user.\n\nThe HttpOnly flag is available to be set on cookie values to prevent the cookie from being accessed by non-HTTP resources, such as JavaScript. By not setting the HttpOnly flag on a number of session cookies, sites are left potentially vulnerable to session-hijacking attacks through the exploitation of other application issues, such as cross-site scripting."
@@ -9,4 +11,11 @@ def gen(cb):
 	notes="<url>http://www.owasp.org/index.php/HttpOnly</url>\n"
 	notes+="<url>http://msdn.microsoft.com/en-us/library/ms972826</url>"
 
-	genFile.genr(cb, plugin_ids, name, description, risk_description, recommendation, notes)
+	ap = genFile.genr(cb, plugin_ids, name, description, risk_description, recommendation, notes)
+	if not ap is None:
+		appendices += ap
+
+
+
+	if appendices:
+		return appendices

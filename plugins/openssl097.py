@@ -1,6 +1,8 @@
 from plugins import genFile
 
 def gen(cb):
+	appendices = []
+
 	plugin_ids=['OpenSSL < 0.9.7%']
 	name="OpenSSL 0.9.7 Services"
 	description="Several hosts have been observed to present at least one services which utilises an older version of the OpenSSL 0.9.7 library to secure their traffic. Such versions are commonly superseded as a result of a number of issues affecting them, some of which can be seen to carry a significant threat to data and host security from unauthenticated attackers with access to the services or the network being used by a connecting client. Such versions are also now no longer supported, preventing them from receiving updates for any identified issues."
@@ -9,4 +11,11 @@ def gen(cb):
 	notes="<url>https://www.openssl.org/policies/releasestrat.html</url>"
 	notes+="\n<url>https://www.openssl.org/news/openssl-0.9.7-notes.html</url>"
 
-	genFile.genr(cb, plugin_ids, name, description, risk_description, recommendation, notes)
+	ap = genFile.genr(cb, plugin_ids, name, description, risk_description, recommendation, notes)
+	if not ap is None:
+		appendices += ap
+
+
+
+	if appendices:
+		return appendices

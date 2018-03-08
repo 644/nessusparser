@@ -1,6 +1,8 @@
 from plugins import genFile
 
 def gen(cb):
+	appendices = []
+
 	plugin_ids=['HP System Management Homepage%','Compaq WBEM%']
 	name="HP System Management Homepage"
 	description="Multiple servers within the tested network were found to be running the HP System Management Homepage or Compaq WBEM software. This is reportedly vulnerable to multiple issues that could potentially lead to remote code execution."
@@ -8,4 +10,11 @@ def gen(cb):
 	recommendation="It is recommended that this service, if required, is updated to the latest version. If the service is not required, the software should be removed."
 	notes="<url>http://h18013.www1.hp.com/products/servers/management/agents/index.html</url>"
 
-	genFile.genr(cb, plugin_ids, name, description, risk_description, recommendation, notes)
+	ap = genFile.genr(cb, plugin_ids, name, description, risk_description, recommendation, notes)
+	if not ap is None:
+		appendices += ap
+
+
+
+	if appendices:
+		return appendices

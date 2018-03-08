@@ -1,6 +1,8 @@
 from plugins import genParent
 
 def gen(cb):
+	appendices = []
+
 	plugin_ids=['Flash Player %', 'Adobe Flash Player %']
 	plugin_ids+=['Shockwave Player %', 'Adobe Shockwave Player %']
 	plugin_ids+=['Adobe Reader %', 'Adobe Acrobat %']

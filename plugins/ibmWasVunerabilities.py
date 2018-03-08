@@ -1,6 +1,8 @@
 from plugins import genFile
 
 def gen(cb):
+	appendices = []
+
 	plugin_ids=['IBM WebSphere Application Server 6.1%']
 	name="IBM WebSphere Application Server"
 	description="Several hosts present IBM WebSphere Application Server (WAS) services which are running on a dated version. As updates are made available to address both functional and security issues, such deployments are seen to present a risk."

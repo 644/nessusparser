@@ -1,6 +1,8 @@
 from plugins import genFile
 
 def gen(cb):
+	appendices = []
+
 	name="Samba Version"
 	plugin_ids=["Samba Version"] ## not here previously
 	description="Samba services presented by hosts were found to be running on top of outdated versions of the software. Issues affecting such versions can compromise the confidentiality, integrity and availability of the service and underlying host. Depending on the functionality provided by a Samba service, this could provide access to sensitive data hosted on file shares or permit alterations to Domain configurations."
@@ -9,4 +11,11 @@ def gen(cb):
 	notes="<url>https://www.samba.org/samba/history/</url>"
 	notes+="<url>https://wiki.samba.org/index.php/Samba_Release_Planning</url>"
 
-	genFile.genr(cb, plugin_ids, name, description, risk_description, recommendation, notes)
+	ap = genFile.genr(cb, plugin_ids, name, description, risk_description, recommendation, notes)
+	if not ap is None:
+		appendices += ap
+
+
+
+	if appendices:
+		return appendices

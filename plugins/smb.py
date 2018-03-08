@@ -1,6 +1,8 @@
 from plugins import genFile
 
 def gen(cb):
+	appendices = []
+
 	# New plugin_ids
 	description="Server Message Block (SMB) Issues\nConfiguration issues within the Server Message Block (SMB) service on multiple hosts could enable information disclosure or traffic interception. Successful interception of traffic from the SMB service could enable the retrieval of Windows domain user credentials that could be used to gain privileged access within the internal network."
 	
@@ -12,7 +14,9 @@ def gen(cb):
 	notes="<bold_italic>"+name+"</bold_italic>\n"
 	notes+="<url>https://technet.microsoft.com/en-us/library/jj852186(v=ws.10).aspx</url>\n"
 
-	genFile.genr(cb, plugin_ids, name, description, risk_description, recommendation, notes)
+	ap = genFile.genr(cb, plugin_ids, name, description, risk_description, recommendation, notes)
+	if not ap is None:
+		appendices += ap
 
 
 	# New plugin_ids
@@ -26,4 +30,11 @@ def gen(cb):
 	notes+="<url>https://technet.microsoft.com/en-us/library/jj852166(v=ws.10).aspx</url>\n"
 	notes+="<url>https://technet.microsoft.com/en-us/library/jj852230(v=ws.10).aspx</url>\n"
 
-	genFile.genr(cb, plugin_ids, name, description, risk_description, recommendation, notes)
+	ap = genFile.genr(cb, plugin_ids, name, description, risk_description, recommendation, notes)
+	if not ap is None:
+		appendices += ap
+
+
+
+	if appendices:
+		return appendices

@@ -1,6 +1,8 @@
 from plugins import genFile
 
 def gen(cb):
+	appendices = []
+
 	description=str()
 
 	plugin_ids=["Cacheable HTTPS response"]
@@ -9,7 +11,9 @@ def gen(cb):
 	recommendation="Web servers should be configured to return caching directives instructing browsers not to store local copies of any sensitive data. This can be achieved using HTTP headers:\n\nSet the Cache-Control HTTP Header with no-cache, no-store, must-revalidate, private.\nSet the pragma HTTP Header with no-cache."
 	notes="<url>https://www.owasp.org/index.php/Session_Management_Cheat_Sheet%23Web_Content_Caching</url>"
 
-	genFile.genr(cb, plugin_ids, name, description, risk_description, recommendation, notes)
+	ap = genFile.genr(cb, plugin_ids, name, description, risk_description, recommendation, notes)
+	if not ap is None:
+		appendices += ap
 
 
 	# New plugin_ids HSTS(BurpPlugin):
@@ -19,7 +23,9 @@ def gen(cb):
 	recommendation="Enable HTTP Strict Transport Security (HSTS) by adding a response header with the name 'Strict-Transport-Security' and the value 'max-age=expireTime', where expireTime is the time in seconds that browsers should remember that the site should only be accessed using HTTPS. Consider adding the 'includeSubDomains' flag if appropriate."
 	notes="<url>https://developer.mozilla.org/en-US/docs/Web/Security/HTTP_strict_transport_security</url>"
 
-	genFile.genr(cb, plugin_ids, name, description, risk_description, recommendation, notes)
+	ap = genFile.genr(cb, plugin_ids, name, description, risk_description, recommendation, notes)
+	if not ap is None:
+		appendices += ap
 
 
 	# New plugin_ids XFrameOptions(BurpPlugin):
@@ -29,7 +35,9 @@ def gen(cb):
 	recommendation="Ensure the X-Frame-Options HTTP header is set on all web pages returned by the server. If the page will be framed by other pages on the server, then it should be set with SAMEORIGIN. Otherwise, if the page should never be framed, it should be set to DENY."
 	notes="<url>https://www.owasp.org/index.php/Clickjacking</url>"
 
-	genFile.genr(cb, plugin_ids, name, description, risk_description, recommendation, notes)
+	ap = genFile.genr(cb, plugin_ids, name, description, risk_description, recommendation, notes)
+	if not ap is None:
+		appendices += ap
 
 
 	# New plugin_ids XXSSProtection(BurpPlugin):
@@ -39,4 +47,11 @@ def gen(cb):
 	recommendation = "It is recommended that X-XSS-Protection header is set by the server with a value of '1; mode=block'"
 	notes = "<url>https://www.owasp.org/index.php/OWASP_Secure_Headers_Project</url>"
 
-	genFile.genr(cb, plugin_ids, name, description, risk_description, recommendation, notes)
+	ap = genFile.genr(cb, plugin_ids, name, description, risk_description, recommendation, notes)
+	if not ap is None:
+		appendices += ap
+
+
+
+	if appendices:
+		return appendices

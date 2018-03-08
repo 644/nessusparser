@@ -1,6 +1,8 @@
 from plugins import genFile
 
 def gen(cb):
+	appendices = []
+
 	plugin_ids=['Anonymous FTP Enabled','FTP Writable Directories']
 	name="Anonymous FTP Service"
 	description="Anonymous logins have been found to be allowed on the remote FTP servers."
@@ -10,4 +12,11 @@ def gen(cb):
 	notes+="\n<url>http://www.proftpd.org/docs/faq/linked/faq-ch5.html#AEN597</url>"
 	notes+="\n<url>https://www.centos.org/docs/5/html/Deployment_Guide-en-US/s1-ftp-vsftpd-conf.html</url>"
 
-	genFile.genr(cb, plugin_ids, name, description, risk_description, recommendation, notes)
+	ap = genFile.genr(cb, plugin_ids, name, description, risk_description, recommendation, notes)
+	if not ap is None:
+		appendices += ap
+
+
+
+	if appendices:
+		return appendices

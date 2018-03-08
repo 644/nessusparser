@@ -1,6 +1,8 @@
 from plugins import genFile
 
 def gen(cb):
+	appendices = []
+
 	include_strings=["  Path","  Installed version"]
 	plugin_ids=['Flash Player %', 'Adobe Flash Player %']
 	name="Adobe Flash Player"
@@ -10,7 +12,9 @@ def gen(cb):
 	notes="\n<bold>"+name+"</bold>"
 	notes+="\n<url>https://helpx.adobe.com/uk/security.html</url>"
 
-	genFile.genr(cb, plugin_ids, name, description, risk_description, recommendation, notes)
+	ap = genFile.genr(cb, plugin_ids, name, description, risk_description, recommendation, notes)
+	if not ap is None:
+		appendices += ap
 
 	# New plugin_ids ShockwavePlayer(StringExtractionPlugin,ManyToOnePlugin):
 	include_strings=["  Variant","  File","  Installed version"]
@@ -22,7 +26,9 @@ def gen(cb):
 	notes="\n<bold>"+name+"</bold>"
 	notes+="\n<url>https://helpx.adobe.com/uk/security.html</url>"
 
-	genFile.genr(cb, plugin_ids, name, description, risk_description, recommendation, notes)
+	ap = genFile.genr(cb, plugin_ids, name, description, risk_description, recommendation, notes)
+	if not ap is None:
+		appendices += ap
 
 	# New plugin_ids AdobeReader(StringExtractionPlugin,ManyToOnePlugin):
 	include_strings=["  Path","  Installed version"]
@@ -34,7 +40,9 @@ def gen(cb):
 	notes="\n<bold>"+name+"</bold>"
 	notes+="\n<url>https://helpx.adobe.com/uk/security.html#reader</url>"
 
-	genFile.genr(cb, plugin_ids, name, description, risk_description, recommendation, notes)
+	ap = genFile.genr(cb, plugin_ids, name, description, risk_description, recommendation, notes)
+	if not ap is None:
+		appendices += ap
 
 	# New plugin_ids Firefox(StringExtractionPlugin,ManyToOnePlugin):
 	include_strings=["  Path","  Installed version","    Path","    Installed version"]
@@ -46,7 +54,9 @@ def gen(cb):
 	notes="\n<bold>"+name+"</bold>"
 	notes+="\n<url>https://www.mozilla.org/en-US/security/advisories/</url>"
 
-	genFile.genr(cb, plugin_ids, name, description, risk_description, recommendation, notes)
+	ap = genFile.genr(cb, plugin_ids, name, description, risk_description, recommendation, notes)
+	if not ap is None:
+		appendices += ap
 
 	# New plugin_ids AdobeAir(StringExtractionPlugin,ManyToOnePlugin):
 	include_strings=["  Path","  Installed version"]
@@ -58,7 +68,9 @@ def gen(cb):
 	notes="\n<bold>"+name+"</bold>"
 	notes+="\n<url>http://www.adobe.com/support/programs/policies/supported.html</url>"
 
-	genFile.genr(cb, plugin_ids, name, description, risk_description, recommendation, notes)
+	ap = genFile.genr(cb, plugin_ids, name, description, risk_description, recommendation, notes)
+	if not ap is None:
+		appendices += ap
 
 	# New plugin_ids Java(StringExtractionPlugin,ManyToOnePlugin):
 	include_strings=["  Path","  Installed version"]
@@ -70,7 +82,9 @@ def gen(cb):
 	notes="\n<bold>"+name+"</bold>"
 	notes+="\n<url>http://www.oracle.com/technetwork/java/eol-135779.html</url>"
 
-	genFile.genr(cb, plugin_ids, name, description, risk_description, recommendation, notes)
+	ap = genFile.genr(cb, plugin_ids, name, description, risk_description, recommendation, notes)
+	if not ap is None:
+		appendices += ap
 
 	# New plugin_ids CitrixReceiverICA(StringExtractionPlugin,ManyToOnePlugin):
 	include_strings=["  Path","  Installed version"]
@@ -83,7 +97,9 @@ def gen(cb):
 	notes+="\n<url>https://support.citrix.com/search?searchQuery=%3F&lang=en&sort=cr_date_desc&ct=Security+Bulletin&prod=Citrix%20Receiver</url>"
 	notes+="\n<url>https://support.citrix.com/search?searchQuery=%3F&lang=en&sort=cr_date_desc&ct=Security+Bulletin&prod=XenApp%20Plug-ins%20(Clients)</url>"
 
-	genFile.genr(cb, plugin_ids, name, description, risk_description, recommendation, notes)
+	ap = genFile.genr(cb, plugin_ids, name, description, risk_description, recommendation, notes)
+	if not ap is None:
+		appendices += ap
 
 	# New plugin_ids GoogleChrome(StringExtractionPlugin,ManyToOnePlugin):
 	include_strings=["  Path","  Installed version"]
@@ -95,7 +111,9 @@ def gen(cb):
 	notes="\n<bold>"+name+"</bold>"
 	notes+="\n<url>http://googlechromereleases.blogspot.co.uk/</url>"
 
-	genFile.genr(cb, plugin_ids, name, description, risk_description, recommendation, notes)
+	ap = genFile.genr(cb, plugin_ids, name, description, risk_description, recommendation, notes)
+	if not ap is None:
+		appendices += ap
 
 	# New plugin_ids Wireshark(ManyToOnePlugin):
 	plugin_ids=['Wireshark %']	
@@ -105,7 +123,9 @@ def gen(cb):
 	recommendation="It is highly recommended that the Wireshark deployments on all assets be brought in line with the most recent stable software release.\n\nRegular reviews of this software should be undertaken to ensure that each deployment remains up to date with recent releases."
 	notes="\n<bold>"+name+"</bold>"
 
-	genFile.genr(cb, plugin_ids, name, description, risk_description, recommendation, notes)
+	ap = genFile.genr(cb, plugin_ids, name, description, risk_description, recommendation, notes)
+	if not ap is None:
+		appendices += ap
 
 	# New plugin_ids VLC(StringExtractionPlugin,ManyToOnePlugin):
 	include_strings=["  Path","  Installed version"]	
@@ -117,7 +137,9 @@ def gen(cb):
 	notes="\n<bold>"+name+"</bold>"
 	notes+="\n<url>http://www.videolan.org/vlc/</url>"
 
-	genFile.genr(cb, plugin_ids, name, description, risk_description, recommendation, notes)
+	ap = genFile.genr(cb, plugin_ids, name, description, risk_description, recommendation, notes)
+	if not ap is None:
+		appendices += ap
 
 	# New plugin_ids VSphere(StringExtractionPlugin,ManyToOnePlugin):
 	include_strings=["  Path","  Installed version"]
@@ -129,7 +151,9 @@ def gen(cb):
 	notes="\n<bold>"+name+"</bold>"
 	notes+="\n<url>https://www.vmware.com/uk/security/advisories.html</url>"
 
-	genFile.genr(cb, plugin_ids, name, description, risk_description, recommendation, notes)
+	ap = genFile.genr(cb, plugin_ids, name, description, risk_description, recommendation, notes)
+	if not ap is None:
+		appendices += ap
 
 	# New plugin_ids CiscoVPN(ManyToOnePlugin):
 	plugin_ids=['Cisco VPN Client cvpnd.exe Privilege Escalation','Cisco VPN Client Unsupported']	
@@ -139,7 +163,9 @@ def gen(cb):
 	recommendation="It is highly recommended that the Cisco VPN Client deployments on all assets be brought in line with the most recent stable software release.\n\nRegular reviews of this software should be undertaken to ensure that each deployment remains up to date with recent releases."
 	notes="\n<bold>"+name+"</bold>"	
 
-	genFile.genr(cb, plugin_ids, name, description, risk_description, recommendation, notes)
+	ap = genFile.genr(cb, plugin_ids, name, description, risk_description, recommendation, notes)
+	if not ap is None:
+		appendices += ap
 
 	# New plugin_ids Silverlight(ManyToOnePlugin):
 	plugin_ids=['Microsoft Silverlight Unsupported Version Detection (Windows)']	
@@ -150,7 +176,9 @@ def gen(cb):
 	notes="\n<bold>"+name+"</bold>"
 	notes+="\n<url>https://support.microsoft.com/en-gb/lifecycle/search?alpha=silverlight</url>"
 
-	genFile.genr(cb, plugin_ids, name, description, risk_description, recommendation, notes)
+	ap = genFile.genr(cb, plugin_ids, name, description, risk_description, recommendation, notes)
+	if not ap is None:
+		appendices += ap
 
 	# New plugin_ids HPVCA(StringExtractionPlugin,ManyToOnePlugin):
 	include_strings=["  Path","  Installed version"]
@@ -162,7 +190,9 @@ def gen(cb):
 	notes="\n<bold>"+name+"</bold>"
 	notes+="\n<url>https://support.hpe.com/hpsc/swd/public/detail?swItemId=MTX_c9e525cfc0d646338da25bd87c</url>"
 
-	genFile.genr(cb, plugin_ids, name, description, risk_description, recommendation, notes)
+	ap = genFile.genr(cb, plugin_ids, name, description, risk_description, recommendation, notes)
+	if not ap is None:
+		appendices += ap
 
 	# New plugin_ids HPVCR(StringExtractionPlugin,ManyToOnePlugin):
 	include_strings=["  Path","  Installed version"]
@@ -173,7 +203,9 @@ def gen(cb):
 	recommendation="It is highly recommended that the HP Version Control Repository deployments on all assets be brought in line with the most recent stable software release.\n\nRegular reviews of this software should be undertaken to ensure that each deployment remains up to date with recent releases."
 	notes="\n<bold>"+name+"</bold>"
 
-	genFile.genr(cb, plugin_ids, name, description, risk_description, recommendation, notes)
+	ap = genFile.genr(cb, plugin_ids, name, description, risk_description, recommendation, notes)
+	if not ap is None:
+		appendices += ap
 
 	# New plugin_ids FileZilla(StringExtractionPlugin,ManyToOnePlugin):
 	include_strings=["  Path","  Installed version"]
@@ -185,7 +217,9 @@ def gen(cb):
 	notes="\n<bold>"+name+"</bold>"
 	notes+="\n<url>https://filezilla-project.org/versions.php</url>"
 
-	genFile.genr(cb, plugin_ids, name, description, risk_description, recommendation, notes)
+	ap = genFile.genr(cb, plugin_ids, name, description, risk_description, recommendation, notes)
+	if not ap is None:
+		appendices += ap
 
 	# New plugin_ids InternetExplorer(StringExtractionPlugin,ManyToOnePlugin):
 	plugin_ids=['Microsoft Internet Explorer Unsupported Version Detection']	
@@ -196,7 +230,9 @@ def gen(cb):
 	notes="\n<bold>"+name+"</bold>"
 	notes+="\n<url>https://www.microsoft.com/en-gb/WindowsForBusiness/End-of-IE-support</url>"
 
-	genFile.genr(cb, plugin_ids, name, description, risk_description, recommendation, notes)
+	ap = genFile.genr(cb, plugin_ids, name, description, risk_description, recommendation, notes)
+	if not ap is None:
+		appendices += ap
 
 	# New plugin_ids MicrosoftOffice(StringExtractionPlugin,ManyToOnePlugin):
 	plugin_ids=['Microsoft Office Service Pack Out of Date','Microsoft Office Unsupported Version Detection']	
@@ -207,7 +243,9 @@ def gen(cb):
 	notes="\n<bold>"+name+"</bold>"
 	notes+="\n<url>https://support.microsoft.com/en-us/lifecycle/search?alpha=Microsoft%20Office</url>"
 
-	genFile.genr(cb, plugin_ids, name, description, risk_description, recommendation, notes)
+	ap = genFile.genr(cb, plugin_ids, name, description, risk_description, recommendation, notes)
+	if not ap is None:
+		appendices += ap
 
 	# New plugin_ids dotNETFramework(StringExtractionPlugin,ManyToOnePlugin):
 	include_strings=["  Installed version"]
@@ -219,7 +257,9 @@ def gen(cb):
 	notes="\n<bold>"+name+"</bold>"
 	notes+="\n<url>https://support.microsoft.com/en-gb/gp/framework_faq/en-us</url>"
 
-	genFile.genr(cb, plugin_ids, name, description, risk_description, recommendation, notes)
+	ap = genFile.genr(cb, plugin_ids, name, description, risk_description, recommendation, notes)
+	if not ap is None:
+		appendices += ap
 
 	# New plugin_ids SQLServer(StringExtractionPlugin,ManyToOnePlugin):
 	include_strings=["  Installed version"]
@@ -230,7 +270,9 @@ def gen(cb):
 	recommendation="It is recommended that the SQL Server instances be updated to the most recent stable version available or removed from each host if no longer required.\n\nRegular reviews of this software should be undertaken to ensure that each deployment remains up to date with recent releases."
 	notes="\n<bold>"+name+"</bold>"
 
-	genFile.genr(cb, plugin_ids, name, description, risk_description, recommendation, notes)
+	ap = genFile.genr(cb, plugin_ids, name, description, risk_description, recommendation, notes)
+	if not ap is None:
+		appendices += ap
 
 	# New plugin_ids MicrosoftVisio(ManyToOnePlugin):
 	plugin_ids=['Microsoft Visio Unsupported Version Detection']	
@@ -240,7 +282,9 @@ def gen(cb):
 	recommendation="It is recommended that these Visio deployments be removed if no longer required or be updated to the most recent stable version available.\n\nRegular reviews of this software should be undertaken to ensure that each deployment remains up to date with recent releases."
 	notes="\n<bold>"+name+"</bold>"
 
-	genFile.genr(cb, plugin_ids, name, description, risk_description, recommendation, notes)
+	ap = genFile.genr(cb, plugin_ids, name, description, risk_description, recommendation, notes)
+	if not ap is None:
+		appendices += ap
 
 	# New plugin_ids AdobeDigitalEditions(StringExtractionPlugin,ManyToOnePlugin):
 	include_strings=["  Path","  Installed version"]
@@ -251,7 +295,9 @@ def gen(cb):
 	recommendation="It is recommended that the Adobe Digital Editions software be upgraded to the most recent stable release available."
 	notes="\n<bold>"+name+"</bold>"
 
-	genFile.genr(cb, plugin_ids, name, description, risk_description, recommendation, notes)
+	ap = genFile.genr(cb, plugin_ids, name, description, risk_description, recommendation, notes)
+	if not ap is None:
+		appendices += ap
 
 	# New plugin_ids WinZIP(StringExtractionPlugin,ManyToOnePlugin):
 	include_strings=["  Path","  Installed version"]	
@@ -263,7 +309,9 @@ def gen(cb):
 	notes="\n<bold>"+name+"</bold>"
 	notes+="\n<url>http://www.winzip.com/winzip/version.html</url>"
 
-	genFile.genr(cb, plugin_ids, name, description, risk_description, recommendation, notes)
+	ap = genFile.genr(cb, plugin_ids, name, description, risk_description, recommendation, notes)
+	if not ap is None:
+		appendices += ap
 
 	# New plugin_ids Seven7Zip(StringExtractionPlugin,ManyToOnePlugin):
 	include_strings=["  Path","  Installed version"]
@@ -275,7 +323,9 @@ def gen(cb):
 	notes="\n<bold>"+name+"</bold>"
 	notes+="\n<url>http://www.7-zip.org/history.txt</url>"
 
-	genFile.genr(cb, plugin_ids, name, description, risk_description, recommendation, notes)
+	ap = genFile.genr(cb, plugin_ids, name, description, risk_description, recommendation, notes)
+	if not ap is None:
+		appendices += ap
 
 	# New plugin_ids WinSCP(StringExtractionPlugin,ManyToOnePlugin):
 	include_strings=["  Path","  Installed version"]	
@@ -287,7 +337,9 @@ def gen(cb):
 	notes="\n<bold>"+name+"</bold>"
 	notes+="\n<url>https://winscp.net/eng/docs/history</url>"
 
-	genFile.genr(cb, plugin_ids, name, description, risk_description, recommendation, notes)
+	ap = genFile.genr(cb, plugin_ids, name, description, risk_description, recommendation, notes)
+	if not ap is None:
+		appendices += ap
 
 	# New plugin_ids Putty(StringExtractionPlugin,ManyToOnePlugin):
 	include_strings=["  Path","  Installed version"]
@@ -299,7 +351,9 @@ def gen(cb):
 	notes="\n<bold>"+name+"</bold>"
 	notes+="\n<url>https://www.chiark.greenend.org.uk/~sgtatham/putty/changes.html</url>"
 
-	genFile.genr(cb, plugin_ids, name, description, risk_description, recommendation, notes)
+	ap = genFile.genr(cb, plugin_ids, name, description, risk_description, recommendation, notes)
+	if not ap is None:
+		appendices += ap
 
 	# New plugin_ids IBMNotes(ManyToOnePlugin):
 	plugin_ids=['IBM Notes %','Lotus Notes %','IBM Lotus Notes %']	
@@ -309,7 +363,9 @@ def gen(cb):
 	recommendation="Upgrade each Notes installation to the most recent, stable release where it is required. Otherwise, remove the software."
 	notes="\n<bold>"+name+"</bold>"
 
-	genFile.genr(cb, plugin_ids, name, description, risk_description, recommendation, notes)
+	ap = genFile.genr(cb, plugin_ids, name, description, risk_description, recommendation, notes)
+	if not ap is None:
+		appendices += ap
 
 	# New plugin_ids IBMDB2(ManyToOnePlugin):
 	plugin_ids=['IBM DB2 9.7 %']	
@@ -319,7 +375,9 @@ def gen(cb):
 	recommendation="Upgrade each DB2 9.7 installation to the most recent, stable supported release."
 	notes="\n<bold>"+name+"</bold>"
 
-	genFile.genr(cb, plugin_ids, name, description, risk_description, recommendation, notes)
+	ap = genFile.genr(cb, plugin_ids, name, description, risk_description, recommendation, notes)
+	if not ap is None:
+		appendices += ap
 
 	# New plugin_ids IBMTivoliStorageClient(ManyToOnePlugin):
 	plugin_ids=['IBM Tivoli Storage Manager Client %','IBM Spectrum Protect Client%']
@@ -329,7 +387,9 @@ def gen(cb):
 	recommendation="Upgrade the software to the most recent release. Tivoli Storage Manager Client deployments will need to be upgraded to Spectrum Protect Client."
 	notes="\n<bold>"+name+"</bold>"
 
-	genFile.genr(cb, plugin_ids, name, description, risk_description, recommendation, notes)
+	ap = genFile.genr(cb, plugin_ids, name, description, risk_description, recommendation, notes)
+	if not ap is None:
+		appendices += ap
 
 	# New plugin_ids IBMLotusDomino(ManyToOnePlugin):
 	plugin_ids=['IBM Domino %']	
@@ -339,7 +399,9 @@ def gen(cb):
 	recommendation="Upgrade each Domino installation to the most recent, stable supported release for its branch. If the branch is no longer supported, identify a suitable upgrade path to a supported release."
 	notes="\n<bold>"+name+"</bold>"
 
-	genFile.genr(cb, plugin_ids, name, description, risk_description, recommendation, notes)
+	ap = genFile.genr(cb, plugin_ids, name, description, risk_description, recommendation, notes)
+	if not ap is None:
+		appendices += ap
 
 	# New plugin_ids HPInsight(StringExtractionPlugin,ManyToOnePlugin):
 	include_strings=["  Path","  Installed version"]
@@ -352,7 +414,9 @@ def gen(cb):
 	notes+="\n<url>http://www8.hp.com/uk/en/products/server-software/product-detail.html?oid=489496</url>"
 	notes+="\n<url>http://h20564.www2.hpe.com/hpsc/doc/public/display?docId=emr_na-c04271436</url>"
 
-	genFile.genr(cb, plugin_ids, name, description, risk_description, recommendation, notes)
+	ap = genFile.genr(cb, plugin_ids, name, description, risk_description, recommendation, notes)
+	if not ap is None:
+		appendices += ap
 
 	# New plugin_ids OpenVPN(StringExtractionPlugin,ManyToOnePlugin):
 	include_strings=["  Path","  Installed version"]
@@ -364,7 +428,9 @@ def gen(cb):
 	notes="\n<bold>"+name+"</bold>"
 	notes+="\n<url>https://community.openvpn.net/openvpn/wiki/ChangesInOpenvpn23</url>"
 
-	genFile.genr(cb, plugin_ids, name, description, risk_description, recommendation, notes)
+	ap = genFile.genr(cb, plugin_ids, name, description, risk_description, recommendation, notes)
+	if not ap is None:
+		appendices += ap
 
 	# New plugin_ids Firebird(StringExtractionPlugin,ManyToOnePlugin):
 	include_strings=["  Path","  Installed version"]
@@ -376,7 +442,9 @@ def gen(cb):
 	notes="\n<bold>"+name+"</bold>"
 	notes+="\n<url>http://firebirdsql.org/</url>"
 
-	genFile.genr(cb, plugin_ids, name, description, risk_description, recommendation, notes)
+	ap = genFile.genr(cb, plugin_ids, name, description, risk_description, recommendation, notes)
+	if not ap is None:
+		appendices += ap
 
 	# New plugin_ids VCenterOrchestrator(StringExtractionPlugin,ManyToOnePlugin):
 	include_strings=["  Installed version"]
@@ -388,7 +456,9 @@ def gen(cb):
 	notes="\n<bold>"+name+"</bold>"
 	notes+="\n<url>http://www.vmware.com/security/advisories/VMSA-2015-0009.html</url>"
 
-	genFile.genr(cb, plugin_ids, name, description, risk_description, recommendation, notes)
+	ap = genFile.genr(cb, plugin_ids, name, description, risk_description, recommendation, notes)
+	if not ap is None:
+		appendices += ap
 
 	# New plugin_ids GoogleSketchup(StringExtractionPlugin,ManyToOnePlugin):
 	include_strings=["  Path","  Installed version"]
@@ -400,7 +470,9 @@ def gen(cb):
 	notes="\n<bold>"+name+"</bold>"
 	notes+="\n<url>http://www.sketchup.com/</url>"
 
-	genFile.genr(cb, plugin_ids, name, description, risk_description, recommendation, notes)
+	ap = genFile.genr(cb, plugin_ids, name, description, risk_description, recommendation, notes)
+	if not ap is None:
+		appendices += ap
 
 	# New plugin_ids Photoshop(StringExtractionPlugin,ManyToOnePlugin):
 	include_strings=["  Path","  Installed version"]
@@ -412,7 +484,9 @@ def gen(cb):
 	notes="\n<bold>"+name+"</bold>"
 	notes+="\n<url>https://helpx.adobe.com/uk/security.html</url>"
 
-	genFile.genr(cb, plugin_ids, name, description, risk_description, recommendation, notes)
+	ap = genFile.genr(cb, plugin_ids, name, description, risk_description, recommendation, notes)
+	if not ap is None:
+		appendices += ap
 
 	# New plugin_ids FlashProfessional(StringExtractionPlugin,ManyToOnePlugin):
 	include_strings=["  Path","  Installed version"]
@@ -424,7 +498,9 @@ def gen(cb):
 	notes="\n<bold>"+name+"</bold>"
 	notes+="\n<url>https://helpx.adobe.com/uk/security.html</url>"
 
-	genFile.genr(cb, plugin_ids, name, description, risk_description, recommendation, notes)
+	ap = genFile.genr(cb, plugin_ids, name, description, risk_description, recommendation, notes)
+	if not ap is None:
+		appendices += ap
 
 	# New plugin_ids Illustrator(StringExtractionPlugin,ManyToOnePlugin):
 	include_strings=["  Path","  Installed version"]
@@ -436,7 +512,9 @@ def gen(cb):
 	notes="\n<bold>"+name+"</bold>"
 	notes+="\n<url>https://helpx.adobe.com/uk/security.html</url>"
 
-	genFile.genr(cb, plugin_ids, name, description, risk_description, recommendation, notes)
+	ap = genFile.genr(cb, plugin_ids, name, description, risk_description, recommendation, notes)
+	if not ap is None:
+		appendices += ap
 
 	# New plugin_ids Quicktime(StringExtractionPlugin,ManyToOnePlugin):
 	include_strings=["  Path","  Installed version"]
@@ -449,7 +527,9 @@ def gen(cb):
 	notes+="\n<url>https://support.apple.com/en-us/HT205771</url>"
 	notes+="\n<url>https://www.us-cert.gov/ncas/alerts/TA16-105A</url>"
 
-	genFile.genr(cb, plugin_ids, name, description, risk_description, recommendation, notes)
+	ap = genFile.genr(cb, plugin_ids, name, description, risk_description, recommendation, notes)
+	if not ap is None:
+		appendices += ap
 
 	# New plugin_ids VMwarePlayer(StringExtractionPlugin,ManyToOnePlugin):
 	include_strings=["  Path","  Installed version"]
@@ -462,7 +542,9 @@ def gen(cb):
 	notes+="\n<url>https://www.vmware.com/uk/security/advisories.html</url>"
 	notes+="\n<url>http://www.vmware.com/products/player.html</url>"
 
-	genFile.genr(cb, plugin_ids, name, description, risk_description, recommendation, notes)
+	ap = genFile.genr(cb, plugin_ids, name, description, risk_description, recommendation, notes)
+	if not ap is None:
+		appendices += ap
 
 	# New plugin_ids CameraRaw(StringExtractionPlugin,ManyToOnePlugin):
 	include_strings=["  Path","  Installed version"]
@@ -475,7 +557,9 @@ def gen(cb):
 	notes+="\n<url>https://helpx.adobe.com/uk/security.html</url>"
 	notes+="\n<url>https://helpx.adobe.com/photoshop/topics/camera-raw.html</url>"
 
-	genFile.genr(cb, plugin_ids, name, description, risk_description, recommendation, notes)
+	ap = genFile.genr(cb, plugin_ids, name, description, risk_description, recommendation, notes)
+	if not ap is None:
+		appendices += ap
 
 	# New plugin_ids AppleSoftwareUpdate(StringExtractionPlugin,VulnerabilityPlugin):
 	include_strings=["  Path","  Installed version"]
@@ -487,7 +571,9 @@ def gen(cb):
 	notes="\n<bold>"+name+"</bold>"
 	notes+="\n<url>https://support.apple.com/en-us/HT206091</url>"
 
-	genFile.genr(cb, plugin_ids, name, description, risk_description, recommendation, notes)
+	ap = genFile.genr(cb, plugin_ids, name, description, risk_description, recommendation, notes)
+	if not ap is None:
+		appendices += ap
 
 	# New plugin_ids LibreOffice(StringExtractionPlugin,VulnerabilityPlugin):
 	include_strings=["  Path","  Installed version"]
@@ -499,7 +585,9 @@ def gen(cb):
 	notes="\n<bold>"+name+"</bold>"
 	notes+="\n<url>https://www.libreoffice.org/about-us/security/advisories</url>"
 
-	genFile.genr(cb, plugin_ids, name, description, risk_description, recommendation, notes)
+	ap = genFile.genr(cb, plugin_ids, name, description, risk_description, recommendation, notes)
+	if not ap is None:
+		appendices += ap
 
 	# New plugin_ids ApacheOpenOffice(StringExtractionPlugin,VulnerabilityPlugin):
 	include_strings=["  Path","  Installed version"]
@@ -511,7 +599,9 @@ def gen(cb):
 	notes="\n<bold>"+name+"</bold>"
 	notes+="\n<url>https://www.openoffice.org/security/bulletin.html</url>"
 
-	genFile.genr(cb, plugin_ids, name, description, risk_description, recommendation, notes)
+	ap = genFile.genr(cb, plugin_ids, name, description, risk_description, recommendation, notes)
+	if not ap is None:
+		appendices += ap
 
 	# New plugin_ids iTunes(StringExtractionPlugin,VulnerabilityPlugin):
 	include_strings=["  Path","  Installed version"]
@@ -523,7 +613,9 @@ def gen(cb):
 	notes="\n<bold>"+name+"</bold>"
 	notes+="\n<url>https://support.apple.com/en-gb/</url>"
 
-	genFile.genr(cb, plugin_ids, name, description, risk_description, recommendation, notes)
+	ap = genFile.genr(cb, plugin_ids, name, description, risk_description, recommendation, notes)
+	if not ap is None:
+		appendices += ap
 
 	# New plugin_ids AutoDeskAutoCAD(StringExtractionPlugin,VulnerabilityPlugin):
 	include_strings=["  Path","  Installed version"]
@@ -535,7 +627,9 @@ def gen(cb):
 	notes="\n<bold>"+name+"</bold>"
 	notes+="\n<url>https://knowledge.autodesk.com/support/autocad/downloads</url>"
 
-	genFile.genr(cb, plugin_ids, name, description, risk_description, recommendation, notes)
+	ap = genFile.genr(cb, plugin_ids, name, description, risk_description, recommendation, notes)
+	if not ap is None:
+		appendices += ap
 
 	# New plugin_ids AutoDeskDesignReview(StringExtractionPlugin,VulnerabilityPlugin):
 	include_strings=["  Path","  Installed version"]
@@ -547,7 +641,9 @@ def gen(cb):
 	notes="\n<bold>"+name+"</bold>"
 	notes+="\n<url>https://knowledge.autodesk.com/support/design-review?cg=Downloads</url>"
 
-	genFile.genr(cb, plugin_ids, name, description, risk_description, recommendation, notes)
+	ap = genFile.genr(cb, plugin_ids, name, description, risk_description, recommendation, notes)
+	if not ap is None:
+		appendices += ap
 
 	# New plugin_ids Cygwin(VulnerabilityPlugin):
 	plugin_ids=['Cygwin <%']	
@@ -558,7 +654,9 @@ def gen(cb):
 	notes="\n<bold>"+name+"</bold>"
 	notes+="\n<url>http://cygwin.com/ml/cygwin-developers/2007-11/msg00001.html</url>"
 
-	genFile.genr(cb, plugin_ids, name, description, risk_description, recommendation, notes)
+	ap = genFile.genr(cb, plugin_ids, name, description, risk_description, recommendation, notes)
+	if not ap is None:
+		appendices += ap
 
 	# New plugin_ids VMwareHorizonView(StringExtractionPlugin, VulnerabilityPlugin):
 	include_strings=["  Path","  Installed version"]
@@ -570,4 +668,11 @@ def gen(cb):
 	notes="\n<bold>"+name+"</bold>"
 	notes+="\n<url>https://www.vmware.com/uk/security/advisories.html</url>"
 	
-	genFile.genr(cb, plugin_ids, name, description, risk_description, recommendation, notes)
+	ap = genFile.genr(cb, plugin_ids, name, description, risk_description, recommendation, notes)
+	if not ap is None:
+		appendices += ap
+
+
+
+	if appendices:
+		return appendices

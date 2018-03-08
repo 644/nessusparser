@@ -1,6 +1,8 @@
 from plugins import genFile
 
 def gen(cb):
+	appendices = []
+
 	plugin_ids=['Tivoli Storage Manager Server Unauthorized Access Vulnerability']
 	name="Tivoli Storage Manager Server"
 	description="Instances of the Tivoli Storage Manager Server were seen which are susceptible to known vulnerabilities."
@@ -8,4 +10,11 @@ def gen(cb):
 	recommendation="IBM have released a patch for this issue which should be applied to any affected installations."
 	notes="<url>https://www-304.ibm.com/support/docview.wss?uid=swg21657726</url>"
 
-	genFile.genr(cb, plugin_ids, name, description, risk_description, recommendation, notes)
+	ap = genFile.genr(cb, plugin_ids, name, description, risk_description, recommendation, notes)
+	if not ap is None:
+		appendices += ap
+
+
+
+	if appendices:
+		return appendices

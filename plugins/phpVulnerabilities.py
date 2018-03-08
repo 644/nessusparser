@@ -1,6 +1,8 @@
 from plugins import genFile
 
 def gen(cb):
+	appendices = []
+
 	plugin_ids=['PHP % Multiple Vulnerabilities', 'PHP Unsupported Version Detection', 'PHP % <%','PHP PHP_RSHUTDOWN_FUNCTION Security Bypass','PHP < %']
 	name="PHP Multiple Vulnerabilities"
 	description="Older versions of PHP, a web application scripting language, were seen to be installed on the affected hosts. Newer revisions of the software are either released to addresses vulnerabilities or expand on the functionality of the language. As a result, each deployment may be vulnerable to a number of web application or service attack vectors that could be used to compromise a host or web application."
@@ -8,4 +10,11 @@ def gen(cb):
 	recommendation="It is recommended that PHP be upgraded to the latest version on the affected servers."
 	notes=str()
 
-	genFile.genr(cb, plugin_ids, name, description, risk_description, recommendation, notes)
+	ap = genFile.genr(cb, plugin_ids, name, description, risk_description, recommendation, notes)
+	if not ap is None:
+		appendices += ap
+
+
+
+	if appendices:
+		return appendices

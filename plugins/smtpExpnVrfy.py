@@ -1,6 +1,8 @@
 from plugins import genFile
 
 def gen(cb):
+	appendices = []
+
 	plugin_ids=[10249]
 	name="Mail Server Information Disclosure (EXPN/VRFY)"
 	description="It is possible to determine valid users from mail servers due to the support for specific methods."
@@ -9,4 +11,11 @@ def gen(cb):
 	notes="<url>http://www.ietf.org/rfc/rfc2821.txt</url>"
 	notes+="\n<url>https://cvedetails.com/cve/CVE-1999-0531/</url>"
 
-	genFile.genr(cb, plugin_ids, name, description, risk_description, recommendation, notes)
+	ap = genFile.genr(cb, plugin_ids, name, description, risk_description, recommendation, notes)
+	if not ap is None:
+		appendices += ap
+
+
+
+	if appendices:
+		return appendices

@@ -1,6 +1,8 @@
 from plugins import genFile
 
 def gen(cb):
+	appendices = []
+
 	include_strings=["  Server banner","  Installed version"]
 	plugin_ids=['MiniUPnP < 1.%']
 	name="MiniUPnP 1.x Deployments"
@@ -9,4 +11,11 @@ def gen(cb):
 	recommendation="Upgrade the MiniUPnP version to the most recent supported release. For deployments which are implemented as part of third-party software/device firmware, contact the vendor to identify if more recent releases are available to address this issue."
 	notes="<url>http://miniupnp.free.fr/files/</url>"
 
-	genFile.genr(cb, plugin_ids, name, description, risk_description, recommendation, notes)
+	ap = genFile.genr(cb, plugin_ids, name, description, risk_description, recommendation, notes)
+	if not ap is None:
+		appendices += ap
+
+
+
+	if appendices:
+		return appendices

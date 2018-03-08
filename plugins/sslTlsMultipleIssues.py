@@ -1,6 +1,8 @@
 from plugins import genFile
 
 def gen(cb):
+	appendices = []
+
 	description=str()
 	## New plugins UntrustedSSLCertificate(VulnerabilityPlugin):
 	plugin_ids=[57582, 51192]
@@ -11,7 +13,9 @@ def gen(cb):
 	notes+="\n<url>https://www.owasp.org/index.php/Transport_Layer_Protection_Cheat_Sheet#Server_Certificate</url>"
 	notes+="\n<url>https://www.globalsign.com/en/ssl-information-center/dangers-self-signed-certificates/</url>"
 
-	genFile.genr(cb, plugin_ids, name, description, risk_description, recommendation, notes)
+	ap = genFile.genr(cb, plugin_ids, name, description, risk_description, recommendation, notes)
+	if not ap is None:
+		appendices += ap
 
 
 	## New plugins SSLCertificateWithWrongHostname(VulnerabilityPlugin):
@@ -22,7 +26,9 @@ def gen(cb):
 	notes="\n<bold_italic>"+name+"</bold_italic>"
 	notes+="\n<url>https://www.owasp.org/index.php/Transport_Layer_Protection_Cheat_Sheet#Server_Certificate</url>"
 
-	genFile.genr(cb, plugin_ids, name, description, risk_description, recommendation, notes)
+	ap = genFile.genr(cb, plugin_ids, name, description, risk_description, recommendation, notes)
+	if not ap is None:
+		appendices += ap
 
 
 	## New plugins ExpiredSSLCertificate(VulnerabilityPlugin):
@@ -33,7 +39,9 @@ def gen(cb):
 	notes="\n<bold_italic>"+name+"</bold_italic>"
 	notes+="\n<url>https://www.owasp.org/index.php/Transport_Layer_Protection_Cheat_Sheet#Server_Certificate</url>"
 
-	genFile.genr(cb, plugin_ids, name, description, risk_description, recommendation, notes)
+	ap = genFile.genr(cb, plugin_ids, name, description, risk_description, recommendation, notes)
+	if not ap is None:
+		appendices += ap
 
 
 	## New plugins WeakSSLCertificateinCertificateChain2048(VulnerabilityPlugin):
@@ -45,7 +53,9 @@ def gen(cb):
 	notes+="\n<url>https://support.microsoft.com/en-gb/kb/2661254</url>"
 	notes+="\n<url>https://www.rapid7.com/db/vulnerabilities/weak-crypto-key</url>"
 
-	genFile.genr(cb, plugin_ids, name, description, risk_description, recommendation, notes)
+	ap = genFile.genr(cb, plugin_ids, name, description, risk_description, recommendation, notes)
+	if not ap is None:
+		appendices += ap
 
 
 	## New plugins SSLCertificateSignedUsingaWeakHashingAlgorithm(VulnerabilityPlugin):
@@ -57,7 +67,9 @@ def gen(cb):
 	notes+="\n<url>https://technet.microsoft.com/library/security/961509</url>"
 	notes+="\n<url>https://security.googleblog.com/2014/09/gradually-sunsetting-sha-1.html</url>"
 
-	genFile.genr(cb, plugin_ids, name, description, risk_description, recommendation, notes)
+	ap = genFile.genr(cb, plugin_ids, name, description, risk_description, recommendation, notes)
+	if not ap is None:
+		appendices += ap
 
 
 	## New plugins WeakMediumCiphers(VulnerabilityPlugin):
@@ -70,7 +82,9 @@ def gen(cb):
 	notes+="\n<url>https://httpd.apache.org/docs/2.4/ssl/ssl_howto.html</url>"
 	notes+="\n<url>https://www.owasp.org/index.php/Transport_Layer_Protection_Cheat_Sheet#Server_Protocol_and_Cipher_Configuration</url>"
 
-	genFile.genr(cb, plugin_ids, name, description, risk_description, recommendation, notes)
+	ap = genFile.genr(cb, plugin_ids, name, description, risk_description, recommendation, notes)
+	if not ap is None:
+		appendices += ap
 
 
 	## New plugins SSLRC4CipherSuitesSupported(VulnerabilityPlugin):
@@ -85,7 +99,9 @@ def gen(cb):
 	notes+="\n<url>https://support.microsoft.com/en-gb/kb/245030</url>"
 	notes+="\n<url>https://httpd.apache.org/docs/2.4/ssl/ssl_howto.html</url>"
 
-	genFile.genr(cb, plugin_ids, name, description, risk_description, recommendation, notes)
+	ap = genFile.genr(cb, plugin_ids, name, description, risk_description, recommendation, notes)
+	if not ap is None:
+		appendices += ap
 
 
 	## New plugins AnonymousSSLCiphersPermitted(VulnerabilityPlugin):
@@ -96,7 +112,9 @@ def gen(cb):
 	notes="\n<bold_italic>"+name+"</bold_italic>"
 	notes+="\n<url>https://www.owasp.org/index.php/Transport_Layer_Protection_Cheat_Sheet#Server_Protocol_and_Cipher_Configuration</url>"
 
-	genFile.genr(cb, plugin_ids, name, description, risk_description, recommendation, notes)
+	ap = genFile.genr(cb, plugin_ids, name, description, risk_description, recommendation, notes)
+	if not ap is None:
+		appendices += ap
 
 
 	## New plugins SSLTLSRenegotiationDenialofService(VulnerabilityPlugin):
@@ -107,7 +125,9 @@ def gen(cb):
 	notes="\n<bold_italic>"+name+"</bold_italic>"
 	notes+="\n<url>https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2009-3555</url>"
 
-	genFile.genr(cb, plugin_ids, name, description, risk_description, recommendation, notes)
+	ap = genFile.genr(cb, plugin_ids, name, description, risk_description, recommendation, notes)
+	if not ap is None:
+		appendices += ap
 
 
 	## New plugins SSLVersion2and3ProtocolDetection(VulnerabilityPlugin):
@@ -121,7 +141,9 @@ def gen(cb):
 	notes+="\n<url>https://support.microsoft.com/en-gb/kb/245030</url>"
 	notes+="\n<url>https://support.microsoft.com/en-gb/kb/187498</url>"
 
-	genFile.genr(cb, plugin_ids, name, description, risk_description, recommendation, notes)
+	ap = genFile.genr(cb, plugin_ids, name, description, risk_description, recommendation, notes)
+	if not ap is None:
+		appendices += ap
 
 
 	## New plugins SSLDROWNAttack(VulnerabilityPlugin):
@@ -132,7 +154,9 @@ def gen(cb):
 	notes="\n<bold_italic>"+name+"</bold_italic>"
 	notes+="\n<url>https://drownattack.com/</url>"
 
-	genFile.genr(cb, plugin_ids, name, description, risk_description, recommendation, notes)
+	ap = genFile.genr(cb, plugin_ids, name, description, risk_description, recommendation, notes)
+	if not ap is None:
+		appendices += ap
 
 
 	## New plugins SSLTLSProtocolInitialisationVectorInformationDisclosure(VulnerabilityPlugin):
@@ -144,7 +168,9 @@ def gen(cb):
 	notes+="\n<url>http://resources.infosecinstitute.com/beast-vs-crime-attack/</url>"
 	notes+="\n<url>https://cve.mitre.org/cgi-bin/cvename.cgi?name=cve-2011-3389</url>"
 
-	genFile.genr(cb, plugin_ids, name, description, risk_description, recommendation, notes)
+	ap = genFile.genr(cb, plugin_ids, name, description, risk_description, recommendation, notes)
+	if not ap is None:
+		appendices += ap
 
 
 	## New plugins TransportLayerSecurityProtocolCRIMEVulnerability(VulnerabilityPlugin):
@@ -156,7 +182,9 @@ def gen(cb):
 	notes+="\n<url>http://resources.infosecinstitute.com/beast-vs-crime-attack/</url>"
 	notes+="\n<url>https://web.nvd.nist.gov/view/vuln/detail?vulnId=CVE-2012-4929</url>"
 
-	genFile.genr(cb, plugin_ids, name, description, risk_description, recommendation, notes)
+	ap = genFile.genr(cb, plugin_ids, name, description, risk_description, recommendation, notes)
+	if not ap is None:
+		appendices += ap
 
 
 	## New plugins SSLv3PaddingOracleOnDowngradedLegacyEncryptionVulnerability(VulnerabilityPlugin):
@@ -169,7 +197,9 @@ def gen(cb):
 	notes+="\n<url>https://www.openssl.org/news/secadv/20141015.txt</url>"
 	notes+="\n<url>https://access.redhat.com/articles/1232123</url>"
 
-	genFile.genr(cb, plugin_ids, name, description, risk_description, recommendation, notes)
+	ap = genFile.genr(cb, plugin_ids, name, description, risk_description, recommendation, notes)
+	if not ap is None:
+		appendices += ap
 
 
 	## New plugins TLSPaddingOracleOnDowngradedLegacyEncryptionVulnerability(VulnerabilityPlugin):
@@ -180,7 +210,9 @@ def gen(cb):
 	notes="\n<bold_italic>"+name+"</bold_italic>"
 	notes+="\n<url>https://www.imperialviolet.org/2014/12/08/poodleagain.html</url>"
 
-	genFile.genr(cb, plugin_ids, name, description, risk_description, recommendation, notes)
+	ap = genFile.genr(cb, plugin_ids, name, description, risk_description, recommendation, notes)
+	if not ap is None:
+		appendices += ap
 
 
 	## New plugins SSLTLSRenegotiationHandshakesMiTMPlaintextDataInjection(VulnerabilityPlugin):
@@ -192,7 +224,9 @@ def gen(cb):
 	notes+="\n<url>http://technet.microsoft.com/en-us/security/advisory/977377</url>"
 	notes+="\n<url>http://www.cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2009-3555</url>"
 
-	genFile.genr(cb, plugin_ids, name, description, risk_description, recommendation, notes)
+	ap = genFile.genr(cb, plugin_ids, name, description, risk_description, recommendation, notes)
+	if not ap is None:
+		appendices += ap
 
 
 	## New plugins ExportWeakDHCiphers(VulnerabilityPlugin):
@@ -205,7 +239,9 @@ def gen(cb):
 	notes+="\n<url>http://www.kb.cert.org/vuls/id/243585</url>"
 	notes+="\n<url>https://weakdh.org/</url>"
 
-	genFile.genr(cb, plugin_ids, name, description, risk_description, recommendation, notes)
+	ap = genFile.genr(cb, plugin_ids, name, description, risk_description, recommendation, notes)
+	if not ap is None:
+		appendices += ap
 
 
 	## New plugins SWEET32Ciphers(VulnerabilityPlugin):
@@ -217,7 +253,9 @@ def gen(cb):
 	notes+="\n<url>https://sweet32.info/</url>"
 	notes+="\n<url>https://www.openssl.org/blog/blog/2016/08/24/sweet32/</url>"
 	
-	genFile.genr(cb, plugin_ids, name, description, risk_description, recommendation, notes)
+	ap = genFile.genr(cb, plugin_ids, name, description, risk_description, recommendation, notes)
+	if not ap is None:
+		appendices += ap
 
 
 	## New plugins CertificateNullCharacter(VulnerabilityPlugin):
@@ -228,4 +266,11 @@ def gen(cb):
 	notes="\n<bold_italic>"+name+"</bold_italic>"
 	notes+="\n<url>http://thoughtcrime.org/papers/null-prefix-attacks.pdf</url>"
 	
-	genFile.genr(cb, plugin_ids, name, description, risk_description, recommendation, notes)
+	ap = genFile.genr(cb, plugin_ids, name, description, risk_description, recommendation, notes)
+	if not ap is None:
+		appendices += ap
+
+
+
+	if appendices:
+		return appendices

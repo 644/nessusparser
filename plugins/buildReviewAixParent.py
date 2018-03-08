@@ -1,6 +1,8 @@
 from plugins import genParent
 
 def gen(cb):
+	appendices = []
+
 	plugin_ids=["%/etc/security/user - mindiff%"]
 	plugin_ids+=["%/etc/security/user - minage%"]
 	plugin_ids+=["%/etc/security/user - maxage%"]

@@ -1,6 +1,8 @@
 from plugins import genFile
 
 def gen(cb):
+	appendices = []
+
 	name="VMware vCenter Vulnerabilities"
 	plugin_ids=['VMware vCenter Multiple Vulnerabilities%','VMware vCenter Server%']
 	description="VMware hypervisor software provides functionality with which organisations are able to deploy a multitude of virtual assets, including servers and networking devices. As these hypervisors are typically used to host the majority of infrastructure assets due to the flexibility a virtual environment can offer, vulnerabilities within the deployed VMware software versions could have a potentially critical impact on an environment if exploited. The vCenter Server software is used to manage multiple hypervisor (ESX/ESXi instances), giving it a large amount of control over the environment."
@@ -10,4 +12,11 @@ def gen(cb):
 	notes+="<url>https://my.vmware.com/en/web/vmware/info/slug/datacenter_cloud_infrastructure/vmware_vsphere/5_5</url>\n"
 	notes+="<url>https://my.vmware.com/en/web/vmware/info/slug/datacenter_cloud_infrastructure/vmware_vsphere/6_0</url>"
 
-	genFile.genr(cb, plugin_ids, name, description, risk_description, recommendation, notes)
+	ap = genFile.genr(cb, plugin_ids, name, description, risk_description, recommendation, notes)
+	if not ap is None:
+		appendices += ap
+
+
+
+	if appendices:
+		return appendices

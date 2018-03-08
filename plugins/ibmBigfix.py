@@ -1,6 +1,8 @@
 from plugins import genFile
 
 def gen(cb):
+	appendices = []
+
 	plugin_ids=['IBM BigFix Platform%','IBM BigFix Server%']
 	name="IBM BigFix Server"
 	description="Hosts have a version of an infrastructure management application, IBM BigFix, that is affected by multiple issues."
@@ -10,4 +12,11 @@ def gen(cb):
 	notes+="\n<url>http://www-01.ibm.com/support/docview.wss?uid=swg21985743</url>"
 	notes+="\n<url>http://www-01.ibm.com/support/docview.wss?uid=swg21996348</url>"
 
-	genFile.genr(cb, plugin_ids, name, description, risk_description, recommendation, notes)
+	ap = genFile.genr(cb, plugin_ids, name, description, risk_description, recommendation, notes)
+	if not ap is None:
+		appendices += ap
+
+
+
+	if appendices:
+		return appendices

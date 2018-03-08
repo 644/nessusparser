@@ -1,6 +1,8 @@
 from plugins import genFile
 
 def gen(cb):
+	appendices = []
+
 	plugin_ids=[90509]
 	name="Samba Badlock Vulnerability"
 	description="Samba services are running versions which are vulnerable to man-in-the-middle and denial-of-service issues, commonly referenced as the \"Badlock\" vulnerability."
@@ -9,4 +11,11 @@ def gen(cb):
 	notes="<url>http://badlock.org</url>"
 	notes+="\n<url>https://www.samba.org/samba/security/CVE-2016-2118.html</url>"
 
-	genFile.genr(cb, plugin_ids, name, description, risk_description, recommendation, notes)
+	ap = genFile.genr(cb, plugin_ids, name, description, risk_description, recommendation, notes)
+	if not ap is None:
+		appendices += ap
+
+
+
+	if appendices:
+		return appendices

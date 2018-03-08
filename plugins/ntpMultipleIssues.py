@@ -1,6 +1,8 @@
 from plugins import genFile
 
 def gen(cb):
+	appendices = []
+
 	plugin_ids=[97861]
 	name="NTP Mode 6 Query Support"
 	description=str()
@@ -10,7 +12,9 @@ def gen(cb):
 	recommendation+="\n\nHost-based firewalls can also be used to reduce the services availability to unnecessary clients."
 	notes="<url>http://support.ntp.org/bin/view/Support/AccessRestrictions</url>"
 	
-	genFile.genr(cb, plugin_ids, name, description, risk_description, recommendation, notes)
+	ap = genFile.genr(cb, plugin_ids, name, description, risk_description, recommendation, notes)
+	if not ap is None:
+		appendices += ap
 	
 
 	# New plugin_ids NTPMode7DoS(VulnerabilityPlugin):
@@ -21,7 +25,9 @@ def gen(cb):
 	recommendation="Upgrade to NTP 4.2.4p8 / 4.2.6 or later. For other NTP software, consult the vendor documentation or contact the vendor.\n\nOtherwise, limit access to the affected service to trusted hosts only."
 	notes="<url>http://bugs.ntp.org/show_bug.cgi?id=1331</url>"
 
-	genFile.genr(cb, plugin_ids, name, description, risk_description, recommendation, notes)
+	ap = genFile.genr(cb, plugin_ids, name, description, risk_description, recommendation, notes)
+	if not ap is None:
+		appendices += ap
 
 
 	# New plugin_ids NTPMonlist(VulnerabilityPlugin):
@@ -34,7 +40,9 @@ def gen(cb):
 	notes+="\n<url>http://bugs.ntp.org/show_bug.cgi?id=1532</url>"
 	notes+="\n<url>http://kb.juniper.net/InfoCenter/index?page=content&id=JSA10613</url>"
 	
-	genFile.genr(cb, plugin_ids, name, description, risk_description, recommendation, notes)
+	ap = genFile.genr(cb, plugin_ids, name, description, risk_description, recommendation, notes)
+	if not ap is None:
+		appendices += ap
 	
 
 	# New plugin_ids NTPVersion(VulnerabilityPlugin):
@@ -46,4 +54,11 @@ def gen(cb):
 	recommendation="Upgrade to the most recent, supported ntpd release. Where ntpd is included with a third-party software deployment, contact the vendor to identify a suitable upgrade path."
 	notes="<url>http://support.ntp.org/bin/view/Main/SecurityNotice</url>"
 	
-	genFile.genr(cb, plugin_ids, name, description, risk_description, recommendation, notes)
+	ap = genFile.genr(cb, plugin_ids, name, description, risk_description, recommendation, notes)
+	if not ap is None:
+		appendices += ap
+
+
+
+	if appendices:
+		return appendices

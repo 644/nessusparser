@@ -1,6 +1,8 @@
 from plugins import genFile
 
 def gen(cb):
+	appendices = []
+
 	include_strings=["McAfee VirusScan Enterprise","Engine version","DAT version","Updated date"]
 	plugin_ids=['McAfee VirusScan Enterprise %','McAfee Antivirus Detection and Status']
 	name="McAfee VirusScan Enterprise"
@@ -10,4 +12,11 @@ def gen(cb):
 	notes="<url>https://kc.mcafee.com/corporate/index?page=content&id=SB10151</url>"
 	notes+="\n<url>https://kc.mcafee.com/corporate/index?page=content&id=KB84590</url>"
 
-	genFile.genr(cb, plugin_ids, name, description, risk_description, recommendation, notes)
+	ap = genFile.genr(cb, plugin_ids, name, description, risk_description, recommendation, notes)
+	if not ap is None:
+		appendices += ap
+
+
+
+	if appendices:
+		return appendices

@@ -1,6 +1,8 @@
 from plugins import genFile
 
 def gen(cb):
+	appendices = []
+
 	plugin_ids=['ImageMagick <%']
 	name="ImageMagick"
 	description="Hosts have versions of the ImageMagick software installed that are affected by multiple vulnerabilities. Exploitation of such issues typically requires a user to be tricked into accessing a malicious resource and could enable the remote compromise of a host."
@@ -8,4 +10,11 @@ def gen(cb):
 	recommendation="Upgrade the ImageMagick software to the most recent release or remove it from the system if not required. Vulnerable versions may have to be removed from the system."
 	notes=str()
 
-	genFile.genr(cb, plugin_ids, name, description, risk_description, recommendation, notes)
+	ap = genFile.genr(cb, plugin_ids, name, description, risk_description, recommendation, notes)
+	if not ap is None:
+		appendices += ap
+
+
+
+	if appendices:
+		return appendices

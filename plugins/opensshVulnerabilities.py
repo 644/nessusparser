@@ -1,6 +1,8 @@
 from plugins import genFile
 
 def gen(cb):
+	appendices = []
+
 	plugin_ids=['Portable OpenSSH %', 'OpenSSH X11%', 'OpenSSH%<%', 'OpenSSH 6.%', 'OpenSSH SSHFP%']
 	name="OpenSSH Versions"
 	description="SSH services presented by hosts were found to be running on top of outdated versions of OpenSSH and may be affected by several issues. These issues can lead to the damage of the confidentiality, integrity and availability of the service and underlying host, particularly as the SSH service is typically used to administer networking devices and non-Windows based hosts (e.g. Unix/Linux deployments)."
@@ -9,4 +11,11 @@ def gen(cb):
 	notes="<url>http://www.openssh.com/</url>"
 	notes+="\n<url>http://www.openssh.com/security.html</url>"
 
-	genFile.genr(cb, plugin_ids, name, description, risk_description, recommendation, notes)
+	ap = genFile.genr(cb, plugin_ids, name, description, risk_description, recommendation, notes)
+	if not ap is None:
+		appendices += ap
+
+
+
+	if appendices:
+		return appendices

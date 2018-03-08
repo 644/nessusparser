@@ -1,6 +1,8 @@
 from plugins import genFile
 
 def gen(cb):
+	appendices = []
+
 	plugin_ids=['Microsoft Windows LM / NTLMv1 Authentication Enabled']
 	name="Microsoft Windows LM / NTLMv1 Authentication Enabled"
 	description="Hosts are configured to use an insecure authentication protocol when authenticating to other Windows hosts. This could allow an attacker to capture a user's Windows credentials (domain or local) and masquerade as that user, either by cracking the password or exploiting the Windows hash-passing functionality."
@@ -11,4 +13,11 @@ def gen(cb):
 	notes+="<url>http://technet.microsoft.com/library/cc960646.aspx</url>\n"
 	notes+="<url>http://support.microsoft.com/en-us/kb/239869</url>"
 
-	genFile.genr(cb, plugin_ids, name, description, risk_description, recommendation, notes)
+	ap = genFile.genr(cb, plugin_ids, name, description, risk_description, recommendation, notes)
+	if not ap is None:
+		appendices += ap
+
+
+
+	if appendices:
+		return appendices

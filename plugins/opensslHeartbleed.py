@@ -1,6 +1,8 @@
 from plugins import genFile
 
 def gen(cb):
+	appendices = []
+
 	plugin_ids=[73412]
 	name="OpenSSL Heartbleed"
 	description="Hosts presents at least one service using the OpenSSL library to enable TLS/SSL traffic encryption support. The version of the library identified in use is associated with a known issue which allows the contents of host memory to be read remotely by an unauthenticated user"
@@ -9,4 +11,11 @@ def gen(cb):
 	notes="<url>https://www.openssl.org/news/secadv/20140407.txt</url>"
 	notes+="\n<url>http://heartbleed.com/</url>"
 
-	genFile.genr(cb, plugin_ids, name, description, risk_description, recommendation, notes)
+	ap = genFile.genr(cb, plugin_ids, name, description, risk_description, recommendation, notes)
+	if not ap is None:
+		appendices += ap
+
+
+
+	if appendices:
+		return appendices

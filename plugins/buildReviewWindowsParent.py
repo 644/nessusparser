@@ -1,6 +1,8 @@
 from plugins import genParent
 
 def gen(cb):
+	appendices = []
+
 	plugin_ids=["%Rename administrator account%"]
 	plugin_ids+=["%Rename guest account%"]
 	plugin_ids+=["%Do not allow anonymous enumeration of SAM accounts and shares%"]

@@ -1,6 +1,8 @@
 from plugins import genParent
 
 def gen(cb):
+	appendices = []
+
 	plugin_ids=["%Ensure no duplicate group names exist%"]
 	plugin_ids+=["%Ensure no duplicate user names exist%"]
 	plugin_ids+=["%Ensure no duplicate GIDs exist%"]

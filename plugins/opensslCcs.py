@@ -1,6 +1,8 @@
 from plugins import genFile
 
 def gen(cb):
+	appendices = []
+
 	plugin_ids=[77200]
 	name="OpenSSL ChangeCipherSpec"
 	description="Hosts present at least one service using the OpenSSL library to enable TLS/SSL traffic encryption support. The versions of the library identified in use are associated with at least one known issue which could permit a man-in-the-middle (MiTM) attack."
@@ -9,4 +11,11 @@ def gen(cb):
 	notes="<url>https://www.openssl.org/news/secadv/20140605.txt</url>"
 	notes+="\n<url>http://ccsinjection.lepidum.co.jp/blog/2014-06-05/CCS-Injection-en/index.html</url>"
 
-	genFile.genr(cb, plugin_ids, name, description, risk_description, recommendation, notes)
+	ap = genFile.genr(cb, plugin_ids, name, description, risk_description, recommendation, notes)
+	if not ap is None:
+		appendices += ap
+
+
+
+	if appendices:
+		return appendices

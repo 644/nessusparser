@@ -1,6 +1,8 @@
 from plugins import genFile
 
 def gen(cb):
+	appendices = []
+
 	plugin_ids=[10043]
 	name="Chargen Service - DoS"
 	description="Chargen is a historic service used for debugging TCP/UDP connections. No longer commonly used, the chargen service can be manipulated into performing a denial-of-service attack against assets."
@@ -8,4 +10,11 @@ def gen(cb):
 	recommendation="If in use, filter access to this service to only necessary sources.\n\nDisable this service where not required. On Unix/Linux systems this is commonly done by commenting out the chargen line in /etc/inetd.conf and restarting the inetd service.\n\nFor Windows hosts, disable the \"Simple TCP Services\" service or set the following registry entries under <italic>HKLM\System\CurrentControlSet\Services\SimpTCP\Parameters\</italic> to 0 and restart the \"simptcp\" service:\n\n<italic>EnableTcpChargen</italic>\n<italic>EnableUdpChargen</italic>"
 	notes="<url>https://web.nvd.nist.gov/view/vuln/detail?vulnId=CVE-1999-0103</url>"
 
-	genFile.genr(cb, plugin_ids, name, description, risk_description, recommendation, notes)
+	ap = genFile.genr(cb, plugin_ids, name, description, risk_description, recommendation, notes)
+	if not ap is None:
+		appendices += ap
+
+
+
+	if appendices:
+		return appendices

@@ -1,6 +1,8 @@
 from plugins import genFile
 
 def gen(cb):
+	appendices = []
+
 	plugin_ids=['Microsoft Forefront Endpoint Protection / System Center Endpoint Protection / Anti-malware Client Detection and Status']
 	include_strings=["  Product name","  Path","  Version","  Engine version","  Antivirus signature version","  Antispyware signature version"]
 	name="Microsoft Endpoint Protection"
@@ -9,4 +11,11 @@ def gen(cb):
 	recommendation="Ensure each endpoint protection deployment is kept in line with the most recent definition data releases and ensure they are configured to retrieve signature updates regularly."
 	notes="<url>https://technet.microsoft.com/en-us/library/hh508836.aspx</url>"
 
-	genFile.genr(cb, plugin_ids, name, description, risk_description, recommendation, notes)
+	ap = genFile.genr(cb, plugin_ids, name, description, risk_description, recommendation, notes)
+	if not ap is None:
+		appendices += ap
+
+
+
+	if appendices:
+		return appendices

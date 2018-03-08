@@ -4,6 +4,14 @@ from docx.shared import Inches
 import os.path
 from tqdm import *
 
+def appendGen(cb, appendix):
+	document = Document(cb + '.docx')
+	document.add_heading('Appendix A', level=1) # TODO: make appendix alphabetical and searchable
+	for ap in appendix:
+		document.add_paragraph(ap)
+
+	document.save(cb + '.docx')
+
 def gen_document(cb, name, description, risk_description, recommendation, notes, affected_hosts):
 	if os.path.isfile(cb + '.docx'):
 		document = Document(cb + '.docx')
@@ -23,22 +31,25 @@ def gen_document(cb, name, description, risk_description, recommendation, notes,
 		document.add_heading('Recommendation:', level=1)
 		document.add_paragraph(recommendation)
 
-	table = document.add_table(rows=1, cols=1)
-	tbl_cells = table.rows[0].cells
-	tbl_cells[0].text = 'Affected Hosts:'
-
-	for ac in tqdm(affected_hosts):
-		tbl_cells = table.add_row().cells
-		#if '<bold_italic>' in ac:
-		#	ac = ac.replace('<bold_italic>', '')
-		#	ac = ac.replace('</bold_italic>', '')
-		#	tbl_cells[0].text = str(ac) # TODO: make bold and italic
-		#else:
-		tbl_cells[0].text = ac
-	print('\n')
-
-	document.add_page_break()
-	document.save(cb + '.docx')
+	if len(affected_hosts) <= 20:
+		table = document.add_table(rows=1, cols=1)
+		tbl_cells = table.rows[0].cells
+		tbl_cells[0].text = 'Affected Hosts:'
+		for ac in tqdm(affected_hosts):
+			tbl_cells = table.add_row().cells
+			#if '<bold_italic>' in ac:
+			#	ac = ac.replace('<bold_italic>', '')
+			#	ac = ac.replace('</bold_italic>', '')
+			#	tbl_cells[0].text = str(ac) # TODO: make bold and italic
+			#else:
+			tbl_cells[0].text = ac
+		print('\n')
+		document.add_page_break()
+		document.save(cb + '.docx')
+	else:
+		document.add_page_break()
+		document.save(cb + '.docx')
+		return affected_hosts
 
 def genr(cb, plugin_ids, name, description, risk_description, recommendation, notes):
 	pluginid_strings = [x for x in plugin_ids if not isinstance(x, int)]
@@ -57,6 +68,6 @@ def genr(cb, plugin_ids, name, description, risk_description, recommendation, no
 			affected_hosts.append(x[0])
 		else:
 			affected_hosts.append(x[1])
-	
+
 	if len(affected_hosts) > 0:
-		gen_document(cb, name, description, risk_description, recommendation, notes, affected_hosts)
+		return gen_document(cb, name, description, risk_description, recommendation, notes, affected_hosts)

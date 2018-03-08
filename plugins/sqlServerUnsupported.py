@@ -1,6 +1,8 @@
 from plugins import genFile
 
 def gen(cb):
+	appendices = []
+
 	include_strings=["  Install path","  Installed version", "  Minimum supported version"]
 	plugin_ids=['Microsoft SQL Server Unsupported Version Detection']	
 	name="Unsupported Microsoft SQL Server"
@@ -9,4 +11,11 @@ def gen(cb):
 	recommendation="It is recommended that SQL Server is updated to its most recent available release. In some cases, SQL Server Express is bundled with other installed software, which requires an update to the packaging software."
 	notes="<url>https://support.microsoft.com/en-gb/lifecycle/search?alpha=Microsoft%20SQL%20Server</url>"
 	
-	genFile.genr(cb, plugin_ids, name, description, risk_description, recommendation, notes)
+	ap = genFile.genr(cb, plugin_ids, name, description, risk_description, recommendation, notes)
+	if not ap is None:
+		appendices += ap
+
+
+
+	if appendices:
+		return appendices

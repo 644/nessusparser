@@ -1,6 +1,8 @@
 from plugins import genFile
 
 def gen(cb):
+	appendices = []
+
 	plugin_ids=[35372]
 	name="DNS Dynamic Updates"
 	description="DNS services were identified which permit their records for specific zones to be dynamically updated. This can be used to facilitate man-in-the-middle attacks."
@@ -9,7 +11,9 @@ def gen(cb):
 	notes="<url>https://technet.microsoft.com/en-us/library/cc753751(v=ws.11).aspx</url>"
 	notes+="\n<url>https://technet.microsoft.com/en-us/library/cc725703(v=ws.11).aspx</url>"
 
-	genFile.genr(cb, plugin_ids, name, description, risk_description, recommendation, notes)
+	ap = genFile.genr(cb, plugin_ids, name, description, risk_description, recommendation, notes)
+	if not ap is None:
+		appendices += ap
 
 
 	# New plugin_ids CacheSnooping(VulnerabilityPlugin):
@@ -22,7 +26,9 @@ def gen(cb):
 	notes+="\n<url>https://technet.microsoft.com/en-us/library/cc771738.aspx</url>"
 	notes+="\n<url>https://support.microsoft.com/kb/2678371</url>"
 
-	genFile.genr(cb, plugin_ids, name, description, risk_description, recommendation, notes)
+	ap = genFile.genr(cb, plugin_ids, name, description, risk_description, recommendation, notes)
+	if not ap is None:
+		appendices += ap
 
 
 	# New plugin_ids RequestAmpDos(VulnerabilityPlugin):
@@ -34,4 +40,11 @@ def gen(cb):
 	notes="<bold_italic>"+name+"</bold_italic>"
 	notes+="\n<url>https://technet.microsoft.com/en-us/security/hh972393.aspx</url>"
 
-	genFile.genr(cb, plugin_ids, name, description, risk_description, recommendation, notes)
+	ap = genFile.genr(cb, plugin_ids, name, description, risk_description, recommendation, notes)
+	if not ap is None:
+		appendices += ap
+
+
+
+	if appendices:
+		return appendices

@@ -1,6 +1,8 @@
 from plugins import genFile
 
 def gen(cb):
+	appendices = []
+
 	plugin_ids=['BlackBerry Enterprise Service (BES) Management Console %']
 	name="BlackBerry Enterprise Service (BES) Management Console"
 	description="The BlackBerry Enterprise Service (BES) Management Console application is used to manage various aspects of a BES deployment (including users, devices, apps, and other components). Deployments of this software seen on hosts are running versions affected by known vulnerabilities."
@@ -10,4 +12,11 @@ def gen(cb):
 	notes+="\n<url>http://support.blackberry.com/kb/articleDetail?articleNumber=000038118</url>"
 	notes+="\n<url>http://support.blackberry.com/kb/articleDetail?articleNumber=000038119</url>"
 
-	genFile.genr(cb, plugin_ids, name, description, risk_description, recommendation, notes)
+	ap = genFile.genr(cb, plugin_ids, name, description, risk_description, recommendation, notes)
+	if not ap is None:
+		appendices += ap
+
+
+
+	if appendices:
+		return appendices

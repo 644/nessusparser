@@ -1,6 +1,8 @@
 from plugins import genFile
 
 def gen(cb):
+	appendices = []
+
 	plugin_ids=['Microsoft Windows Update Reboot Required']
 	name="Microsoft Windows Update Reboot Required"
 	description="At least one host has been identified which requires a reboot in order to apply recently installed updates. As such updates commonly include security fixes, leaving a host in this state leaves it persistently vulnerable to issues which have already been remedied."
@@ -8,4 +10,11 @@ def gen(cb):
 	recommendation="Force a manual reboot of each affected host when possible to ensure that any pending updates are suitably applied."
 	notes="<url>https://technet.microsoft.com/library/cc960241.aspx</url>"
 
-	genFile.genr(cb, plugin_ids, name, description, risk_description, recommendation, notes)
+	ap = genFile.genr(cb, plugin_ids, name, description, risk_description, recommendation, notes)
+	if not ap is None:
+		appendices += ap
+
+
+
+	if appendices:
+		return appendices

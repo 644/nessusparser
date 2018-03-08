@@ -1,6 +1,8 @@
 from plugins import genFile
 
 def gen(cb):
+	appendices = []
+
 	plugin_ids=[10203, 10205]
 	name="Insecure Inetd Services"
 	description="Instances of obsolete Inetd services were seen on hosts within the network. These can be used to gain remote access or execute commands with administrative rights on an affected host. Such services are considered obsolete and have been deprecated and replaced by more secure alternatives due to the lack of security, such as traffic encryption, and vulnerabilities related to them."
@@ -9,4 +11,11 @@ def gen(cb):
 	notes="<url>http://web.nvd.nist.gov/view/vuln/detail?vulnId=CVE-1999-0618</url>"
 	notes+="\n<url>http://web.nvd.nist.gov/view/vuln/detail?vulnId=CVE-1999-0651</url>"
 
-	genFile.genr(cb, plugin_ids, name, description, risk_description, recommendation, notes)
+	ap = genFile.genr(cb, plugin_ids, name, description, risk_description, recommendation, notes)
+	if not ap is None:
+		appendices += ap
+
+
+
+	if appendices:
+		return appendices

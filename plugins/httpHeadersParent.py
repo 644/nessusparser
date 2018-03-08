@@ -1,6 +1,8 @@
 from plugins import genParent
 
 def gen(cb):
+	appendices = []
+
 	plugin_ids=["Cacheable HTTPS response"]
 	plugin_ids+=["Strict transport security not enforced"]
 	plugin_ids+=["Frameable response (potential Clickjacking)"]

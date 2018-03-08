@@ -1,6 +1,8 @@
 from plugins import genParent
 
 def gen(cb):
+	appendices = []
+
 	plugin_ids=[51894,51895]
 	plugin_ids+=[26014]
 	plugin_ids+=["Macrovision FLEXnet %","FLEXNet %"]

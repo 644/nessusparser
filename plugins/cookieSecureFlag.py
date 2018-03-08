@@ -1,6 +1,8 @@
 from plugins import genFile
 
 def gen(cb):
+	appendices = []
+
 	plugin_ids=["SSL cookie without Secure flag set"]
 	name="Cookies Not Set With Secure Flag"
 	description="Secure is an additional flag included in a Set-Cookie HTTP response header. Using the Secure flag when generating a cookie helps mitigate the risk of interception of cookies sent over encrypted communications, as otherwise they could be accessed outside of the Secure session."
@@ -8,4 +10,11 @@ def gen(cb):
 	recommendation="The Secure flag should be set on all cookies that are used for transmitting sensitive data when accessing content over HTTPS. If cookies are used to transmit session tokens, then areas of the application that are accessed over HTTPS should employ their own session handling mechanism, and the session tokens used should never be transmitted over unencrypted communications."
 	notes="<url>https://www.owasp.org/index.php/SecureFlag</url>"
 
-	genFile.genr(cb, plugin_ids, name, description, risk_description, recommendation, notes)
+	ap = genFile.genr(cb, plugin_ids, name, description, risk_description, recommendation, notes)
+	if not ap is None:
+		appendices += ap
+
+
+
+	if appendices:
+		return appendices

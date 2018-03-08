@@ -1,6 +1,8 @@
 from plugins import genFile
 
 def gen(cb):
+	appendices = []
+
 	plugin_ids=[22127]
 	name="eIQnetworks Enterprise Security Analyzer"
 	description="A security event/logging analysis application is installed on at least one host that is vulnerable to remote buffer overflow attacks."
@@ -8,4 +10,11 @@ def gen(cb):
 	recommendation="This issue has been addressed in more recent releases of the Enterprise/Network Security Analyzer software (2.1.14 and 4.5.4). Affected deployments should be brought into line with the most recent, supported release or decommissioned."
 	notes="<url>https://web.nvd.nist.gov/view/vuln/detail?vulnId=CVE-2006-3838</url>"
 
-	genFile.genr(cb, plugin_ids, name, description, risk_description, recommendation, notes)
+	ap = genFile.genr(cb, plugin_ids, name, description, risk_description, recommendation, notes)
+	if not ap is None:
+		appendices += ap
+
+
+
+	if appendices:
+		return appendices

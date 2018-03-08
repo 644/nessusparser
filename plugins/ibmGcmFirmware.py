@@ -1,6 +1,8 @@
 from plugins import genFile
 
 def gen(cb):
+	appendices = []
+
 	plugin_ids=['IBM GCM16 / GCM32 Global Console Manager KVM Switch Firmware Version%']
 	name="IBM GCM KVM Switch Firmware"
 	description="The web interface for IBM KVM switches is reported to be affected by multiple vulnerabilities."
@@ -8,4 +10,11 @@ def gen(cb):
 	recommendation="Upgrade the firmware to the most recent version."
 	notes=str()
 
-	genFile.genr(cb, plugin_ids, name, description, risk_description, recommendation, notes)
+	ap = genFile.genr(cb, plugin_ids, name, description, risk_description, recommendation, notes)
+	if not ap is None:
+		appendices += ap
+
+
+
+	if appendices:
+		return appendices

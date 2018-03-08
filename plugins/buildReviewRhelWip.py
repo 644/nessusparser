@@ -1,6 +1,8 @@
 from plugins import genFile
 
 def gen(cb):
+	appendices = []
+
 	notes=str()
 	description=str()
 
@@ -9,7 +11,9 @@ def gen(cb):
 	risk_description=str()
 	recommendation=str()
 
-	genFile.genr(cb, plugin_ids, name, description, risk_description, recommendation, notes)
+	ap = genFile.genr(cb, plugin_ids, name, description, risk_description, recommendation, notes)
+	if not ap is None:
+		appendices += ap
 
 
 	# New plugin_ids Ensurenoduplicateusernamesexist(CompliancePlugin):
@@ -18,7 +22,9 @@ def gen(cb):
 	risk_description=str()
 	recommendation=str()
 
-	genFile.genr(cb, plugin_ids, name, description, risk_description, recommendation, notes)
+	ap = genFile.genr(cb, plugin_ids, name, description, risk_description, recommendation, notes)
+	if not ap is None:
+		appendices += ap
 
 
 	# New plugin_ids EnsurenoduplicateGIDsexist(CompliancePlugin):
@@ -27,7 +33,9 @@ def gen(cb):
 	risk_description=str()
 	recommendation=str()
 
-	genFile.genr(cb, plugin_ids, name, description, risk_description, recommendation, notes)
+	ap = genFile.genr(cb, plugin_ids, name, description, risk_description, recommendation, notes)
+	if not ap is None:
+		appendices += ap
 
 
 	# New plugin_ids EnsurenoduplicateUIDsexist(CompliancePlugin):
@@ -36,7 +44,9 @@ def gen(cb):
 	risk_description=str()
 	recommendation=str()
 
-	genFile.genr(cb, plugin_ids, name, description, risk_description, recommendation, notes)
+	ap = genFile.genr(cb, plugin_ids, name, description, risk_description, recommendation, notes)
+	if not ap is None:
+		appendices += ap
 
 
 	# New plugin_ids Ensureallgroupsinetcpasswdexistinetcgroup(CompliancePlugin):
@@ -45,7 +55,9 @@ def gen(cb):
 	risk_description=str()
 	recommendation=str()
 
-	genFile.genr(cb, plugin_ids, name, description, risk_description, recommendation, notes)
+	ap = genFile.genr(cb, plugin_ids, name, description, risk_description, recommendation, notes)
+	if not ap is None:
+		appendices += ap
 
 
 	# New plugin_ids Ensurenousershaverhostsfiles(CompliancePlugin):
@@ -54,7 +66,9 @@ def gen(cb):
 	risk_description=str()
 	recommendation=str()
 
-	genFile.genr(cb, plugin_ids, name, description, risk_description, recommendation, notes)
+	ap = genFile.genr(cb, plugin_ids, name, description, risk_description, recommendation, notes)
+	if not ap is None:
+		appendices += ap
 
 
 	# New plugin_ids EnsureusersnetrcFilesarenotgrouporworldaccessible(CompliancePlugin):
@@ -63,7 +77,9 @@ def gen(cb):
 	risk_description=str()
 	recommendation=str()
 
-	genFile.genr(cb, plugin_ids, name, description, risk_description, recommendation, notes)
+	ap = genFile.genr(cb, plugin_ids, name, description, risk_description, recommendation, notes)
+	if not ap is None:
+		appendices += ap
 
 
 	# New plugin_ids Ensurenousershavenetrcfiles(CompliancePlugin):
@@ -72,7 +88,9 @@ def gen(cb):
 	risk_description=str()
 	recommendation=str()
 
-	genFile.genr(cb, plugin_ids, name, description, risk_description, recommendation, notes)
+	ap = genFile.genr(cb, plugin_ids, name, description, risk_description, recommendation, notes)
+	if not ap is None:
+		appendices += ap
 
 
 	# New plugin_ids Ensurenousershaveforwardfiles(CompliancePlugin):
@@ -81,7 +99,9 @@ def gen(cb):
 	risk_description=str()
 	recommendation=str()
 
-	genFile.genr(cb, plugin_ids, name, description, risk_description, recommendation, notes)
+	ap = genFile.genr(cb, plugin_ids, name, description, risk_description, recommendation, notes)
+	if not ap is None:
+		appendices += ap
 
 
 	# New plugin_ids Ensureusersdotfilesarenotgrouporworldwritable(CompliancePlugin):
@@ -90,7 +110,9 @@ def gen(cb):
 	risk_description=str()
 	recommendation=str()
 
-	genFile.genr(cb, plugin_ids, name, description, risk_description, recommendation, notes)
+	ap = genFile.genr(cb, plugin_ids, name, description, risk_description, recommendation, notes)
+	if not ap is None:
+		appendices += ap
 
 
 	# New plugin_ids Ensureusersowntheirhomedirectories(CompliancePlugin):
@@ -99,7 +121,9 @@ def gen(cb):
 	risk_description=str()
 	recommendation=str()
 
-	genFile.genr(cb, plugin_ids, name, description, risk_description, recommendation, notes)
+	ap = genFile.genr(cb, plugin_ids, name, description, risk_description, recommendation, notes)
+	if not ap is None:
+		appendices += ap
 
 
 	# New plugin_ids Ensureusershomedirectoriespermissionsare750ormorerestrictive(CompliancePlugin):
@@ -108,7 +132,9 @@ def gen(cb):
 	risk_description=str()
 	recommendation=str()
 
-	genFile.genr(cb, plugin_ids, name, description, risk_description, recommendation, notes)
+	ap = genFile.genr(cb, plugin_ids, name, description, risk_description, recommendation, notes)
+	if not ap is None:
+		appendices += ap
 
 
 	# New plugin_ids Ensureallusershomedirectoriesexist(CompliancePlugin):
@@ -117,7 +143,9 @@ def gen(cb):
 	risk_description=str()
 	recommendation=str()
 
-	genFile.genr(cb, plugin_ids, name, description, risk_description, recommendation, notes)
+	ap = genFile.genr(cb, plugin_ids, name, description, risk_description, recommendation, notes)
+	if not ap is None:
+		appendices += ap
 
 
 	# New plugin_ids EnsurerootPATHIntegrity(CompliancePlugin):
@@ -126,7 +154,9 @@ def gen(cb):
 	risk_description=str()
 	recommendation=str()
 
-	genFile.genr(cb, plugin_ids, name, description, risk_description, recommendation, notes)
+	ap = genFile.genr(cb, plugin_ids, name, description, risk_description, recommendation, notes)
+	if not ap is None:
+		appendices += ap
 
 
 	# New plugin_ids EnsurerootistheonlyUID0account(CompliancePlugin):
@@ -135,7 +165,9 @@ def gen(cb):
 	risk_description=str()
 	recommendation=str()
 
-	genFile.genr(cb, plugin_ids, name, description, risk_description, recommendation, notes)
+	ap = genFile.genr(cb, plugin_ids, name, description, risk_description, recommendation, notes)
+	if not ap is None:
+		appendices += ap
 
 
 	# New plugin_ids Ensurenolegacyentriesexistinetcgroup(CompliancePlugin):
@@ -144,7 +176,9 @@ def gen(cb):
 	risk_description=str()
 	recommendation=str()
 
-	genFile.genr(cb, plugin_ids, name, description, risk_description, recommendation, notes)
+	ap = genFile.genr(cb, plugin_ids, name, description, risk_description, recommendation, notes)
+	if not ap is None:
+		appendices += ap
 
 
 	# New plugin_ids Ensurenolegacyentriesexistinetcshadow(CompliancePlugin):
@@ -153,7 +187,9 @@ def gen(cb):
 	risk_description=str()
 	recommendation=str()
 
-	genFile.genr(cb, plugin_ids, name, description, risk_description, recommendation, notes)
+	ap = genFile.genr(cb, plugin_ids, name, description, risk_description, recommendation, notes)
+	if not ap is None:
+		appendices += ap
 
 
 	# New plugin_ids Ensurenolegacyentriesexistinetcpasswd(CompliancePlugin):
@@ -162,7 +198,9 @@ def gen(cb):
 	risk_description=str()
 	recommendation=str()
 
-	genFile.genr(cb, plugin_ids, name, description, risk_description, recommendation, notes)
+	ap = genFile.genr(cb, plugin_ids, name, description, risk_description, recommendation, notes)
+	if not ap is None:
+		appendices += ap
 
 
 	# New plugin_ids Ensurepasswordfieldsarenotempty(CompliancePlugin):
@@ -171,7 +209,9 @@ def gen(cb):
 	risk_description=str()
 	recommendation=str()
 
-	genFile.genr(cb, plugin_ids, name, description, risk_description, recommendation, notes)
+	ap = genFile.genr(cb, plugin_ids, name, description, risk_description, recommendation, notes)
+	if not ap is None:
+		appendices += ap
 
 
 	# New plugin_ids AuditSGIDexecutables(CompliancePlugin):
@@ -180,7 +220,9 @@ def gen(cb):
 	risk_description=str()
 	recommendation=str()
 
-	genFile.genr(cb, plugin_ids, name, description, risk_description, recommendation, notes)
+	ap = genFile.genr(cb, plugin_ids, name, description, risk_description, recommendation, notes)
+	if not ap is None:
+		appendices += ap
 
 
 	# New plugin_ids AuditSUIDexecutables(CompliancePlugin):
@@ -189,7 +231,9 @@ def gen(cb):
 	risk_description=str()
 	recommendation=str()
 
-	genFile.genr(cb, plugin_ids, name, description, risk_description, recommendation, notes)
+	ap = genFile.genr(cb, plugin_ids, name, description, risk_description, recommendation, notes)
+	if not ap is None:
+		appendices += ap
 
 
 	# New plugin_ids Ensurenoungroupedfilesordirectoriesexist(CompliancePlugin):
@@ -198,7 +242,9 @@ def gen(cb):
 	risk_description=str()
 	recommendation=str()
 
-	genFile.genr(cb, plugin_ids, name, description, risk_description, recommendation, notes)
+	ap = genFile.genr(cb, plugin_ids, name, description, risk_description, recommendation, notes)
+	if not ap is None:
+		appendices += ap
 
 
 	# New plugin_ids Ensurenounownedfilesordirectoriesexist(CompliancePlugin):
@@ -207,7 +253,9 @@ def gen(cb):
 	risk_description=str()
 	recommendation=str()
 
-	genFile.genr(cb, plugin_ids, name, description, risk_description, recommendation, notes)
+	ap = genFile.genr(cb, plugin_ids, name, description, risk_description, recommendation, notes)
+	if not ap is None:
+		appendices += ap
 
 
 	# New plugin_ids Ensurenoworldwritablefilesexist(CompliancePlugin):
@@ -216,7 +264,9 @@ def gen(cb):
 	risk_description=str()
 	recommendation=str()
 
-	genFile.genr(cb, plugin_ids, name, description, risk_description, recommendation, notes)
+	ap = genFile.genr(cb, plugin_ids, name, description, risk_description, recommendation, notes)
+	if not ap is None:
+		appendices += ap
 
 
 	# New plugin_ids Ensurepermissionsonetcgshadowareconfigured(CompliancePlugin):
@@ -225,7 +275,9 @@ def gen(cb):
 	risk_description=str()
 	recommendation=str()
 
-	genFile.genr(cb, plugin_ids, name, description, risk_description, recommendation, notes)
+	ap = genFile.genr(cb, plugin_ids, name, description, risk_description, recommendation, notes)
+	if not ap is None:
+		appendices += ap
 
 
 	# New plugin_ids Ensurepermissionsonetcgroupareconfigured(CompliancePlugin):
@@ -234,7 +286,9 @@ def gen(cb):
 	risk_description=str()
 	recommendation=str()
 
-	genFile.genr(cb, plugin_ids, name, description, risk_description, recommendation, notes)
+	ap = genFile.genr(cb, plugin_ids, name, description, risk_description, recommendation, notes)
+	if not ap is None:
+		appendices += ap
 
 
 	# New plugin_ids Ensurepermissionsonetcshadowareconfigured(CompliancePlugin):
@@ -243,7 +297,9 @@ def gen(cb):
 	risk_description=str()
 	recommendation=str()
 
-	genFile.genr(cb, plugin_ids, name, description, risk_description, recommendation, notes)
+	ap = genFile.genr(cb, plugin_ids, name, description, risk_description, recommendation, notes)
+	if not ap is None:
+		appendices += ap
 
 
 	# New plugin_ids Ensurepermissionsonetcpasswdareconfigured(CompliancePlugin):
@@ -252,7 +308,9 @@ def gen(cb):
 	risk_description=str()
 	recommendation=str()
 
-	genFile.genr(cb, plugin_ids, name, description, risk_description, recommendation, notes)
+	ap = genFile.genr(cb, plugin_ids, name, description, risk_description, recommendation, notes)
+	if not ap is None:
+		appendices += ap
 
 
 	# New plugin_ids Ensurepermissionsonetcgshadowareconfigured(CompliancePlugin):
@@ -261,7 +319,9 @@ def gen(cb):
 	risk_description=str()
 	recommendation=str()
 
-	genFile.genr(cb, plugin_ids, name, description, risk_description, recommendation, notes)
+	ap = genFile.genr(cb, plugin_ids, name, description, risk_description, recommendation, notes)
+	if not ap is None:
+		appendices += ap
 
 
 	# New plugin_ids Ensurepermissionsonetcgroupareconfigured(CompliancePlugin):
@@ -270,7 +330,9 @@ def gen(cb):
 	risk_description=str()
 	recommendation=str()
 
-	genFile.genr(cb, plugin_ids, name, description, risk_description, recommendation, notes)
+	ap = genFile.genr(cb, plugin_ids, name, description, risk_description, recommendation, notes)
+	if not ap is None:
+		appendices += ap
 
 
 	# New plugin_ids Ensurepermissionsonetcshadowareconfigured(CompliancePlugin):
@@ -279,7 +341,9 @@ def gen(cb):
 	risk_description=str()
 	recommendation=str()
 
-	genFile.genr(cb, plugin_ids, name, description, risk_description, recommendation, notes)
+	ap = genFile.genr(cb, plugin_ids, name, description, risk_description, recommendation, notes)
+	if not ap is None:
+		appendices += ap
 
 
 	# New plugin_ids Ensurepermissionsonetcpasswdareconfigured(CompliancePlugin):
@@ -288,7 +352,9 @@ def gen(cb):
 	risk_description=str()
 	recommendation=str()
 
-	genFile.genr(cb, plugin_ids, name, description, risk_description, recommendation, notes)
+	ap = genFile.genr(cb, plugin_ids, name, description, risk_description, recommendation, notes)
+	if not ap is None:
+		appendices += ap
 
 
 	# New plugin_ids Ensureaccesstothesucommandisrestrictedwheelgroupcontainsroot(CompliancePlugin):
@@ -297,7 +363,9 @@ def gen(cb):
 	risk_description=str()
 	recommendation=str()
 
-	genFile.genr(cb, plugin_ids, name, description, risk_description, recommendation, notes)
+	ap = genFile.genr(cb, plugin_ids, name, description, risk_description, recommendation, notes)
+	if not ap is None:
+		appendices += ap
 
 
 	# New plugin_ids Ensureaccesstothesucommandisrestrictedpam_wheelso(CompliancePlugin):
@@ -306,7 +374,9 @@ def gen(cb):
 	risk_description=str()
 	recommendation=str()
 
-	genFile.genr(cb, plugin_ids, name, description, risk_description, recommendation, notes)
+	ap = genFile.genr(cb, plugin_ids, name, description, risk_description, recommendation, notes)
+	if not ap is None:
+		appendices += ap
 
 
 	# New plugin_ids Ensurerootloginisrestrictedtosystemconsole(CompliancePlugin):
@@ -315,7 +385,9 @@ def gen(cb):
 	risk_description=str()
 	recommendation=str()
 
-	genFile.genr(cb, plugin_ids, name, description, risk_description, recommendation, notes)
+	ap = genFile.genr(cb, plugin_ids, name, description, risk_description, recommendation, notes)
+	if not ap is None:
+		appendices += ap
 
 
 	# New plugin_ids Ensuredefaultuserumaskis027ormorerestrictiveetcprofile(CompliancePlugin):
@@ -324,7 +396,9 @@ def gen(cb):
 	risk_description=str()
 	recommendation=str()
 
-	genFile.genr(cb, plugin_ids, name, description, risk_description, recommendation, notes)
+	ap = genFile.genr(cb, plugin_ids, name, description, risk_description, recommendation, notes)
+	if not ap is None:
+		appendices += ap
 
 
 	# New plugin_ids Ensuredefaultuserumaskis027ormorerestrictiveetcbashrc(CompliancePlugin):
@@ -333,7 +407,9 @@ def gen(cb):
 	risk_description=str()
 	recommendation=str()
 
-	genFile.genr(cb, plugin_ids, name, description, risk_description, recommendation, notes)
+	ap = genFile.genr(cb, plugin_ids, name, description, risk_description, recommendation, notes)
+	if not ap is None:
+		appendices += ap
 
 
 	# New plugin_ids EnsuredefaultgroupfortherootaccountisGID0(CompliancePlugin):
@@ -342,7 +418,9 @@ def gen(cb):
 	risk_description=str()
 	recommendation=str()
 
-	genFile.genr(cb, plugin_ids, name, description, risk_description, recommendation, notes)
+	ap = genFile.genr(cb, plugin_ids, name, description, risk_description, recommendation, notes)
+	if not ap is None:
+		appendices += ap
 
 
 	# New plugin_ids Ensuresystemaccountsarenonlogin(CompliancePlugin):
@@ -351,7 +429,9 @@ def gen(cb):
 	risk_description=str()
 	recommendation=str()
 
-	genFile.genr(cb, plugin_ids, name, description, risk_description, recommendation, notes)
+	ap = genFile.genr(cb, plugin_ids, name, description, risk_description, recommendation, notes)
+	if not ap is None:
+		appendices += ap
 
 
 	# New plugin_ids Ensureinactivepasswordlockis30daysorless(CompliancePlugin):
@@ -360,7 +440,9 @@ def gen(cb):
 	risk_description=str()
 	recommendation=str()
 
-	genFile.genr(cb, plugin_ids, name, description, risk_description, recommendation, notes)
+	ap = genFile.genr(cb, plugin_ids, name, description, risk_description, recommendation, notes)
+	if not ap is None:
+		appendices += ap
 
 
 	# New plugin_ids Ensurepasswordexpirationwarningdaysis7ormore(CompliancePlugin):
@@ -369,7 +451,9 @@ def gen(cb):
 	risk_description=str()
 	recommendation=str()
 
-	genFile.genr(cb, plugin_ids, name, description, risk_description, recommendation, notes)
+	ap = genFile.genr(cb, plugin_ids, name, description, risk_description, recommendation, notes)
+	if not ap is None:
+		appendices += ap
 
 
 	# New plugin_ids Ensureminimumdaysbetweenpasswordchangesis7ormore(CompliancePlugin):
@@ -378,7 +462,9 @@ def gen(cb):
 	risk_description=str()
 	recommendation=str()
 
-	genFile.genr(cb, plugin_ids, name, description, risk_description, recommendation, notes)
+	ap = genFile.genr(cb, plugin_ids, name, description, risk_description, recommendation, notes)
+	if not ap is None:
+		appendices += ap
 
 
 	# New plugin_ids Ensurepasswordexpirationis90daysorless(CompliancePlugin):
@@ -387,7 +473,9 @@ def gen(cb):
 	risk_description=str()
 	recommendation=str()
 
-	genFile.genr(cb, plugin_ids, name, description, risk_description, recommendation, notes)
+	ap = genFile.genr(cb, plugin_ids, name, description, risk_description, recommendation, notes)
+	if not ap is None:
+		appendices += ap
 
 
 	# New plugin_ids EnsurepasswordhashingalgorithmisSHA512passwordauth(CompliancePlugin):
@@ -396,7 +484,9 @@ def gen(cb):
 	risk_description=str()
 	recommendation=str()
 
-	genFile.genr(cb, plugin_ids, name, description, risk_description, recommendation, notes)
+	ap = genFile.genr(cb, plugin_ids, name, description, risk_description, recommendation, notes)
+	if not ap is None:
+		appendices += ap
 
 
 	# New plugin_ids EnsurepasswordhashingalgorithmisSHA512systemauth(CompliancePlugin):
@@ -405,7 +495,9 @@ def gen(cb):
 	risk_description=str()
 	recommendation=str()
 
-	genFile.genr(cb, plugin_ids, name, description, risk_description, recommendation, notes)
+	ap = genFile.genr(cb, plugin_ids, name, description, risk_description, recommendation, notes)
+	if not ap is None:
+		appendices += ap
 
 
 	# New plugin_ids Ensurepasswordreuseislimitedpasswordauth(CompliancePlugin):
@@ -414,7 +506,9 @@ def gen(cb):
 	risk_description=str()
 	recommendation=str()
 
-	genFile.genr(cb, plugin_ids, name, description, risk_description, recommendation, notes)
+	ap = genFile.genr(cb, plugin_ids, name, description, risk_description, recommendation, notes)
+	if not ap is None:
+		appendices += ap
 
 
 	# New plugin_ids Ensurepasswordreuseislimitedsystemauth(CompliancePlugin):
@@ -423,7 +517,9 @@ def gen(cb):
 	risk_description=str()
 	recommendation=str()
 
-	genFile.genr(cb, plugin_ids, name, description, risk_description, recommendation, notes)
+	ap = genFile.genr(cb, plugin_ids, name, description, risk_description, recommendation, notes)
+	if not ap is None:
+		appendices += ap
 
 
 	# New plugin_ids Lockoutforfailedpasswordattemptspasswordauthauthsufficientpamfaillocksoauthsuccauditdeny5unlocktime900(CompliancePlugin):
@@ -432,7 +528,9 @@ def gen(cb):
 	risk_description=str()
 	recommendation=str()
 
-	genFile.genr(cb, plugin_ids, name, description, risk_description, recommendation, notes)
+	ap = genFile.genr(cb, plugin_ids, name, description, risk_description, recommendation, notes)
+	if not ap is None:
+		appendices += ap
 
 
 	# New plugin_ids Lockoutforfailedpasswordattemptspasswordauthauthdefaultdiepamfaillocksoauthfailauditdeny5unlocktime900(CompliancePlugin):
@@ -441,7 +539,9 @@ def gen(cb):
 	risk_description=str()
 	recommendation=str()
 
-	genFile.genr(cb, plugin_ids, name, description, risk_description, recommendation, notes)
+	ap = genFile.genr(cb, plugin_ids, name, description, risk_description, recommendation, notes)
+	if not ap is None:
+		appendices += ap
 
 
 	# New plugin_ids Lockoutforfailedpasswordattemptspasswordauthauthsuccess1defaultbadpamunixso(CompliancePlugin):
@@ -450,7 +550,9 @@ def gen(cb):
 	risk_description=str()
 	recommendation=str()
 
-	genFile.genr(cb, plugin_ids, name, description, risk_description, recommendation, notes)
+	ap = genFile.genr(cb, plugin_ids, name, description, risk_description, recommendation, notes)
+	if not ap is None:
+		appendices += ap
 
 
 	# New plugin_ids Lockoutforfailedpasswordattemptspasswordauthauthrequiredpamfaillocksopreauthauditsilentdeny5unlocktime900(CompliancePlugin):
@@ -459,7 +561,9 @@ def gen(cb):
 	risk_description=str()
 	recommendation=str()
 
-	genFile.genr(cb, plugin_ids, name, description, risk_description, recommendation, notes)
+	ap = genFile.genr(cb, plugin_ids, name, description, risk_description, recommendation, notes)
+	if not ap is None:
+		appendices += ap
 
 
 	# New plugin_ids Lockoutforfailedpasswordattemptssystemauthauthsufficientpamfaillocksoauthsuccauditdeny5unlocktime900(CompliancePlugin):
@@ -468,7 +572,9 @@ def gen(cb):
 	risk_description=str()
 	recommendation=str()
 
-	genFile.genr(cb, plugin_ids, name, description, risk_description, recommendation, notes)
+	ap = genFile.genr(cb, plugin_ids, name, description, risk_description, recommendation, notes)
+	if not ap is None:
+		appendices += ap
 
 
 	# New plugin_ids Lockoutforfailedpasswordattemptssystemauthauthdefaultdiepamfaillocksoauthfailauditdeny5unlocktime900(CompliancePlugin):
@@ -477,7 +583,9 @@ def gen(cb):
 	risk_description=str()
 	recommendation=str()
 
-	genFile.genr(cb, plugin_ids, name, description, risk_description, recommendation, notes)
+	ap = genFile.genr(cb, plugin_ids, name, description, risk_description, recommendation, notes)
+	if not ap is None:
+		appendices += ap
 
 
 	# New plugin_ids Lockoutforfailedpasswordattemptssystemauthauthsuccess1defaultbadpamunixso(CompliancePlugin):
@@ -486,7 +594,9 @@ def gen(cb):
 	risk_description=str()
 	recommendation=str()
 
-	genFile.genr(cb, plugin_ids, name, description, risk_description, recommendation, notes)
+	ap = genFile.genr(cb, plugin_ids, name, description, risk_description, recommendation, notes)
+	if not ap is None:
+		appendices += ap
 
 
 	# New plugin_ids Lockoutforfailedpasswordattemptssystemauthauthrequiredpamfaillocksopreauthauditsilentdeny5unlocktime900(CompliancePlugin):
@@ -495,7 +605,9 @@ def gen(cb):
 	risk_description=str()
 	recommendation=str()
 
-	genFile.genr(cb, plugin_ids, name, description, risk_description, recommendation, notes)
+	ap = genFile.genr(cb, plugin_ids, name, description, risk_description, recommendation, notes)
+	if not ap is None:
+		appendices += ap
 
 
 	# New plugin_ids Ensurepasswordcreationrequirementsareconfiguredlcredit(CompliancePlugin):
@@ -504,7 +616,9 @@ def gen(cb):
 	risk_description=str()
 	recommendation=str()
 
-	genFile.genr(cb, plugin_ids, name, description, risk_description, recommendation, notes)
+	ap = genFile.genr(cb, plugin_ids, name, description, risk_description, recommendation, notes)
+	if not ap is None:
+		appendices += ap
 
 
 	# New plugin_ids Ensurepasswordcreationrequirementsareconfiguredocredit(CompliancePlugin):
@@ -513,7 +627,9 @@ def gen(cb):
 	risk_description=str()
 	recommendation=str()
 
-	genFile.genr(cb, plugin_ids, name, description, risk_description, recommendation, notes)
+	ap = genFile.genr(cb, plugin_ids, name, description, risk_description, recommendation, notes)
+	if not ap is None:
+		appendices += ap
 
 
 	# New plugin_ids Ensurepasswordcreationrequirementsareconfigureducredit(CompliancePlugin):
@@ -522,7 +638,9 @@ def gen(cb):
 	risk_description=str()
 	recommendation=str()
 
-	genFile.genr(cb, plugin_ids, name, description, risk_description, recommendation, notes)
+	ap = genFile.genr(cb, plugin_ids, name, description, risk_description, recommendation, notes)
+	if not ap is None:
+		appendices += ap
 
 
 	# New plugin_ids Ensurepasswordcreationrequirementsareconfigureddcredit(CompliancePlugin):
@@ -531,7 +649,9 @@ def gen(cb):
 	risk_description=str()
 	recommendation=str()
 
-	genFile.genr(cb, plugin_ids, name, description, risk_description, recommendation, notes)
+	ap = genFile.genr(cb, plugin_ids, name, description, risk_description, recommendation, notes)
+	if not ap is None:
+		appendices += ap
 
 
 	# New plugin_ids Ensurepasswordcreationrequirementsareconfiguredminlen(CompliancePlugin):
@@ -540,7 +660,9 @@ def gen(cb):
 	risk_description=str()
 	recommendation=str()
 
-	genFile.genr(cb, plugin_ids, name, description, risk_description, recommendation, notes)
+	ap = genFile.genr(cb, plugin_ids, name, description, risk_description, recommendation, notes)
+	if not ap is None:
+		appendices += ap
 
 
 	# New plugin_ids Ensurepasswordcreationrequirementsareconfiguredsystemauthretry3(CompliancePlugin):
@@ -549,7 +671,9 @@ def gen(cb):
 	risk_description=str()
 	recommendation=str()
 
-	genFile.genr(cb, plugin_ids, name, description, risk_description, recommendation, notes)
+	ap = genFile.genr(cb, plugin_ids, name, description, risk_description, recommendation, notes)
+	if not ap is None:
+		appendices += ap
 
 
 	# New plugin_ids Ensurepasswordcreationrequirementsareconfiguredpasswordauthretry3(CompliancePlugin):
@@ -558,7 +682,9 @@ def gen(cb):
 	risk_description=str()
 	recommendation=str()
 
-	genFile.genr(cb, plugin_ids, name, description, risk_description, recommendation, notes)
+	ap = genFile.genr(cb, plugin_ids, name, description, risk_description, recommendation, notes)
+	if not ap is None:
+		appendices += ap
 
 
 	# New plugin_ids Ensurepasswordcreationrequirementsareconfiguredsystemauthtryfirstpass(CompliancePlugin):
@@ -567,7 +693,9 @@ def gen(cb):
 	risk_description=str()
 	recommendation=str()
 
-	genFile.genr(cb, plugin_ids, name, description, risk_description, recommendation, notes)
+	ap = genFile.genr(cb, plugin_ids, name, description, risk_description, recommendation, notes)
+	if not ap is None:
+		appendices += ap
 
 
 	# New plugin_ids Ensurepasswordcreationrequirementsareconfiguredpasswordauthtryfirstpass(CompliancePlugin):
@@ -576,7 +704,9 @@ def gen(cb):
 	risk_description=str()
 	recommendation=str()
 
-	genFile.genr(cb, plugin_ids, name, description, risk_description, recommendation, notes)
+	ap = genFile.genr(cb, plugin_ids, name, description, risk_description, recommendation, notes)
+	if not ap is None:
+		appendices += ap
 
 
 	# New plugin_ids EnsureSSHwarningbannerisconfigured(CompliancePlugin):
@@ -585,7 +715,9 @@ def gen(cb):
 	risk_description=str()
 	recommendation=str()
 
-	genFile.genr(cb, plugin_ids, name, description, risk_description, recommendation, notes)
+	ap = genFile.genr(cb, plugin_ids, name, description, risk_description, recommendation, notes)
+	if not ap is None:
+		appendices += ap
 
 
 	# New plugin_ids EnsureSSHaccessislimited(CompliancePlugin):
@@ -594,7 +726,9 @@ def gen(cb):
 	risk_description=str()
 	recommendation=str()
 
-	genFile.genr(cb, plugin_ids, name, description, risk_description, recommendation, notes)
+	ap = genFile.genr(cb, plugin_ids, name, description, risk_description, recommendation, notes)
+	if not ap is None:
+		appendices += ap
 
 
 	# New plugin_ids EnsureSSHLoginGraceTimeissettooneminuteorless(CompliancePlugin):
@@ -603,7 +737,9 @@ def gen(cb):
 	risk_description=str()
 	recommendation=str()
 
-	genFile.genr(cb, plugin_ids, name, description, risk_description, recommendation, notes)
+	ap = genFile.genr(cb, plugin_ids, name, description, risk_description, recommendation, notes)
+	if not ap is None:
+		appendices += ap
 
 
 	# New plugin_ids EnsureSSHIdleTimeoutIntervalisconfiguredClientAliveCountMax(CompliancePlugin):
@@ -612,7 +748,9 @@ def gen(cb):
 	risk_description=str()
 	recommendation=str()
 
-	genFile.genr(cb, plugin_ids, name, description, risk_description, recommendation, notes)
+	ap = genFile.genr(cb, plugin_ids, name, description, risk_description, recommendation, notes)
+	if not ap is None:
+		appendices += ap
 
 
 	# New plugin_ids EnsureSSHIdleTimeoutIntervalisconfiguredClientAliveInterval(CompliancePlugin):
@@ -621,7 +759,9 @@ def gen(cb):
 	risk_description=str()
 	recommendation=str()
 
-	genFile.genr(cb, plugin_ids, name, description, risk_description, recommendation, notes)
+	ap = genFile.genr(cb, plugin_ids, name, description, risk_description, recommendation, notes)
+	if not ap is None:
+		appendices += ap
 
 
 	# New plugin_ids EnsureonlyapprovedMACalgorithmsareused(CompliancePlugin):
@@ -630,7 +770,9 @@ def gen(cb):
 	risk_description=str()
 	recommendation="Edit the /etc/ssh/sshd_config file to set the parameter in accordance with organisation/environment policy. The following includes all supported and accepted MACs:\n\nMACS hmac-sha2-512-etm@openssh.com,hmac-sha2-256-etm@openssh.com,umac-128-etm@openssh.com,hmac-sha2-512,hmac-sha2-256,umac-128@openssh.com"
 
-	genFile.genr(cb, plugin_ids, name, description, risk_description, recommendation, notes)
+	ap = genFile.genr(cb, plugin_ids, name, description, risk_description, recommendation, notes)
+	if not ap is None:
+		appendices += ap
 
 
 	# New plugin_ids Ensureonlyapprovedciphersareused(CompliancePlugin):
@@ -639,7 +781,9 @@ def gen(cb):
 	risk_description=str()
 	recommendation=str()
 
-	genFile.genr(cb, plugin_ids, name, description, risk_description, recommendation, notes)
+	ap = genFile.genr(cb, plugin_ids, name, description, risk_description, recommendation, notes)
+	if not ap is None:
+		appendices += ap
 
 
 	# New plugin_ids EnsureSSHPermitUserEnvironmentisdisabled(CompliancePlugin):
@@ -648,7 +792,9 @@ def gen(cb):
 	risk_description=str()
 	recommendation=str()
 
-	genFile.genr(cb, plugin_ids, name, description, risk_description, recommendation, notes)
+	ap = genFile.genr(cb, plugin_ids, name, description, risk_description, recommendation, notes)
+	if not ap is None:
+		appendices += ap
 
 
 	# New plugin_ids EnsureSSHPermitEmptyPasswordsisdisabled(CompliancePlugin):
@@ -657,7 +803,9 @@ def gen(cb):
 	risk_description=str()
 	recommendation=str()
 
-	genFile.genr(cb, plugin_ids, name, description, risk_description, recommendation, notes)
+	ap = genFile.genr(cb, plugin_ids, name, description, risk_description, recommendation, notes)
+	if not ap is None:
+		appendices += ap
 
 
 	# New plugin_ids EnsureSSHrootloginisdisabled(CompliancePlugin):
@@ -666,7 +814,9 @@ def gen(cb):
 	risk_description=str()
 	recommendation=str()
 
-	genFile.genr(cb, plugin_ids, name, description, risk_description, recommendation, notes)
+	ap = genFile.genr(cb, plugin_ids, name, description, risk_description, recommendation, notes)
+	if not ap is None:
+		appendices += ap
 
 
 	# New plugin_ids EnsureSSHHostbasedAuthenticationisdisabled(CompliancePlugin):
@@ -675,7 +825,9 @@ def gen(cb):
 	risk_description=str()
 	recommendation=str()
 
-	genFile.genr(cb, plugin_ids, name, description, risk_description, recommendation, notes)
+	ap = genFile.genr(cb, plugin_ids, name, description, risk_description, recommendation, notes)
+	if not ap is None:
+		appendices += ap
 
 
 	# New plugin_ids EnsureSSHIgnoreRhostsisenabled(CompliancePlugin):
@@ -684,7 +836,9 @@ def gen(cb):
 	risk_description=str()
 	recommendation=str()
 
-	genFile.genr(cb, plugin_ids, name, description, risk_description, recommendation, notes)
+	ap = genFile.genr(cb, plugin_ids, name, description, risk_description, recommendation, notes)
+	if not ap is None:
+		appendices += ap
 
 
 	# New plugin_ids EnsureSSHMaxAuthTriesissetto4orless(CompliancePlugin):
@@ -693,7 +847,9 @@ def gen(cb):
 	risk_description=str()
 	recommendation=str()
 
-	genFile.genr(cb, plugin_ids, name, description, risk_description, recommendation, notes)
+	ap = genFile.genr(cb, plugin_ids, name, description, risk_description, recommendation, notes)
+	if not ap is None:
+		appendices += ap
 
 
 	# New plugin_ids EnsureSSHX11forwardingisdisabled(CompliancePlugin):
@@ -702,7 +858,9 @@ def gen(cb):
 	risk_description=str()
 	recommendation=str()
 
-	genFile.genr(cb, plugin_ids, name, description, risk_description, recommendation, notes)
+	ap = genFile.genr(cb, plugin_ids, name, description, risk_description, recommendation, notes)
+	if not ap is None:
+		appendices += ap
 
 
 	# New plugin_ids EnsureSSHLogLevelissettoINFO(CompliancePlugin):
@@ -711,7 +869,9 @@ def gen(cb):
 	risk_description=str()
 	recommendation=str()
 
-	genFile.genr(cb, plugin_ids, name, description, risk_description, recommendation, notes)
+	ap = genFile.genr(cb, plugin_ids, name, description, risk_description, recommendation, notes)
+	if not ap is None:
+		appendices += ap
 
 
 	# New plugin_ids EnsureSSHProtocolissetto2(CompliancePlugin):
@@ -720,7 +880,9 @@ def gen(cb):
 	risk_description=str()
 	recommendation=str()
 
-	genFile.genr(cb, plugin_ids, name, description, risk_description, recommendation, notes)
+	ap = genFile.genr(cb, plugin_ids, name, description, risk_description, recommendation, notes)
+	if not ap is None:
+		appendices += ap
 
 
 	# New plugin_ids Ensurepermissionsonetcsshsshd_configareconfigured(CompliancePlugin):
@@ -729,7 +891,9 @@ def gen(cb):
 	risk_description=str()
 	recommendation=str()
 
-	genFile.genr(cb, plugin_ids, name, description, risk_description, recommendation, notes)
+	ap = genFile.genr(cb, plugin_ids, name, description, risk_description, recommendation, notes)
+	if not ap is None:
+		appendices += ap
 
 
 	# New plugin_ids Ensureatcronisrestrictedtoauthorizedusersatdeny(CompliancePlugin):
@@ -738,7 +902,9 @@ def gen(cb):
 	risk_description=str()
 	recommendation=str()
 
-	genFile.genr(cb, plugin_ids, name, description, risk_description, recommendation, notes)
+	ap = genFile.genr(cb, plugin_ids, name, description, risk_description, recommendation, notes)
+	if not ap is None:
+		appendices += ap
 
 
 	# New plugin_ids Ensureatcronisrestrictedtoauthorizedusersatallow(CompliancePlugin):
@@ -747,7 +913,9 @@ def gen(cb):
 	risk_description=str()
 	recommendation=str()
 
-	genFile.genr(cb, plugin_ids, name, description, risk_description, recommendation, notes)
+	ap = genFile.genr(cb, plugin_ids, name, description, risk_description, recommendation, notes)
+	if not ap is None:
+		appendices += ap
 
 
 	# New plugin_ids Ensureatcronisrestrictedtoauthorizeduserscrondeny(CompliancePlugin):
@@ -756,7 +924,9 @@ def gen(cb):
 	risk_description=str()
 	recommendation=str()
 
-	genFile.genr(cb, plugin_ids, name, description, risk_description, recommendation, notes)
+	ap = genFile.genr(cb, plugin_ids, name, description, risk_description, recommendation, notes)
+	if not ap is None:
+		appendices += ap
 
 
 	# New plugin_ids Ensureatcronisrestrictedtoauthorizeduserscronallow(CompliancePlugin):
@@ -765,7 +935,9 @@ def gen(cb):
 	risk_description=str()
 	recommendation=str()
 
-	genFile.genr(cb, plugin_ids, name, description, risk_description, recommendation, notes)
+	ap = genFile.genr(cb, plugin_ids, name, description, risk_description, recommendation, notes)
+	if not ap is None:
+		appendices += ap
 
 
 	# New plugin_ids Ensurepermissionsonetccrondareconfigured(CompliancePlugin):
@@ -774,7 +946,9 @@ def gen(cb):
 	risk_description=str()
 	recommendation=str()
 
-	genFile.genr(cb, plugin_ids, name, description, risk_description, recommendation, notes)
+	ap = genFile.genr(cb, plugin_ids, name, description, risk_description, recommendation, notes)
+	if not ap is None:
+		appendices += ap
 
 
 	# New plugin_ids Ensurepermissionsonetccronmonthlyareconfigured(CompliancePlugin):
@@ -783,7 +957,9 @@ def gen(cb):
 	risk_description=str()
 	recommendation=str()
 
-	genFile.genr(cb, plugin_ids, name, description, risk_description, recommendation, notes)
+	ap = genFile.genr(cb, plugin_ids, name, description, risk_description, recommendation, notes)
+	if not ap is None:
+		appendices += ap
 
 
 	# New plugin_ids Ensurepermissionsonetccronweeklyareconfigured(CompliancePlugin):
@@ -792,7 +968,9 @@ def gen(cb):
 	risk_description=str()
 	recommendation=str()
 
-	genFile.genr(cb, plugin_ids, name, description, risk_description, recommendation, notes)
+	ap = genFile.genr(cb, plugin_ids, name, description, risk_description, recommendation, notes)
+	if not ap is None:
+		appendices += ap
 
 
 	# New plugin_ids Ensurepermissionsonetccrondailyareconfigured(CompliancePlugin):
@@ -801,7 +979,9 @@ def gen(cb):
 	risk_description=str()
 	recommendation=str()
 
-	genFile.genr(cb, plugin_ids, name, description, risk_description, recommendation, notes)
+	ap = genFile.genr(cb, plugin_ids, name, description, risk_description, recommendation, notes)
+	if not ap is None:
+		appendices += ap
 
 
 	# New plugin_ids Ensurepermissionsonetccronhourlyareconfigured(CompliancePlugin):
@@ -810,7 +990,9 @@ def gen(cb):
 	risk_description=str()
 	recommendation=str()
 
-	genFile.genr(cb, plugin_ids, name, description, risk_description, recommendation, notes)
+	ap = genFile.genr(cb, plugin_ids, name, description, risk_description, recommendation, notes)
+	if not ap is None:
+		appendices += ap
 
 
 	# New plugin_ids Ensurepermissionsonetccrontabareconfigured(CompliancePlugin):
@@ -819,7 +1001,9 @@ def gen(cb):
 	risk_description=str()
 	recommendation=str()
 
-	genFile.genr(cb, plugin_ids, name, description, risk_description, recommendation, notes)
+	ap = genFile.genr(cb, plugin_ids, name, description, risk_description, recommendation, notes)
+	if not ap is None:
+		appendices += ap
 
 
 	# New plugin_ids Ensurecrondaemonisenabled(CompliancePlugin):
@@ -828,7 +1012,9 @@ def gen(cb):
 	risk_description=str()
 	recommendation=str()
 
-	genFile.genr(cb, plugin_ids, name, description, risk_description, recommendation, notes)
+	ap = genFile.genr(cb, plugin_ids, name, description, risk_description, recommendation, notes)
+	if not ap is None:
+		appendices += ap
 
 
 	# New plugin_ids Ensurelogrotateisconfigured(CompliancePlugin):
@@ -837,7 +1023,9 @@ def gen(cb):
 	risk_description=str()
 	recommendation=str()
 
-	genFile.genr(cb, plugin_ids, name, description, risk_description, recommendation, notes)
+	ap = genFile.genr(cb, plugin_ids, name, description, risk_description, recommendation, notes)
+	if not ap is None:
+		appendices += ap
 
 
 	# New plugin_ids Ensurepermissionsonalllogfilesareconfigured(CompliancePlugin):
@@ -846,7 +1034,9 @@ def gen(cb):
 	risk_description=str()
 	recommendation=str()
 
-	genFile.genr(cb, plugin_ids, name, description, risk_description, recommendation, notes)
+	ap = genFile.genr(cb, plugin_ids, name, description, risk_description, recommendation, notes)
+	if not ap is None:
+		appendices += ap
 
 
 	# New plugin_ids Ensurersyslogorsyslogngisinstalled(CompliancePlugin):
@@ -855,7 +1045,9 @@ def gen(cb):
 	risk_description=str()
 	recommendation=str()
 
-	genFile.genr(cb, plugin_ids, name, description, risk_description, recommendation, notes)
+	ap = genFile.genr(cb, plugin_ids, name, description, risk_description, recommendation, notes)
+	if not ap is None:
+		appendices += ap
 
 
 	# New plugin_ids EnsureremotersyslogmessagesareonlyacceptedondesignatedloghostsInputTCPServerRun514(CompliancePlugin):
@@ -864,7 +1056,9 @@ def gen(cb):
 	risk_description=str()
 	recommendation=str()
 
-	genFile.genr(cb, plugin_ids, name, description, risk_description, recommendation, notes)
+	ap = genFile.genr(cb, plugin_ids, name, description, risk_description, recommendation, notes)
+	if not ap is None:
+		appendices += ap
 
 
 	# New plugin_ids Ensureremotersyslogmessagesareonlyacceptedondesignatedloghostsimtcpso(CompliancePlugin):
@@ -873,7 +1067,9 @@ def gen(cb):
 	risk_description=str()
 	recommendation=str()
 
-	genFile.genr(cb, plugin_ids, name, description, risk_description, recommendation, notes)
+	ap = genFile.genr(cb, plugin_ids, name, description, risk_description, recommendation, notes)
+	if not ap is None:
+		appendices += ap
 
 
 	# New plugin_ids Ensurersyslogisconfiguredtosendlogstoaremoteloghost(CompliancePlugin):
@@ -882,7 +1078,9 @@ def gen(cb):
 	risk_description=str()
 	recommendation=str()
 
-	genFile.genr(cb, plugin_ids, name, description, risk_description, recommendation, notes)
+	ap = genFile.genr(cb, plugin_ids, name, description, risk_description, recommendation, notes)
+	if not ap is None:
+		appendices += ap
 
 
 	# New plugin_ids Ensurersyslogdefaultfilepermissionsconfigured(CompliancePlugin):
@@ -891,7 +1089,9 @@ def gen(cb):
 	risk_description=str()
 	recommendation=str()
 
-	genFile.genr(cb, plugin_ids, name, description, risk_description, recommendation, notes)
+	ap = genFile.genr(cb, plugin_ids, name, description, risk_description, recommendation, notes)
+	if not ap is None:
+		appendices += ap
 
 
 	# New plugin_ids Ensureloggingisconfigured(CompliancePlugin):
@@ -900,7 +1100,9 @@ def gen(cb):
 	risk_description=str()
 	recommendation=str()
 
-	genFile.genr(cb, plugin_ids, name, description, risk_description, recommendation, notes)
+	ap = genFile.genr(cb, plugin_ids, name, description, risk_description, recommendation, notes)
+	if not ap is None:
+		appendices += ap
 
 
 	# New plugin_ids EnsurersyslogServiceisenabled(CompliancePlugin):
@@ -909,7 +1111,9 @@ def gen(cb):
 	risk_description=str()
 	recommendation=str()
 
-	genFile.genr(cb, plugin_ids, name, description, risk_description, recommendation, notes)
+	ap = genFile.genr(cb, plugin_ids, name, description, risk_description, recommendation, notes)
+	if not ap is None:
+		appendices += ap
 
 
 	# New plugin_ids Ensurewirelessinterfacesaredisabled(CompliancePlugin):
@@ -918,7 +1122,9 @@ def gen(cb):
 	risk_description=str()
 	recommendation=str()
 
-	genFile.genr(cb, plugin_ids, name, description, risk_description, recommendation, notes)
+	ap = genFile.genr(cb, plugin_ids, name, description, risk_description, recommendation, notes)
+	if not ap is None:
+		appendices += ap
 
 
 	# New plugin_ids Ensurefirewallrulesexistforallopenports(CompliancePlugin):
@@ -927,7 +1133,9 @@ def gen(cb):
 	risk_description=str()
 	recommendation=str()
 
-	genFile.genr(cb, plugin_ids, name, description, risk_description, recommendation, notes)
+	ap = genFile.genr(cb, plugin_ids, name, description, risk_description, recommendation, notes)
+	if not ap is None:
+		appendices += ap
 
 
 	# New plugin_ids Ensureoutboundandestablishedconnectionsareconfigured(CompliancePlugin):
@@ -936,7 +1144,9 @@ def gen(cb):
 	risk_description=str()
 	recommendation=str()
 
-	genFile.genr(cb, plugin_ids, name, description, risk_description, recommendation, notes)
+	ap = genFile.genr(cb, plugin_ids, name, description, risk_description, recommendation, notes)
+	if not ap is None:
+		appendices += ap
 
 
 	# New plugin_ids Ensureloopbacktrafficisconfigured(CompliancePlugin):
@@ -945,7 +1155,9 @@ def gen(cb):
 	risk_description=str()
 	recommendation=str()
 
-	genFile.genr(cb, plugin_ids, name, description, risk_description, recommendation, notes)
+	ap = genFile.genr(cb, plugin_ids, name, description, risk_description, recommendation, notes)
+	if not ap is None:
+		appendices += ap
 
 
 	# New plugin_ids EnsuredefaultdenyfirewallpolicyChainOUTPUT(CompliancePlugin):
@@ -954,7 +1166,9 @@ def gen(cb):
 	risk_description=str()
 	recommendation=str()
 
-	genFile.genr(cb, plugin_ids, name, description, risk_description, recommendation, notes)
+	ap = genFile.genr(cb, plugin_ids, name, description, risk_description, recommendation, notes)
+	if not ap is None:
+		appendices += ap
 
 
 	# New plugin_ids EnsuredefaultdenyfirewallpolicyChainFORWARD(CompliancePlugin):
@@ -963,7 +1177,9 @@ def gen(cb):
 	risk_description=str()
 	recommendation=str()
 
-	genFile.genr(cb, plugin_ids, name, description, risk_description, recommendation, notes)
+	ap = genFile.genr(cb, plugin_ids, name, description, risk_description, recommendation, notes)
+	if not ap is None:
+		appendices += ap
 
 
 	# New plugin_ids EnsuredefaultdenyfirewallpolicyChainINPUT(CompliancePlugin):
@@ -972,7 +1188,9 @@ def gen(cb):
 	risk_description=str()
 	recommendation=str()
 
-	genFile.genr(cb, plugin_ids, name, description, risk_description, recommendation, notes)
+	ap = genFile.genr(cb, plugin_ids, name, description, risk_description, recommendation, notes)
+	if not ap is None:
+		appendices += ap
 
 
 	# New plugin_ids Ensureiptablesisinstalled(CompliancePlugin):
@@ -981,7 +1199,9 @@ def gen(cb):
 	risk_description=str()
 	recommendation=str()
 
-	genFile.genr(cb, plugin_ids, name, description, risk_description, recommendation, notes)
+	ap = genFile.genr(cb, plugin_ids, name, description, risk_description, recommendation, notes)
+	if not ap is None:
+		appendices += ap
 
 
 	# New plugin_ids EnsureTIPCisdisabled(CompliancePlugin):
@@ -990,7 +1210,9 @@ def gen(cb):
 	risk_description=str()
 	recommendation=str()
 
-	genFile.genr(cb, plugin_ids, name, description, risk_description, recommendation, notes)
+	ap = genFile.genr(cb, plugin_ids, name, description, risk_description, recommendation, notes)
+	if not ap is None:
+		appendices += ap
 
 
 	# New plugin_ids EnsureRDSisdisabled(CompliancePlugin):
@@ -999,7 +1221,9 @@ def gen(cb):
 	risk_description=str()
 	recommendation=str()
 
-	genFile.genr(cb, plugin_ids, name, description, risk_description, recommendation, notes)
+	ap = genFile.genr(cb, plugin_ids, name, description, risk_description, recommendation, notes)
+	if not ap is None:
+		appendices += ap
 
 
 	# New plugin_ids EnsureSCTPisdisabled(CompliancePlugin):
@@ -1008,7 +1232,9 @@ def gen(cb):
 	risk_description=str()
 	recommendation=str()
 
-	genFile.genr(cb, plugin_ids, name, description, risk_description, recommendation, notes)
+	ap = genFile.genr(cb, plugin_ids, name, description, risk_description, recommendation, notes)
+	if not ap is None:
+		appendices += ap
 
 
 	# New plugin_ids EnsureDCCPisdisabled(CompliancePlugin):
@@ -1017,7 +1243,9 @@ def gen(cb):
 	risk_description=str()
 	recommendation=str()
 
-	genFile.genr(cb, plugin_ids, name, description, risk_description, recommendation, notes)
+	ap = genFile.genr(cb, plugin_ids, name, description, risk_description, recommendation, notes)
+	if not ap is None:
+		appendices += ap
 
 
 	# New plugin_ids Ensurepermissionsonetchostsdenyare644(CompliancePlugin):
@@ -1026,7 +1254,9 @@ def gen(cb):
 	risk_description=str()
 	recommendation=str()
 
-	genFile.genr(cb, plugin_ids, name, description, risk_description, recommendation, notes)
+	ap = genFile.genr(cb, plugin_ids, name, description, risk_description, recommendation, notes)
+	if not ap is None:
+		appendices += ap
 
 
 	# New plugin_ids Ensurepermissionsonetchostsallowareconfigured(CompliancePlugin):
@@ -1035,7 +1265,9 @@ def gen(cb):
 	risk_description=str()
 	recommendation=str()
 
-	genFile.genr(cb, plugin_ids, name, description, risk_description, recommendation, notes)
+	ap = genFile.genr(cb, plugin_ids, name, description, risk_description, recommendation, notes)
+	if not ap is None:
+		appendices += ap
 
 
 	# New plugin_ids Ensureetchostsdenyisconfigured(CompliancePlugin):
@@ -1044,7 +1276,9 @@ def gen(cb):
 	risk_description=str()
 	recommendation=str()
 
-	genFile.genr(cb, plugin_ids, name, description, risk_description, recommendation, notes)
+	ap = genFile.genr(cb, plugin_ids, name, description, risk_description, recommendation, notes)
+	if not ap is None:
+		appendices += ap
 
 
 	# New plugin_ids Ensureetchostsallowisconfigured(CompliancePlugin):
@@ -1053,7 +1287,9 @@ def gen(cb):
 	risk_description=str()
 	recommendation=str()
 
-	genFile.genr(cb, plugin_ids, name, description, risk_description, recommendation, notes)
+	ap = genFile.genr(cb, plugin_ids, name, description, risk_description, recommendation, notes)
+	if not ap is None:
+		appendices += ap
 
 
 	# New plugin_ids EnsureTCPWrappersisinstalled(CompliancePlugin):
@@ -1062,7 +1298,9 @@ def gen(cb):
 	risk_description=str()
 	recommendation=str()
 
-	genFile.genr(cb, plugin_ids, name, description, risk_description, recommendation, notes)
+	ap = genFile.genr(cb, plugin_ids, name, description, risk_description, recommendation, notes)
+	if not ap is None:
+		appendices += ap
 
 
 	# New plugin_ids EnsureIPv6isdisabled(CompliancePlugin):
@@ -1071,7 +1309,9 @@ def gen(cb):
 	risk_description=str()
 	recommendation=str()
 
-	genFile.genr(cb, plugin_ids, name, description, risk_description, recommendation, notes)
+	ap = genFile.genr(cb, plugin_ids, name, description, risk_description, recommendation, notes)
+	if not ap is None:
+		appendices += ap
 
 
 	# New plugin_ids EnsureIPv6redirectsarenotacceptednetipv6confallacceptredirects0(CompliancePlugin):
@@ -1080,7 +1320,9 @@ def gen(cb):
 	risk_description=str()
 	recommendation=str()
 
-	genFile.genr(cb, plugin_ids, name, description, risk_description, recommendation, notes)
+	ap = genFile.genr(cb, plugin_ids, name, description, risk_description, recommendation, notes)
+	if not ap is None:
+		appendices += ap
 
 
 	# New plugin_ids EnsureIPv6redirectsarenotacceptednetipv6confdefaultacceptredirects0(CompliancePlugin):
@@ -1089,7 +1331,9 @@ def gen(cb):
 	risk_description=str()
 	recommendation=str()
 
-	genFile.genr(cb, plugin_ids, name, description, risk_description, recommendation, notes)
+	ap = genFile.genr(cb, plugin_ids, name, description, risk_description, recommendation, notes)
+	if not ap is None:
+		appendices += ap
 
 
 	# New plugin_ids EnsureIPv6routeradvertisementsarenotacceptednetipv6confdefaultaccept_ra0(CompliancePlugin):
@@ -1098,7 +1342,9 @@ def gen(cb):
 	risk_description=str()
 	recommendation=str()
 
-	genFile.genr(cb, plugin_ids, name, description, risk_description, recommendation, notes)
+	ap = genFile.genr(cb, plugin_ids, name, description, risk_description, recommendation, notes)
+	if not ap is None:
+		appendices += ap
 
 
 	# New plugin_ids EnsureIPv6routeradvertisementsarenotacceptednetipv6confallaccept_ra0(CompliancePlugin):
@@ -1107,7 +1353,9 @@ def gen(cb):
 	risk_description=str()
 	recommendation=str()
 
-	genFile.genr(cb, plugin_ids, name, description, risk_description, recommendation, notes)
+	ap = genFile.genr(cb, plugin_ids, name, description, risk_description, recommendation, notes)
+	if not ap is None:
+		appendices += ap
 
 
 	# New plugin_ids EnsureTCPSYNCookiesisenabled(CompliancePlugin):
@@ -1116,7 +1364,9 @@ def gen(cb):
 	risk_description=str()
 	recommendation=str()
 
-	genFile.genr(cb, plugin_ids, name, description, risk_description, recommendation, notes)
+	ap = genFile.genr(cb, plugin_ids, name, description, risk_description, recommendation, notes)
+	if not ap is None:
+		appendices += ap
 
 
 	# New plugin_ids EnsureReversePathFilteringisenablednetipv4confallrp_filter1(CompliancePlugin):
@@ -1125,7 +1375,9 @@ def gen(cb):
 	risk_description=str()
 	recommendation=str()
 
-	genFile.genr(cb, plugin_ids, name, description, risk_description, recommendation, notes)
+	ap = genFile.genr(cb, plugin_ids, name, description, risk_description, recommendation, notes)
+	if not ap is None:
+		appendices += ap
 
 
 	# New plugin_ids EnsureReversePathFilteringisenablednetipv4confdefaultrp_filter1(CompliancePlugin):
@@ -1134,7 +1386,9 @@ def gen(cb):
 	risk_description=str()
 	recommendation=str()
 
-	genFile.genr(cb, plugin_ids, name, description, risk_description, recommendation, notes)
+	ap = genFile.genr(cb, plugin_ids, name, description, risk_description, recommendation, notes)
+	if not ap is None:
+		appendices += ap
 
 
 	# New plugin_ids EnsurebogusICMPresponsesareignored(CompliancePlugin):
@@ -1143,7 +1397,9 @@ def gen(cb):
 	risk_description=str()
 	recommendation=str()
 
-	genFile.genr(cb, plugin_ids, name, description, risk_description, recommendation, notes)
+	ap = genFile.genr(cb, plugin_ids, name, description, risk_description, recommendation, notes)
+	if not ap is None:
+		appendices += ap
 
 
 	# New plugin_ids EnsurebroadcastICMPrequestsareignored(CompliancePlugin):
@@ -1152,7 +1408,9 @@ def gen(cb):
 	risk_description=str()
 	recommendation=str()
 
-	genFile.genr(cb, plugin_ids, name, description, risk_description, recommendation, notes)
+	ap = genFile.genr(cb, plugin_ids, name, description, risk_description, recommendation, notes)
+	if not ap is None:
+		appendices += ap
 
 
 	# New plugin_ids Ensuresuspiciouspacketsareloggednetipv4confdefaultlog_martians1(CompliancePlugin):
@@ -1161,7 +1419,9 @@ def gen(cb):
 	risk_description=str()
 	recommendation=str()
 
-	genFile.genr(cb, plugin_ids, name, description, risk_description, recommendation, notes)
+	ap = genFile.genr(cb, plugin_ids, name, description, risk_description, recommendation, notes)
+	if not ap is None:
+		appendices += ap
 
 
 	# New plugin_ids Ensuresuspiciouspacketsareloggednetipv4confalllog_martians1(CompliancePlugin):
@@ -1170,7 +1430,9 @@ def gen(cb):
 	risk_description=str()
 	recommendation=str()
 
-	genFile.genr(cb, plugin_ids, name, description, risk_description, recommendation, notes)
+	ap = genFile.genr(cb, plugin_ids, name, description, risk_description, recommendation, notes)
+	if not ap is None:
+		appendices += ap
 
 
 	# New plugin_ids EnsuresecureICMPredirectsarenotacceptednetipv4confallsecureredirects0(CompliancePlugin):
@@ -1179,7 +1441,9 @@ def gen(cb):
 	risk_description=str()
 	recommendation=str()
 
-	genFile.genr(cb, plugin_ids, name, description, risk_description, recommendation, notes)
+	ap = genFile.genr(cb, plugin_ids, name, description, risk_description, recommendation, notes)
+	if not ap is None:
+		appendices += ap
 
 
 	# New plugin_ids EnsuresecureICMPredirectsarenotacceptednetipv4confdefaultsecureredirects0(CompliancePlugin):
@@ -1188,7 +1452,9 @@ def gen(cb):
 	risk_description=str()
 	recommendation=str()
 
-	genFile.genr(cb, plugin_ids, name, description, risk_description, recommendation, notes)
+	ap = genFile.genr(cb, plugin_ids, name, description, risk_description, recommendation, notes)
+	if not ap is None:
+		appendices += ap
 
 
 	# New plugin_ids EnsureICMPredirectsarenotacceptednetipv4confdefaultacceptredirects0(CompliancePlugin):
@@ -1197,7 +1463,9 @@ def gen(cb):
 	risk_description=str()
 	recommendation=str()
 
-	genFile.genr(cb, plugin_ids, name, description, risk_description, recommendation, notes)
+	ap = genFile.genr(cb, plugin_ids, name, description, risk_description, recommendation, notes)
+	if not ap is None:
+		appendices += ap
 
 
 	# New plugin_ids EnsureICMPredirectsarenotacceptednetipv4confallacceptredirects0(CompliancePlugin):
@@ -1206,7 +1474,9 @@ def gen(cb):
 	risk_description=str()
 	recommendation=str()
 
-	genFile.genr(cb, plugin_ids, name, description, risk_description, recommendation, notes)
+	ap = genFile.genr(cb, plugin_ids, name, description, risk_description, recommendation, notes)
+	if not ap is None:
+		appendices += ap
 
 
 	# New plugin_ids Ensuresourceroutedpacketsarenotacceptednetipv4confallaccept_source_route0(CompliancePlugin):
@@ -1215,7 +1485,9 @@ def gen(cb):
 	risk_description=str()
 	recommendation=str()
 
-	genFile.genr(cb, plugin_ids, name, description, risk_description, recommendation, notes)
+	ap = genFile.genr(cb, plugin_ids, name, description, risk_description, recommendation, notes)
+	if not ap is None:
+		appendices += ap
 
 
 	# New plugin_ids Ensuresourceroutedpacketsarenotacceptednetipv4confdefaultaccept_source_route0(CompliancePlugin):
@@ -1224,7 +1496,9 @@ def gen(cb):
 	risk_description=str()
 	recommendation=str()
 
-	genFile.genr(cb, plugin_ids, name, description, risk_description, recommendation, notes)
+	ap = genFile.genr(cb, plugin_ids, name, description, risk_description, recommendation, notes)
+	if not ap is None:
+		appendices += ap
 
 
 	# New plugin_ids Ensurepacketredirectsendingisdisablednetipv4confdefaultsendredirects0(CompliancePlugin):
@@ -1233,7 +1507,9 @@ def gen(cb):
 	risk_description=str()
 	recommendation=str()
 
-	genFile.genr(cb, plugin_ids, name, description, risk_description, recommendation, notes)
+	ap = genFile.genr(cb, plugin_ids, name, description, risk_description, recommendation, notes)
+	if not ap is None:
+		appendices += ap
 
 
 	# New plugin_ids Ensurepacketredirectsendingisdisablednetipv4confallsendredirects0(CompliancePlugin):
@@ -1242,7 +1518,9 @@ def gen(cb):
 	risk_description=str()
 	recommendation=str()
 
-	genFile.genr(cb, plugin_ids, name, description, risk_description, recommendation, notes)
+	ap = genFile.genr(cb, plugin_ids, name, description, risk_description, recommendation, notes)
+	if not ap is None:
+		appendices += ap
 
 
 	# New plugin_ids EnsureLDAPclientisnotinstalled(CompliancePlugin):
@@ -1251,7 +1529,9 @@ def gen(cb):
 	risk_description=str()
 	recommendation=str()
 
-	genFile.genr(cb, plugin_ids, name, description, risk_description, recommendation, notes)
+	ap = genFile.genr(cb, plugin_ids, name, description, risk_description, recommendation, notes)
+	if not ap is None:
+		appendices += ap
 
 
 	# New plugin_ids Ensuretelnetclientisnotinstalled(CompliancePlugin):
@@ -1260,7 +1540,9 @@ def gen(cb):
 	risk_description=str()
 	recommendation=str()
 
-	genFile.genr(cb, plugin_ids, name, description, risk_description, recommendation, notes)
+	ap = genFile.genr(cb, plugin_ids, name, description, risk_description, recommendation, notes)
+	if not ap is None:
+		appendices += ap
 
 
 	# New plugin_ids Ensuretalkclientisnotinstalled(CompliancePlugin):
@@ -1269,7 +1551,9 @@ def gen(cb):
 	risk_description=str()
 	recommendation=str()
 
-	genFile.genr(cb, plugin_ids, name, description, risk_description, recommendation, notes)
+	ap = genFile.genr(cb, plugin_ids, name, description, risk_description, recommendation, notes)
+	if not ap is None:
+		appendices += ap
 
 
 	# New plugin_ids Ensurershclientisnotinstalled(CompliancePlugin):
@@ -1278,7 +1562,9 @@ def gen(cb):
 	risk_description=str()
 	recommendation=str()
 
-	genFile.genr(cb, plugin_ids, name, description, risk_description, recommendation, notes)
+	ap = genFile.genr(cb, plugin_ids, name, description, risk_description, recommendation, notes)
+	if not ap is None:
+		appendices += ap
 
 
 	# New plugin_ids EnsureNISClientisnotinstalled(CompliancePlugin):
@@ -1287,7 +1573,9 @@ def gen(cb):
 	risk_description=str()
 	recommendation=str()
 
-	genFile.genr(cb, plugin_ids, name, description, risk_description, recommendation, notes)
+	ap = genFile.genr(cb, plugin_ids, name, description, risk_description, recommendation, notes)
+	if not ap is None:
+		appendices += ap
 
 
 	# New plugin_ids Ensurersyncserviceisnotenabled(CompliancePlugin):
@@ -1296,7 +1584,9 @@ def gen(cb):
 	risk_description=str()
 	recommendation=str()
 
-	genFile.genr(cb, plugin_ids, name, description, risk_description, recommendation, notes)
+	ap = genFile.genr(cb, plugin_ids, name, description, risk_description, recommendation, notes)
+	if not ap is None:
+		appendices += ap
 
 
 	# New plugin_ids Ensuretftpserverisnotenabled(CompliancePlugin):
@@ -1305,7 +1595,9 @@ def gen(cb):
 	risk_description=str()
 	recommendation=str()
 
-	genFile.genr(cb, plugin_ids, name, description, risk_description, recommendation, notes)
+	ap = genFile.genr(cb, plugin_ids, name, description, risk_description, recommendation, notes)
+	if not ap is None:
+		appendices += ap
 
 
 	# New plugin_ids Ensuretelnetserverisnotenabled(CompliancePlugin):
@@ -1314,7 +1606,9 @@ def gen(cb):
 	risk_description=str()
 	recommendation=str()
 
-	genFile.genr(cb, plugin_ids, name, description, risk_description, recommendation, notes)
+	ap = genFile.genr(cb, plugin_ids, name, description, risk_description, recommendation, notes)
+	if not ap is None:
+		appendices += ap
 
 
 	# New plugin_ids Ensuretalkserverisnotenabled(CompliancePlugin):
@@ -1323,7 +1617,9 @@ def gen(cb):
 	risk_description=str()
 	recommendation=str()
 
-	genFile.genr(cb, plugin_ids, name, description, risk_description, recommendation, notes)
+	ap = genFile.genr(cb, plugin_ids, name, description, risk_description, recommendation, notes)
+	if not ap is None:
+		appendices += ap
 
 
 	# New plugin_ids Ensurershserverisnotenabledrsh(CompliancePlugin):
@@ -1332,7 +1628,9 @@ def gen(cb):
 	risk_description=str()
 	recommendation=str()
 
-	genFile.genr(cb, plugin_ids, name, description, risk_description, recommendation, notes)
+	ap = genFile.genr(cb, plugin_ids, name, description, risk_description, recommendation, notes)
+	if not ap is None:
+		appendices += ap
 
 
 	# New plugin_ids Ensurershserverisnotenabledrlogin(CompliancePlugin):
@@ -1341,7 +1639,9 @@ def gen(cb):
 	risk_description=str()
 	recommendation=str()
 
-	genFile.genr(cb, plugin_ids, name, description, risk_description, recommendation, notes)
+	ap = genFile.genr(cb, plugin_ids, name, description, risk_description, recommendation, notes)
+	if not ap is None:
+		appendices += ap
 
 
 	# New plugin_ids Ensurershserverisnotenabledrexec(CompliancePlugin):
@@ -1350,7 +1650,9 @@ def gen(cb):
 	risk_description=str()
 	recommendation=str()
 
-	genFile.genr(cb, plugin_ids, name, description, risk_description, recommendation, notes)
+	ap = genFile.genr(cb, plugin_ids, name, description, risk_description, recommendation, notes)
+	if not ap is None:
+		appendices += ap
 
 
 	# New plugin_ids EnsureNISServerisnotenabled(CompliancePlugin):
@@ -1359,7 +1661,9 @@ def gen(cb):
 	risk_description=str()
 	recommendation=str()
 
-	genFile.genr(cb, plugin_ids, name, description, risk_description, recommendation, notes)
+	ap = genFile.genr(cb, plugin_ids, name, description, risk_description, recommendation, notes)
+	if not ap is None:
+		appendices += ap
 
 
 	# New plugin_ids Ensuremailtransferagentisconfiguredforlocalonlymode(CompliancePlugin):
@@ -1368,7 +1672,9 @@ def gen(cb):
 	risk_description=str()
 	recommendation=str()
 
-	genFile.genr(cb, plugin_ids, name, description, risk_description, recommendation, notes)
+	ap = genFile.genr(cb, plugin_ids, name, description, risk_description, recommendation, notes)
+	if not ap is None:
+		appendices += ap
 
 
 	# New plugin_ids EnsureSNMPServerisnotenabled(CompliancePlugin):
@@ -1377,7 +1683,9 @@ def gen(cb):
 	risk_description=str()
 	recommendation=str()
 
-	genFile.genr(cb, plugin_ids, name, description, risk_description, recommendation, notes)
+	ap = genFile.genr(cb, plugin_ids, name, description, risk_description, recommendation, notes)
+	if not ap is None:
+		appendices += ap
 
 
 	# New plugin_ids EnsureHTTPProxyServerisnotenabled(CompliancePlugin):
@@ -1386,7 +1694,9 @@ def gen(cb):
 	risk_description=str()
 	recommendation=str()
 
-	genFile.genr(cb, plugin_ids, name, description, risk_description, recommendation, notes)
+	ap = genFile.genr(cb, plugin_ids, name, description, risk_description, recommendation, notes)
+	if not ap is None:
+		appendices += ap
 
 
 	# New plugin_ids EnsureSambaisnotenabled(CompliancePlugin):
@@ -1395,7 +1705,9 @@ def gen(cb):
 	risk_description=str()
 	recommendation=str()
 
-	genFile.genr(cb, plugin_ids, name, description, risk_description, recommendation, notes)
+	ap = genFile.genr(cb, plugin_ids, name, description, risk_description, recommendation, notes)
+	if not ap is None:
+		appendices += ap
 
 
 	# New plugin_ids EnsureIMAPandPOP3serverisnotenabled(CompliancePlugin):
@@ -1404,7 +1716,9 @@ def gen(cb):
 	risk_description=str()
 	recommendation=str()
 
-	genFile.genr(cb, plugin_ids, name, description, risk_description, recommendation, notes)
+	ap = genFile.genr(cb, plugin_ids, name, description, risk_description, recommendation, notes)
+	if not ap is None:
+		appendices += ap
 
 
 	# New plugin_ids EnsureHTTPserverisnotenabled(CompliancePlugin):
@@ -1413,7 +1727,9 @@ def gen(cb):
 	risk_description=str()
 	recommendation=str()
 
-	genFile.genr(cb, plugin_ids, name, description, risk_description, recommendation, notes)
+	ap = genFile.genr(cb, plugin_ids, name, description, risk_description, recommendation, notes)
+	if not ap is None:
+		appendices += ap
 
 
 	# New plugin_ids EnsureFTPServerisnotenabled(CompliancePlugin):
@@ -1422,7 +1738,9 @@ def gen(cb):
 	risk_description=str()
 	recommendation=str()
 
-	genFile.genr(cb, plugin_ids, name, description, risk_description, recommendation, notes)
+	ap = genFile.genr(cb, plugin_ids, name, description, risk_description, recommendation, notes)
+	if not ap is None:
+		appendices += ap
 
 
 	# New plugin_ids EnsureDNSServerisnotenabled(CompliancePlugin):
@@ -1431,7 +1749,9 @@ def gen(cb):
 	risk_description=str()
 	recommendation=str()
 
-	genFile.genr(cb, plugin_ids, name, description, risk_description, recommendation, notes)
+	ap = genFile.genr(cb, plugin_ids, name, description, risk_description, recommendation, notes)
+	if not ap is None:
+		appendices += ap
 
 
 	# New plugin_ids EnsureNFSandRPCarenotenabledRPC(CompliancePlugin):
@@ -1440,7 +1760,9 @@ def gen(cb):
 	risk_description=str()
 	recommendation=str()
 
-	genFile.genr(cb, plugin_ids, name, description, risk_description, recommendation, notes)
+	ap = genFile.genr(cb, plugin_ids, name, description, risk_description, recommendation, notes)
+	if not ap is None:
+		appendices += ap
 
 
 	# New plugin_ids EnsureNFSandRPCarenotenabledNFS(CompliancePlugin):
@@ -1449,7 +1771,9 @@ def gen(cb):
 	risk_description=str()
 	recommendation=str()
 
-	genFile.genr(cb, plugin_ids, name, description, risk_description, recommendation, notes)
+	ap = genFile.genr(cb, plugin_ids, name, description, risk_description, recommendation, notes)
+	if not ap is None:
+		appendices += ap
 
 
 	# New plugin_ids EnsureLDAPserverisnotenabled(CompliancePlugin):
@@ -1458,7 +1782,9 @@ def gen(cb):
 	risk_description=str()
 	recommendation=str()
 
-	genFile.genr(cb, plugin_ids, name, description, risk_description, recommendation, notes)
+	ap = genFile.genr(cb, plugin_ids, name, description, risk_description, recommendation, notes)
+	if not ap is None:
+		appendices += ap
 
 
 	# New plugin_ids EnsureDHCPServerisnotenabled(CompliancePlugin):
@@ -1467,7 +1793,9 @@ def gen(cb):
 	risk_description=str()
 	recommendation=str()
 
-	genFile.genr(cb, plugin_ids, name, description, risk_description, recommendation, notes)
+	ap = genFile.genr(cb, plugin_ids, name, description, risk_description, recommendation, notes)
+	if not ap is None:
+		appendices += ap
 
 
 	# New plugin_ids EnsureCUPSisnotenabled(CompliancePlugin):
@@ -1476,7 +1804,9 @@ def gen(cb):
 	risk_description=str()
 	recommendation=str()
 
-	genFile.genr(cb, plugin_ids, name, description, risk_description, recommendation, notes)
+	ap = genFile.genr(cb, plugin_ids, name, description, risk_description, recommendation, notes)
+	if not ap is None:
+		appendices += ap
 
 
 	# New plugin_ids EnsureAvahiServerisnotenabled(CompliancePlugin):
@@ -1485,7 +1815,9 @@ def gen(cb):
 	risk_description=str()
 	recommendation=str()
 
-	genFile.genr(cb, plugin_ids, name, description, risk_description, recommendation, notes)
+	ap = genFile.genr(cb, plugin_ids, name, description, risk_description, recommendation, notes)
+	if not ap is None:
+		appendices += ap
 
 
 	# New plugin_ids EnsureXWindowSystemisnotinstalled(CompliancePlugin):
@@ -1494,7 +1826,9 @@ def gen(cb):
 	risk_description=str()
 	recommendation=str()
 
-	genFile.genr(cb, plugin_ids, name, description, risk_description, recommendation, notes)
+	ap = genFile.genr(cb, plugin_ids, name, description, risk_description, recommendation, notes)
+	if not ap is None:
+		appendices += ap
 
 
 	# New plugin_ids EnsurechronyisconfiguredOPTIONS(CompliancePlugin):
@@ -1503,7 +1837,9 @@ def gen(cb):
 	risk_description=str()
 	recommendation=str()
 
-	genFile.genr(cb, plugin_ids, name, description, risk_description, recommendation, notes)
+	ap = genFile.genr(cb, plugin_ids, name, description, risk_description, recommendation, notes)
+	if not ap is None:
+		appendices += ap
 
 
 	# New plugin_ids EnsurechronyisconfiguredNTPserver(CompliancePlugin):
@@ -1512,7 +1848,9 @@ def gen(cb):
 	risk_description=str()
 	recommendation=str()
 
-	genFile.genr(cb, plugin_ids, name, description, risk_description, recommendation, notes)
+	ap = genFile.genr(cb, plugin_ids, name, description, risk_description, recommendation, notes)
+	if not ap is None:
+		appendices += ap
 
 
 	# New plugin_ids EnsurentpisconfiguredOPTIONSorExecStartuntpntp(CompliancePlugin):
@@ -1521,7 +1859,9 @@ def gen(cb):
 	risk_description=str()
 	recommendation=str()
 
-	genFile.genr(cb, plugin_ids, name, description, risk_description, recommendation, notes)
+	ap = genFile.genr(cb, plugin_ids, name, description, risk_description, recommendation, notes)
+	if not ap is None:
+		appendices += ap
 
 
 	# New plugin_ids EnsurentpisconfiguredNTPServer(CompliancePlugin):
@@ -1530,7 +1870,9 @@ def gen(cb):
 	risk_description=str()
 	recommendation=str()
 
-	genFile.genr(cb, plugin_ids, name, description, risk_description, recommendation, notes)
+	ap = genFile.genr(cb, plugin_ids, name, description, risk_description, recommendation, notes)
+	if not ap is None:
+		appendices += ap
 
 
 	# New plugin_ids Ensurentpisconfiguredrestrict6(CompliancePlugin):
@@ -1539,7 +1881,9 @@ def gen(cb):
 	risk_description=str()
 	recommendation=str()
 
-	genFile.genr(cb, plugin_ids, name, description, risk_description, recommendation, notes)
+	ap = genFile.genr(cb, plugin_ids, name, description, risk_description, recommendation, notes)
+	if not ap is None:
+		appendices += ap
 
 
 	# New plugin_ids Ensurentpisconfiguredrestrict4(CompliancePlugin):
@@ -1548,7 +1892,9 @@ def gen(cb):
 	risk_description=str()
 	recommendation=str()
 
-	genFile.genr(cb, plugin_ids, name, description, risk_description, recommendation, notes)
+	ap = genFile.genr(cb, plugin_ids, name, description, risk_description, recommendation, notes)
+	if not ap is None:
+		appendices += ap
 
 
 	# New plugin_ids Ensuretimesynchronizationisinuse(CompliancePlugin):
@@ -1557,7 +1903,9 @@ def gen(cb):
 	risk_description=str()
 	recommendation=str()
 
-	genFile.genr(cb, plugin_ids, name, description, risk_description, recommendation, notes)
+	ap = genFile.genr(cb, plugin_ids, name, description, risk_description, recommendation, notes)
+	if not ap is None:
+		appendices += ap
 
 
 	# New plugin_ids Ensurexinetdisnotenabled(CompliancePlugin):
@@ -1566,7 +1914,9 @@ def gen(cb):
 	risk_description=str()
 	recommendation=str()
 
-	genFile.genr(cb, plugin_ids, name, description, risk_description, recommendation, notes)
+	ap = genFile.genr(cb, plugin_ids, name, description, risk_description, recommendation, notes)
+	if not ap is None:
+		appendices += ap
 
 
 	# New plugin_ids Ensuretftpserverisnotenabled(CompliancePlugin):
@@ -1575,7 +1925,9 @@ def gen(cb):
 	risk_description=str()
 	recommendation=str()
 
-	genFile.genr(cb, plugin_ids, name, description, risk_description, recommendation, notes)
+	ap = genFile.genr(cb, plugin_ids, name, description, risk_description, recommendation, notes)
+	if not ap is None:
+		appendices += ap
 
 
 	# New plugin_ids Ensuretimeservicesarenotenabledtimedgram(CompliancePlugin):
@@ -1584,7 +1936,9 @@ def gen(cb):
 	risk_description=str()
 	recommendation=str()
 
-	genFile.genr(cb, plugin_ids, name, description, risk_description, recommendation, notes)
+	ap = genFile.genr(cb, plugin_ids, name, description, risk_description, recommendation, notes)
+	if not ap is None:
+		appendices += ap
 
 
 	# New plugin_ids Ensuretimeservicesarenotenabledtimestream(CompliancePlugin):
@@ -1593,7 +1947,9 @@ def gen(cb):
 	risk_description=str()
 	recommendation=str()
 
-	genFile.genr(cb, plugin_ids, name, description, risk_description, recommendation, notes)
+	ap = genFile.genr(cb, plugin_ids, name, description, risk_description, recommendation, notes)
+	if not ap is None:
+		appendices += ap
 
 
 	# New plugin_ids Ensureechoservicesarenotenabledechodgram(CompliancePlugin):
@@ -1602,7 +1958,9 @@ def gen(cb):
 	risk_description=str()
 	recommendation=str()
 
-	genFile.genr(cb, plugin_ids, name, description, risk_description, recommendation, notes)
+	ap = genFile.genr(cb, plugin_ids, name, description, risk_description, recommendation, notes)
+	if not ap is None:
+		appendices += ap
 
 
 	# New plugin_ids Ensureechoservicesarenotenabledechostream(CompliancePlugin):
@@ -1611,7 +1969,9 @@ def gen(cb):
 	risk_description=str()
 	recommendation=str()
 
-	genFile.genr(cb, plugin_ids, name, description, risk_description, recommendation, notes)
+	ap = genFile.genr(cb, plugin_ids, name, description, risk_description, recommendation, notes)
+	if not ap is None:
+		appendices += ap
 
 
 	# New plugin_ids Ensurediscardservicesarenotenableddiscarddgram(CompliancePlugin):
@@ -1620,7 +1980,9 @@ def gen(cb):
 	risk_description=str()
 	recommendation=str()
 
-	genFile.genr(cb, plugin_ids, name, description, risk_description, recommendation, notes)
+	ap = genFile.genr(cb, plugin_ids, name, description, risk_description, recommendation, notes)
+	if not ap is None:
+		appendices += ap
 
 
 	# New plugin_ids Ensurediscardservicesarenotenableddiscardstream(CompliancePlugin):
@@ -1629,7 +1991,9 @@ def gen(cb):
 	risk_description=str()
 	recommendation=str()
 
-	genFile.genr(cb, plugin_ids, name, description, risk_description, recommendation, notes)
+	ap = genFile.genr(cb, plugin_ids, name, description, risk_description, recommendation, notes)
+	if not ap is None:
+		appendices += ap
 
 
 	# New plugin_ids Ensuredaytimeservicesarenotenableddaytimedgram(CompliancePlugin):
@@ -1638,7 +2002,9 @@ def gen(cb):
 	risk_description=str()
 	recommendation=str()
 
-	genFile.genr(cb, plugin_ids, name, description, risk_description, recommendation, notes)
+	ap = genFile.genr(cb, plugin_ids, name, description, risk_description, recommendation, notes)
+	if not ap is None:
+		appendices += ap
 
 
 	# New plugin_ids Ensuredaytimeservicesarenotenableddaytimestream(CompliancePlugin):
@@ -1647,7 +2013,9 @@ def gen(cb):
 	risk_description=str()
 	recommendation=str()
 
-	genFile.genr(cb, plugin_ids, name, description, risk_description, recommendation, notes)
+	ap = genFile.genr(cb, plugin_ids, name, description, risk_description, recommendation, notes)
+	if not ap is None:
+		appendices += ap
 
 
 	# New plugin_ids Ensurechargenservicesarenotenabledchargendgram(CompliancePlugin):
@@ -1656,7 +2024,9 @@ def gen(cb):
 	risk_description=str()
 	recommendation=str()
 
-	genFile.genr(cb, plugin_ids, name, description, risk_description, recommendation, notes)
+	ap = genFile.genr(cb, plugin_ids, name, description, risk_description, recommendation, notes)
+	if not ap is None:
+		appendices += ap
 
 
 	# New plugin_ids Ensurechargenservicesarenotenabledchargenstream(CompliancePlugin):
@@ -1665,7 +2035,9 @@ def gen(cb):
 	risk_description=str()
 	recommendation=str()
 
-	genFile.genr(cb, plugin_ids, name, description, risk_description, recommendation, notes)
+	ap = genFile.genr(cb, plugin_ids, name, description, risk_description, recommendation, notes)
+	if not ap is None:
+		appendices += ap
 
 
 	# New plugin_ids Ensureupdatespatchesandadditionalsecuritysoftwareareinstalled(CompliancePlugin):
@@ -1674,7 +2046,9 @@ def gen(cb):
 	risk_description=str()
 	recommendation=str()
 
-	genFile.genr(cb, plugin_ids, name, description, risk_description, recommendation, notes)
+	ap = genFile.genr(cb, plugin_ids, name, description, risk_description, recommendation, notes)
+	if not ap is None:
+		appendices += ap
 
 
 	# New plugin_ids EnsureGDMloginbannerisconfigurednotinstalled(CompliancePlugin):
@@ -1683,7 +2057,9 @@ def gen(cb):
 	risk_description=str()
 	recommendation=str()
 
-	genFile.genr(cb, plugin_ids, name, description, risk_description, recommendation, notes)
+	ap = genFile.genr(cb, plugin_ids, name, description, risk_description, recommendation, notes)
+	if not ap is None:
+		appendices += ap
 
 
 	# New plugin_ids Ensurepermissionsonetcissuenetareconfigured(CompliancePlugin):
@@ -1692,7 +2068,9 @@ def gen(cb):
 	risk_description=str()
 	recommendation=str()
 
-	genFile.genr(cb, plugin_ids, name, description, risk_description, recommendation, notes)
+	ap = genFile.genr(cb, plugin_ids, name, description, risk_description, recommendation, notes)
+	if not ap is None:
+		appendices += ap
 
 
 	# New plugin_ids Ensurepermissionsonetcissueareconfigured(CompliancePlugin):
@@ -1701,7 +2079,9 @@ def gen(cb):
 	risk_description=str()
 	recommendation=str()
 
-	genFile.genr(cb, plugin_ids, name, description, risk_description, recommendation, notes)
+	ap = genFile.genr(cb, plugin_ids, name, description, risk_description, recommendation, notes)
+	if not ap is None:
+		appendices += ap
 
 
 	# New plugin_ids Ensurepermissionsonetcmotdareconfigured(CompliancePlugin):
@@ -1710,7 +2090,9 @@ def gen(cb):
 	risk_description=str()
 	recommendation=str()
 
-	genFile.genr(cb, plugin_ids, name, description, risk_description, recommendation, notes)
+	ap = genFile.genr(cb, plugin_ids, name, description, risk_description, recommendation, notes)
+	if not ap is None:
+		appendices += ap
 
 
 	# New plugin_ids Ensureremoteloginwarningbannerisconfiguredproperly(CompliancePlugin):
@@ -1719,7 +2101,9 @@ def gen(cb):
 	risk_description=str()
 	recommendation=str()
 
-	genFile.genr(cb, plugin_ids, name, description, risk_description, recommendation, notes)
+	ap = genFile.genr(cb, plugin_ids, name, description, risk_description, recommendation, notes)
+	if not ap is None:
+		appendices += ap
 
 
 	# New plugin_ids Ensurelocalloginwarningbannerisconfiguredproperly(CompliancePlugin):
@@ -1728,7 +2112,9 @@ def gen(cb):
 	risk_description=str()
 	recommendation=str()
 
-	genFile.genr(cb, plugin_ids, name, description, risk_description, recommendation, notes)
+	ap = genFile.genr(cb, plugin_ids, name, description, risk_description, recommendation, notes)
+	if not ap is None:
+		appendices += ap
 
 
 	# New plugin_ids Ensuremessageofthedayisconfiguredproperly(CompliancePlugin):
@@ -1737,7 +2123,9 @@ def gen(cb):
 	risk_description=str()
 	recommendation=str()
 
-	genFile.genr(cb, plugin_ids, name, description, risk_description, recommendation, notes)
+	ap = genFile.genr(cb, plugin_ids, name, description, risk_description, recommendation, notes)
+	if not ap is None:
+		appendices += ap
 
 
 	# New plugin_ids Ensureprelinkisdisabled(CompliancePlugin):
@@ -1746,7 +2134,9 @@ def gen(cb):
 	risk_description=str()
 	recommendation=str()
 
-	genFile.genr(cb, plugin_ids, name, description, risk_description, recommendation, notes)
+	ap = genFile.genr(cb, plugin_ids, name, description, risk_description, recommendation, notes)
+	if not ap is None:
+		appendices += ap
 
 
 	# New plugin_ids EnsureaddressspacelayoutrandomizationASLRisenabled(CompliancePlugin):
@@ -1755,7 +2145,9 @@ def gen(cb):
 	risk_description=str()
 	recommendation=str()
 
-	genFile.genr(cb, plugin_ids, name, description, risk_description, recommendation, notes)
+	ap = genFile.genr(cb, plugin_ids, name, description, risk_description, recommendation, notes)
+	if not ap is None:
+		appendices += ap
 
 
 	# New plugin_ids EnsureXDNXsupportisenabled(CompliancePlugin):
@@ -1764,7 +2156,9 @@ def gen(cb):
 	risk_description=str()
 	recommendation=str()
 
-	genFile.genr(cb, plugin_ids, name, description, risk_description, recommendation, notes)
+	ap = genFile.genr(cb, plugin_ids, name, description, risk_description, recommendation, notes)
+	if not ap is None:
+		appendices += ap
 
 
 	# New plugin_ids Ensurecoredumpsarerestrictedsysctl(CompliancePlugin):
@@ -1773,7 +2167,9 @@ def gen(cb):
 	risk_description=str()
 	recommendation=str()
 
-	genFile.genr(cb, plugin_ids, name, description, risk_description, recommendation, notes)
+	ap = genFile.genr(cb, plugin_ids, name, description, risk_description, recommendation, notes)
+	if not ap is None:
+		appendices += ap
 
 
 	# New plugin_ids Ensurecoredumpsarerestrictedlimitsconf(CompliancePlugin):
@@ -1782,7 +2178,9 @@ def gen(cb):
 	risk_description=str()
 	recommendation=str()
 
-	genFile.genr(cb, plugin_ids, name, description, risk_description, recommendation, notes)
+	ap = genFile.genr(cb, plugin_ids, name, description, risk_description, recommendation, notes)
+	if not ap is None:
+		appendices += ap
 
 
 	# New plugin_ids Ensureauthenticationrequiredforsingleusermodeemergencyservice(CompliancePlugin):
@@ -1791,7 +2189,9 @@ def gen(cb):
 	risk_description=str()
 	recommendation=str()
 
-	genFile.genr(cb, plugin_ids, name, description, risk_description, recommendation, notes)
+	ap = genFile.genr(cb, plugin_ids, name, description, risk_description, recommendation, notes)
+	if not ap is None:
+		appendices += ap
 
 
 	# New plugin_ids Ensureauthenticationrequiredforsingleusermoderescueservice(CompliancePlugin):
@@ -1800,7 +2200,9 @@ def gen(cb):
 	risk_description=str()
 	recommendation=str()
 
-	genFile.genr(cb, plugin_ids, name, description, risk_description, recommendation, notes)
+	ap = genFile.genr(cb, plugin_ids, name, description, risk_description, recommendation, notes)
+	if not ap is None:
+		appendices += ap
 
 
 	# New plugin_ids Ensurebootloaderpasswordissetpassword_pbkdf2(CompliancePlugin):
@@ -1809,7 +2211,9 @@ def gen(cb):
 	risk_description=str()
 	recommendation="Create an encrypted password with grub-mkpasswd-pbkdf2:\n\n# grub2-mkpasswd-pbkdf2\nEnter password: <password>\nReenter password: <password>\nYour PBKDF2 is <encrypted-password>\n\nAdd the following into /etc/grub.d/01_users or a custom /etc/grub.d configuration file:\n\ncat <<EOFset superusers=<username>password_pbkdf2 <username> <encrypted-password> EOF\n\nRun the following command to update the grub2 configuration:\n\n# grub2-mkconfig > /boot/grub2/grub.cfg"
 
-	genFile.genr(cb, plugin_ids, name, description, risk_description, recommendation, notes)
+	ap = genFile.genr(cb, plugin_ids, name, description, risk_description, recommendation, notes)
+	if not ap is None:
+		appendices += ap
 
 
 	# New plugin_ids Ensurebootloaderpasswordissetsetsuperusers(CompliancePlugin):
@@ -1818,7 +2222,9 @@ def gen(cb):
 	risk_description=str()
 	recommendation=str()
 
-	genFile.genr(cb, plugin_ids, name, description, risk_description, recommendation, notes)
+	ap = genFile.genr(cb, plugin_ids, name, description, risk_description, recommendation, notes)
+	if not ap is None:
+		appendices += ap
 
 
 	# New plugin_ids Ensurepermissionsonbootloaderconfigareconfigured(CompliancePlugin):
@@ -1827,7 +2233,9 @@ def gen(cb):
 	risk_description=str()
 	recommendation="Run the following commands to set permissions on the grub configuration:\n\n# chown root:root /boot/grub2/grub.cfg\n# chmod og-rwx /boot/grub2/grub.cfg"
 
-	genFile.genr(cb, plugin_ids, name, description, risk_description, recommendation, notes)
+	ap = genFile.genr(cb, plugin_ids, name, description, risk_description, recommendation, notes)
+	if not ap is None:
+		appendices += ap
 
 
 	# New plugin_ids Ensurefilesystemintegrityisregularlychecked(CompliancePlugin):
@@ -1836,7 +2244,9 @@ def gen(cb):
 	risk_description=str()
 	recommendation=str()
 
-	genFile.genr(cb, plugin_ids, name, description, risk_description, recommendation, notes)
+	ap = genFile.genr(cb, plugin_ids, name, description, risk_description, recommendation, notes)
+	if not ap is None:
+		appendices += ap
 
 
 	# New plugin_ids EnsureAIDEisinstalled(CompliancePlugin):
@@ -1845,7 +2255,9 @@ def gen(cb):
 	risk_description=str()
 	recommendation=str()
 
-	genFile.genr(cb, plugin_ids, name, description, risk_description, recommendation, notes)
+	ap = genFile.genr(cb, plugin_ids, name, description, risk_description, recommendation, notes)
+	if not ap is None:
+		appendices += ap
 
 
 	# New plugin_ids EnsureRedHatNetworkorSubscriptionManagerconnectionisconfigured(CompliancePlugin):
@@ -1854,7 +2266,9 @@ def gen(cb):
 	risk_description=str()
 	recommendation=str()
 
-	genFile.genr(cb, plugin_ids, name, description, risk_description, recommendation, notes)
+	ap = genFile.genr(cb, plugin_ids, name, description, risk_description, recommendation, notes)
+	if not ap is None:
+		appendices += ap
 
 
 	# New plugin_ids EnsureGPGkeysareconfigured(CompliancePlugin):
@@ -1863,7 +2277,9 @@ def gen(cb):
 	risk_description=str()
 	recommendation=str()
 
-	genFile.genr(cb, plugin_ids, name, description, risk_description, recommendation, notes)
+	ap = genFile.genr(cb, plugin_ids, name, description, risk_description, recommendation, notes)
+	if not ap is None:
+		appendices += ap
 
 
 	# New plugin_ids Ensuregpgcheckisgloballyactivated(CompliancePlugin):
@@ -1872,7 +2288,9 @@ def gen(cb):
 	risk_description=str()
 	recommendation=str()
 
-	genFile.genr(cb, plugin_ids, name, description, risk_description, recommendation, notes)
+	ap = genFile.genr(cb, plugin_ids, name, description, risk_description, recommendation, notes)
+	if not ap is None:
+		appendices += ap
 
 
 	# New plugin_ids Ensurepackagemanagerrepositoriesareconfigured(CompliancePlugin):
@@ -1881,7 +2299,9 @@ def gen(cb):
 	risk_description=str()
 	recommendation=str()
 
-	genFile.genr(cb, plugin_ids, name, description, risk_description, recommendation, notes)
+	ap = genFile.genr(cb, plugin_ids, name, description, risk_description, recommendation, notes)
+	if not ap is None:
+		appendices += ap
 
 
 	# New plugin_ids DisableAutomounting(CompliancePlugin):
@@ -1890,7 +2310,9 @@ def gen(cb):
 	risk_description=str()
 	recommendation=str()
 
-	genFile.genr(cb, plugin_ids, name, description, risk_description, recommendation, notes)
+	ap = genFile.genr(cb, plugin_ids, name, description, risk_description, recommendation, notes)
+	if not ap is None:
+		appendices += ap
 
 
 	# New plugin_ids Ensurestickybitissetonallworldwritabledirectories(CompliancePlugin):
@@ -1899,7 +2321,9 @@ def gen(cb):
 	risk_description=str()
 	recommendation=str()
 
-	genFile.genr(cb, plugin_ids, name, description, risk_description, recommendation, notes)
+	ap = genFile.genr(cb, plugin_ids, name, description, risk_description, recommendation, notes)
+	if not ap is None:
+		appendices += ap
 
 
 	# New plugin_ids Ensurenoexecoptionsetondevshmpartition(CompliancePlugin):
@@ -1908,7 +2332,9 @@ def gen(cb):
 	risk_description=str()
 	recommendation=str()
 
-	genFile.genr(cb, plugin_ids, name, description, risk_description, recommendation, notes)
+	ap = genFile.genr(cb, plugin_ids, name, description, risk_description, recommendation, notes)
+	if not ap is None:
+		appendices += ap
 
 
 	# New plugin_ids Ensurenosuidoptionsetondevshmpartition(CompliancePlugin):
@@ -1917,7 +2343,9 @@ def gen(cb):
 	risk_description=str()
 	recommendation=str()
 
-	genFile.genr(cb, plugin_ids, name, description, risk_description, recommendation, notes)
+	ap = genFile.genr(cb, plugin_ids, name, description, risk_description, recommendation, notes)
+	if not ap is None:
+		appendices += ap
 
 
 	# New plugin_ids Ensurenodevoptionsetondevshmpartition(CompliancePlugin):
@@ -1926,7 +2354,9 @@ def gen(cb):
 	risk_description=str()
 	recommendation=str()
 
-	genFile.genr(cb, plugin_ids, name, description, risk_description, recommendation, notes)
+	ap = genFile.genr(cb, plugin_ids, name, description, risk_description, recommendation, notes)
+	if not ap is None:
+		appendices += ap
 
 
 	# New plugin_ids Ensurenodevoptionsetonhomepartition(CompliancePlugin):
@@ -1935,7 +2365,9 @@ def gen(cb):
 	risk_description=str()
 	recommendation=str()
 
-	genFile.genr(cb, plugin_ids, name, description, risk_description, recommendation, notes)
+	ap = genFile.genr(cb, plugin_ids, name, description, risk_description, recommendation, notes)
+	if not ap is None:
+		appendices += ap
 
 
 	# New plugin_ids Ensurenoexecoptionsetonvartmppartition(CompliancePlugin):
@@ -1944,7 +2376,9 @@ def gen(cb):
 	risk_description=str()
 	recommendation=str()
 
-	genFile.genr(cb, plugin_ids, name, description, risk_description, recommendation, notes)
+	ap = genFile.genr(cb, plugin_ids, name, description, risk_description, recommendation, notes)
+	if not ap is None:
+		appendices += ap
 
 
 	# New plugin_ids Ensurenosuidoptionsetonvartmppartition(CompliancePlugin):
@@ -1953,7 +2387,9 @@ def gen(cb):
 	risk_description=str()
 	recommendation=str()
 
-	genFile.genr(cb, plugin_ids, name, description, risk_description, recommendation, notes)
+	ap = genFile.genr(cb, plugin_ids, name, description, risk_description, recommendation, notes)
+	if not ap is None:
+		appendices += ap
 
 
 	# New plugin_ids Ensurenodevoptionsetonvartmppartition(CompliancePlugin):
@@ -1962,7 +2398,9 @@ def gen(cb):
 	risk_description=str()
 	recommendation=str()
 
-	genFile.genr(cb, plugin_ids, name, description, risk_description, recommendation, notes)
+	ap = genFile.genr(cb, plugin_ids, name, description, risk_description, recommendation, notes)
+	if not ap is None:
+		appendices += ap
 
 
 	# New plugin_ids Ensurenoexecoptionsetontmppartition(CompliancePlugin):
@@ -1971,7 +2409,9 @@ def gen(cb):
 	risk_description=str()
 	recommendation=str()
 
-	genFile.genr(cb, plugin_ids, name, description, risk_description, recommendation, notes)
+	ap = genFile.genr(cb, plugin_ids, name, description, risk_description, recommendation, notes)
+	if not ap is None:
+		appendices += ap
 
 
 	# New plugin_ids Ensurenosuidoptionsetontmppartition(CompliancePlugin):
@@ -1980,7 +2420,9 @@ def gen(cb):
 	risk_description=str()
 	recommendation=str()
 
-	genFile.genr(cb, plugin_ids, name, description, risk_description, recommendation, notes)
+	ap = genFile.genr(cb, plugin_ids, name, description, risk_description, recommendation, notes)
+	if not ap is None:
+		appendices += ap
 
 
 	# New plugin_ids Ensurenodevoptionsetontmppartition(CompliancePlugin):
@@ -1989,7 +2431,9 @@ def gen(cb):
 	risk_description=str()
 	recommendation=str()
 
-	genFile.genr(cb, plugin_ids, name, description, risk_description, recommendation, notes)
+	ap = genFile.genr(cb, plugin_ids, name, description, risk_description, recommendation, notes)
+	if not ap is None:
+		appendices += ap
 
 
 	# New plugin_ids EnsuremountingofFATfilesystemsisdisabled(CompliancePlugin):
@@ -1998,7 +2442,9 @@ def gen(cb):
 	risk_description=str()
 	recommendation=str()
 
-	genFile.genr(cb, plugin_ids, name, description, risk_description, recommendation, notes)
+	ap = genFile.genr(cb, plugin_ids, name, description, risk_description, recommendation, notes)
+	if not ap is None:
+		appendices += ap
 
 
 	# New plugin_ids Ensuremountingofudffilesystemsisdisabled(CompliancePlugin):
@@ -2007,7 +2453,9 @@ def gen(cb):
 	risk_description=str()
 	recommendation=str()
 
-	genFile.genr(cb, plugin_ids, name, description, risk_description, recommendation, notes)
+	ap = genFile.genr(cb, plugin_ids, name, description, risk_description, recommendation, notes)
+	if not ap is None:
+		appendices += ap
 
 
 	# New plugin_ids Ensuremountingofsquashfsfilesystemsisdisabled(CompliancePlugin):
@@ -2016,7 +2464,9 @@ def gen(cb):
 	risk_description=str()
 	recommendation=str()
 
-	genFile.genr(cb, plugin_ids, name, description, risk_description, recommendation, notes)
+	ap = genFile.genr(cb, plugin_ids, name, description, risk_description, recommendation, notes)
+	if not ap is None:
+		appendices += ap
 
 
 	# New plugin_ids Ensuremountingofhfsplusfilesystemsisdisabled(CompliancePlugin):
@@ -2025,7 +2475,9 @@ def gen(cb):
 	risk_description=str()
 	recommendation=str()
 
-	genFile.genr(cb, plugin_ids, name, description, risk_description, recommendation, notes)
+	ap = genFile.genr(cb, plugin_ids, name, description, risk_description, recommendation, notes)
+	if not ap is None:
+		appendices += ap
 
 
 	# New plugin_ids Ensuremountingofhfsfilesystemsisdisabled(CompliancePlugin):
@@ -2034,7 +2486,9 @@ def gen(cb):
 	risk_description=str()
 	recommendation=str()
 
-	genFile.genr(cb, plugin_ids, name, description, risk_description, recommendation, notes)
+	ap = genFile.genr(cb, plugin_ids, name, description, risk_description, recommendation, notes)
+	if not ap is None:
+		appendices += ap
 
 
 	# New plugin_ids Ensuremountingofjffs2filesystemsisdisabled(CompliancePlugin):
@@ -2043,7 +2497,9 @@ def gen(cb):
 	risk_description=str()
 	recommendation=str()
 
-	genFile.genr(cb, plugin_ids, name, description, risk_description, recommendation, notes)
+	ap = genFile.genr(cb, plugin_ids, name, description, risk_description, recommendation, notes)
+	if not ap is None:
+		appendices += ap
 
 
 	# New plugin_ids Ensuremountingoffreevxfsfilesystemsisdisabled(CompliancePlugin):
@@ -2052,7 +2508,9 @@ def gen(cb):
 	risk_description=str()
 	recommendation=str()
 
-	genFile.genr(cb, plugin_ids, name, description, risk_description, recommendation, notes)
+	ap = genFile.genr(cb, plugin_ids, name, description, risk_description, recommendation, notes)
+	if not ap is None:
+		appendices += ap
 
 
 	# New plugin_ids Ensuremountingofcramfsfilesystemsisdisabled(CompliancePlugin):
@@ -2061,4 +2519,11 @@ def gen(cb):
 	risk_description=str()
 	recommendation=str()
 
-	genFile.genr(cb, plugin_ids, name, description, risk_description, recommendation, notes)
+	ap = genFile.genr(cb, plugin_ids, name, description, risk_description, recommendation, notes)
+	if not ap is None:
+		appendices += ap
+
+
+
+	if appendices:
+		return appendices

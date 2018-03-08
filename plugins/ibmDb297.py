@@ -1,6 +1,8 @@
 from plugins import genFile
 
 def gen(cb):
+	appendices = []
+
 	plugin_ids=['IBM DB2 9.7 <%', 'IBM DB2 Stored Procedure Infrastructure Privilege Escalation Vulnerability']
 	name="IBM DB2 9.7 Deployments"
 	description="Several hosts present IBM DB2 services which are running on a dated version. As updates are made available to address both functional and security issues, such deployments are seen to present a risk."
@@ -8,4 +10,11 @@ def gen(cb):
 	recommendation="Ensure that each DB2 instance is kept suitably updated, in line with the agreed patching policy."
 	notes=str()
 
-	genFile.genr(cb, plugin_ids, name, description, risk_description, recommendation, notes)
+	ap = genFile.genr(cb, plugin_ids, name, description, risk_description, recommendation, notes)
+	if not ap is None:
+		appendices += ap
+
+
+
+	if appendices:
+		return appendices

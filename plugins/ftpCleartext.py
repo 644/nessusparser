@@ -1,6 +1,8 @@
 from plugins import genFile
 
 def gen(cb):
+	appendices = []
+
 	plugin_ids=[34324]
 	name="FTP Cleartext Authentication"
 	description="Services using FTP to transfer files do so with support for authentication mechanisms which offer no security for user credentials during transmission, leaving them susceptible to interception."
@@ -9,4 +11,11 @@ def gen(cb):
 	notes="<url>https://www.iis.net/configreference/system.applicationhost/sites/site/ftpserver/security/ssl</url>"
 	notes+="\n<url>https://wiki.filezilla-project.org/FTP_over_TLS</url>"
 
-	genFile.genr(cb, plugin_ids, name, description, risk_description, recommendation, notes)
+	ap = genFile.genr(cb, plugin_ids, name, description, risk_description, recommendation, notes)
+	if not ap is None:
+		appendices += ap
+
+
+
+	if appendices:
+		return appendices

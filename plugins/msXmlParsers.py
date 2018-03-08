@@ -1,6 +1,8 @@
 from plugins import genFile
 
 def gen(cb):
+	appendices = []
+
 	plugin_ids=['Microsoft XML Parser (MSXML) and XML Core Services Unsupported']
 	include_strings=["    Path","    File version","    XML Core version"]
 	name="Unsupported Microsoft XML Parser"
@@ -10,4 +12,11 @@ def gen(cb):
 	notes="<url>http://support.microsoft.com/en-us/kb/269238</url>\n"
 	notes+="<url>https://msdn.microsoft.com/en-us/library/jj152146(v=vs.85).aspx</url>"
 
-	genFile.genr(cb, plugin_ids, name, description, risk_description, recommendation, notes)
+	ap = genFile.genr(cb, plugin_ids, name, description, risk_description, recommendation, notes)
+	if not ap is None:
+		appendices += ap
+
+
+
+	if appendices:
+		return appendices

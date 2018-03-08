@@ -1,6 +1,8 @@
 from plugins import genFile
 
 def gen(cb):
+	appendices = []
+
 	plugin_ids=['SSH Protocol Version 1 Session Key Retrieval']
 	name="SSH Protocol Version 1 Support"
 	description="Secure Shell services are used to provide secure remote access to network-connected hosts to allow administrative actions to be performed remotely while ensuring the confidentiality of the service traffic. Historical versions of the SSH protocol suffer from cryptographic flaws, reducing the computational effort required to decrypt communications secured using older protocols. Successful decryption of traffic could facilitate a host compromise."
@@ -8,4 +10,11 @@ def gen(cb):
 	recommendation="Disable compatibility with version 1 of the protocol. References for implementing this change on Cisco devices and Linux hosts are available in the Notes Section."
 	notes="<url>http://www.cisco-faq.com/178/disablesshv1sshversion2.html</url>\n<url>http://www.skullbox.net/disablessh1.php</url>"
 	
-	genFile.genr(cb, plugin_ids, name, description, risk_description, recommendation, notes)
+	ap = genFile.genr(cb, plugin_ids, name, description, risk_description, recommendation, notes)
+	if not ap is None:
+		appendices += ap
+
+
+
+	if appendices:
+		return appendices

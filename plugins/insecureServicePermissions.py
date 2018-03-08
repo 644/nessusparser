@@ -1,6 +1,8 @@
 from plugins import genFile
 
 def gen(cb):
+	appendices = []
+
 	plugin_ids=['Insecure Windows Service Permissions']
 	include_strings=["Path : ", "Used by services : "]
 	name="Insecure Windows Service Permissions"
@@ -9,4 +11,11 @@ def gen(cb):
 	recommendation="Reconfigure the executable related to each service so that it does not allow Full Control or Write permissions to members of the Everyone, Users or other non-administrative user groups. Additionally, ensure that these groups do not have Full Control permission to any directories that contain the service executable."
 	notes="<url>http://travisaltman.com/windows-privilege-escalation-via-weak-service-permissions/</url>"
 
-	genFile.genr(cb, plugin_ids, name, description, risk_description, recommendation, notes)
+	ap = genFile.genr(cb, plugin_ids, name, description, risk_description, recommendation, notes)
+	if not ap is None:
+		appendices += ap
+
+
+
+	if appendices:
+		return appendices

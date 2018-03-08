@@ -8,7 +8,7 @@ def xml2sqlite(dest_file):
 		reportitem_tags = list(set([e.tag for e in tree.findall('.//ReportItem/*')]))
 		reportitem_tags = ', '.join(e.replace('-', '_') for e in reportitem_tags)
 
-		c.execute(f"CREATE TABLE IF NOT EXISTS reportitems (mskb TEXT, reports_pluginName TEXT, reports_pluginFamily TEXT, plugin_id TEXT, report_id INTEGER, {reportitem_tags})");
+		c.execute(f"CREATE TABLE IF NOT EXISTS reportitems (reports_pluginName TEXT, reports_pluginFamily TEXT, plugin_id TEXT, report_id INTEGER, {reportitem_tags})");
 		c.execute("CREATE TABLE IF NOT EXISTS reports (report_id INTEGER PRIMARY KEY, report_name, reporthost_name, host_ip, netbios_name)")
 
 		for report in tree.iter('Report'):

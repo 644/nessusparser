@@ -1,6 +1,8 @@
 from plugins import genParent
 
 def gen(cb):
+	appendices = []
+
 	plugin_ids=[57582, 51192]
 	plugin_ids+=[45411]
 	plugin_ids+=[15901]

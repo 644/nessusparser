@@ -1,6 +1,8 @@
 from plugins import genParent
 
 def gen(cb):
+	appendices = []
+
 	plugin_ids=[35372]
 	plugin_ids+=["DNS Server Cache Snooping Remote Information Disclosure"]
 
