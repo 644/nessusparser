@@ -44,10 +44,10 @@ def gen_document(cb, name, description, risk_description, recommendation, notes,
 			#else:
 			tbl_cells[0].text = ac
 		print('\n')
-		document.add_page_break()
+		#document.add_page_break()
 		document.save(cb + '.docx')
 	else:
-		document.add_page_break()
+		#document.add_page_break()
 		document.save(cb + '.docx')
 		return affected_hosts
 
