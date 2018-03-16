@@ -11,6 +11,7 @@ def gen(cb):
 	recommendation="There is no patch for the issues affecting IPMI services; it is an inherent problem with the specification for IPMI v2.0.\n\nSuggested mitigations include:\nDisabling IPMI over LAN if it is not needed.\nUsing strong passwords to limit the successfulness of off-line dictionary attacks.\nUsing Access Control Lists (ACLs) or isolated networks to limit access to any IPMI management interfaces."
 	notes="<url>https://nvd.nist.gov/vuln/detail/CVE-2013-4786</url>\n"
 	notes+="<url>https://blog.rapid7.com/2013/07/02/a-penetration-testers-guide-to-ipmi/</url>"
+
 	plugin_ids = ['NONE']
 
 	conn = sqlite3.connect('./reports.db')
