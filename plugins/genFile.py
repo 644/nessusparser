@@ -27,6 +27,10 @@ def gen_document(cb, name, description, risk_description, recommendation, notes,
 		document.add_heading('Issue Description:', level=1)
 		document.add_paragraph(description)
 
+	if risk_description:
+		document.add_heading('Risk Description:', level=1)
+		document.add_paragraph(risk_description)
+
 	if recommendation:
 		document.add_heading('Recommendation:', level=1)
 		document.add_paragraph(recommendation)

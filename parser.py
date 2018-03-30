@@ -26,12 +26,15 @@ def select_options(button):
 			appendix = []
 			for fg in genrFiles:
 				appendices = fg.gen(cb)
-				if not appendices is None:
-					appendix += appendices
+
+			if not appendices is None:
+				appendix += appendices
 				
 			genFile.appendGen(cb, appendix)
 			print(cb, 'report finished')
+
 		exit()
+
 	else:
 		exit()
 

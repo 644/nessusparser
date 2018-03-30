@@ -1,5 +1,6 @@
 tests/Archive
 __pycache__/
 plugins/__pycache__/
+.vscode/
 reports.db
 todo.txt
